@@ -31,20 +31,21 @@ Footer
 <div class="row-fluid">
 <div class="span2">
 <h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
-<a href="#">PERSONAL INFORMATION</a><br>
-<a href="#">ADDRESSES</a><br>
-<a href="#">DISCOUNT</a><br>
-<a href="#">ORDER HISTORY</a><br>
+<ul>
+	<li>Ian Mercado</li>
+	<li>Isaac Hernández</li>
+	<li>Leandro Lacaze</li>
+	<li>Gabriel López</li>
+</ul>
  </div>
 <div class="span2">
-<h5>Information</h5>
-<a href="contact.html">CONTACT</a><br>
-<a href="#">SITEMAP</a><br>
-<a href="#">LEGAL NOTICE</a><br>
-<a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
- </div>
+<h5>Carrera</h5>
+<ul>
+	<li>Programación Web II</li>
+	<li>Segundo Cuatrimestre</li>
+	<li>2020</li>
+</ul>
+</div>
 <div class="span2">
 <h5>Our Offer</h5>
 <a href="#">NEW PRODUCTS</a> <br>
