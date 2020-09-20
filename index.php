@@ -1,12 +1,12 @@
 <?php
-	require_once('inc/header.php');
+	require_once('header.php');
 ?>
 <!-- 
 Body Section 
 -->
 	<div class="row">
 		<?php
-			include_once('inc/left_menu.php');
+			include_once('left_menu.php');
 		?>
 	<div class="span9">
 	<div class="well np">
@@ -242,5 +242,5 @@ Clients
 -->
 
 <?php
-	include_once('inc/footer.php');
+	include_once('footer.php');
 ?>
