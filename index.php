@@ -237,10 +237,7 @@ New Products
 	</div>
 	</div>
 	</div>
-<!-- 
-Clients 
--->
-
+	
 <?php
 	include_once('footer.php');
 ?>
