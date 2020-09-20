@@ -28,42 +28,26 @@
 Footer
 -->
 <footer class="footer">
-<div class="row-fluid">
-<div class="span2">
-<h5>Your Account</h5>
+<div class="container">
+<h5 class="text-center">Grupo número 3</h5>
+<div class="row offset1">
 <ul>
-	<li>Ian Mercado</li>
-	<li>Isaac Hernández</li>
-	<li>Leandro Lacaze</li>
-	<li>Gabriel López</li>
-</ul>
- </div>
-<div class="span2">
-<h5>Carrera</h5>
-<ul>
-	<li>Programación Web II</li>
-	<li>Segundo Cuatrimestre</li>
-	<li>2020</li>
+	<li class="span2">Ian Mercado</li>
+	<li class="span2">Isaac Hernández</li>
+	<li class="span2">Leandro Lacaze</li>
+	<li class="span2">Gabriel López</li>
 </ul>
 </div>
-<div class="span2">
-<h5>Our Offer</h5>
-<a href="#">NEW PRODUCTS</a> <br>
-<a href="#">TOP SELLERS</a><br>
-<a href="#">SPECIALS</a><br>
-<a href="#">MANUFACTURERS</a><br>
-<a href="#">SUPPLIERS</a> <br/>
- </div>
- <div class="span6">
-<h5>The standard chunk of Lorem</h5>
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
- those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et 
- Malorum" by Cicero are also reproduced in their exact original form, 
-accompanied by English versions from the 1914 translation by H. Rackham.
- </div>
- </div>
-</footer>
-</div><!-- /container -->
+<h5 class="text-center">Carrera</h5>
+<div class="row offset1">
+<ul>
+	<li class="span3">Programación Web II</li>
+	<li class="span3">Segundo Cuatrimestre</li>
+	<li class="span3">2020</li>
+</ul>
+</div>
+</div>
+</footer><!-- /container -->
 
 <div class="copyright">
 <div class="container">
