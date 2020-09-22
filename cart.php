@@ -7,7 +7,7 @@ Body Section
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+		<li><a href="index.php">Home</a> <span class="divider">/</span></li>
 		<li class="active">Check Out</li>
     </ul>
 	<div class="well well-small">
@@ -117,8 +117,8 @@ Body Section
 				  </tr>
               </tbody>
             </table>		
-	<a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="login.html" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
+	<a href="products.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="login.php" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
 
 </div>
 </div>
