@@ -21,7 +21,9 @@
 		<![endif]-->
 
 	<!-- Favicons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+	<link rel="shortcut icon" href="assets/ico/favicon.ico">
+	
+	<link href="estilos.css" rel="stylesheet"/>	
   </head>
 <body>
 <!-- 

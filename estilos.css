@@ -1,0 +1,11 @@
+.form_comments > div{
+    display: flex;
+}
+
+.form_comments .comment{
+    display: block;
+}
+
+.form_comments #Valoracion{
+    margin: 0px 10px;
+}
