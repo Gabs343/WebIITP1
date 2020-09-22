@@ -5,11 +5,11 @@
 Body Section 
 -->
 	<div class="row">
-	<?php
-		require_once("left_menu.php");
-	?>
+		<?php
+			require_once("left_menu.php");
+		?>
 	<div class="span9">
-<!--
+<!-- 
 New Products
 -->
 	<div class="well well-small">
@@ -239,5 +239,5 @@ New Products
 	</div>
 	</div>
 <?php
-	require_once("footer.php")
+	require_once("footer.php");
 ?>
