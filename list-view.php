@@ -29,8 +29,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -55,8 +55,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -81,8 +81,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -107,8 +107,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -133,8 +133,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -159,8 +159,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -185,8 +185,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -211,8 +211,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -237,8 +237,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -263,8 +263,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -289,8 +289,8 @@ Body Section
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.html" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.html" class="shopBtn">VIEW</a>
+		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
