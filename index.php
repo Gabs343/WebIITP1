@@ -1,34 +1,41 @@
 <?php
 	require_once('header.php');
 	$multi_productos = array(
-		1 => array ("id_producto" => "1", 
+        1 => array ("id_producto" => "1",
+                    "imagen" => "assets/img/auricular1.png", 
 					"nombre" => "MEMECOLEOUS H112", 
 					"descripción" => "El Redragon Memecoleous ofrece un increíble nivel de sonido a gamers gracias a su sonido diseñado a medida. Su estilo de diseño único y su espectro de frecuencia combinados entregan una precisión impresionante.",
-					"precio" => "ARS 5299",
+					"precio" => "ARS 5.299",
 					"id_marca" => "1",
 					"id_categoria" => "1",
-					"destacado" => true,
-					"id_comentarios" => array()),
-		2 => array ("id_producto" => "2",
+                    "destacado" => true,
+                    "especificaciones" => array("Retroiluminación" => "Si, retroiluminado rojo",
+                                                "Sensibilidad" => "109.8 dB",
+                                                "Vibración" => "Si. Motor de vibración 30 mm",
+                                                "Material Diadema" => "Metálica, flexible. Integrada a la estructura",
+                                                "Tipo de salida" => "Stereo",
+                                                "Peso" => "450 gr")),            
+
+        2 => array ("id_producto" => "2",
+                    "imagen" => "assets/img/laptop1.png",
 					"nombre" => "Laptop Lenovo",
 					"descripción" => "Garantía Oficial Lenovo 12 Meses",
-					"precio" => "ARS 60000",
+					"precio" => "ARS 60.000",
 					"id_marca" => "4",
 					"id_categoria" => "5",
 					"destacado" => false,
 					"especificaciones" => array("Procesador" => "AMD",
 												"Memoria" => "4GB DDR4",
 												"Almacenamiento" => "500 GB",
-												"OS" => "Windows 10"),
-					"id_comentarios" => array()),
+												"OS" => "Windows 10")),
+	
 		3 => array("id_producto" => "3",
 					"nombre" => "Teclado Sentey Iluxion Gaming",
 					"descripcion" => "Teclado Retroiluminado USB",
 					"precio" => "ARS 1200",
 					"id_marca" => "3",
 					"id_categoria" => "2",
-					"destacado" => false,
-					"id_comentarios" => array()));
+					"destacado" => false));
 
 	$f_producto = fopen("productos.json", "w");
 	fwrite($f_producto, json_encode($multi_productos));
@@ -168,10 +175,10 @@ New Products
                         <div class="thumbnail">
                             <a class="zoomTool" href="product_details.php?product=1" title="add to cart"><span
                                     class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php?product=1"><img src="assets/img/b.jpg" alt=""></a>
+                            <a href="product_details.php?product=1"><img src="assets/img/auricular1.png" alt=""></a>
                             <div class="caption cntr">
-                                <p>Manicure & Pedicure</p>
-                                <p><strong> $22.00</strong></p>
+                                <p><?php echo $multi_productos["1"]["nombre"];?></p>
+                                <p><strong><?php echo $multi_productos["1"]["precio"]?></strong></p>
                                 <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
                                 <div class="actionList">
                                     <a class="pull-left" href="#">Add to Wish List </a>
@@ -186,10 +193,10 @@ New Products
                         <div class="thumbnail">
                             <a class="zoomTool" href="product_details.php?product=2" title="add to cart"><span
                                     class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php?product=2"><img src="assets/img/c.jpg" alt=""></a>
+                            <a href="product_details.php?product=2"><img src="assets/img/laptop1.png" alt=""></a>
                             <div class="caption cntr">
-                                <p>Manicure & Pedicure</p>
-                                <p><strong> $22.00</strong></p>
+                                <p><?php echo $multi_productos["2"]["nombre"];?></p>
+                                <p><strong><?php echo $multi_productos["2"]["precio"]?></strong></p>
                                 <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
                                 <div class="actionList">
                                     <a class="pull-left" href="#">Add to Wish List </a>
