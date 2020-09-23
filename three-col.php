@@ -49,12 +49,12 @@ Three column view
 			</li>
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/c.jpg" alt=""></a>
+				<a href="product_details.php?product=3" class="overlay"></a>
+				<a class="zoomTool" href="product_details.php?product=3" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="product_details.php?product=3"><img src="assets/img/teclado1.jpg" alt=""></a>
 				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
+					<p><?php echo $multi_productos["3"]["nombre"];?></p>
+					<p><strong><?php echo $multi_productos["3"]["precio"];?></strong></p>
 					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 
@@ -69,12 +69,12 @@ Three column view
 		<ul class="thumbnails">
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/d.jpg" alt=""></a>
+				<a href="product_details.php?product=4" class="overlay"></a>
+				<a class="zoomTool" href="product_details.php?product=4" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="product_details.php=product=4"><img src="assets/img/mouse1.jpg" alt=""></a>
 				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
+					<p><?php echo $multi_productos["4"]["nombre"];?></p>
+					<p><strong><?php echo $multi_productos["4"]["precio"];?></strong></p>
 					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 
@@ -86,12 +86,12 @@ Three column view
 			</li>
 			<li class="span4">
 			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/e.jpg" alt=""></a>
+				<a href="product_details.php?product=5" class="overlay"></a>
+				<a class="zoomTool" href="product_details.php?product=5" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a href="product_details.php?product=5"><img src="assets/img/silla1.jpg" alt=""></a>
 				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
+					<p><?php echo $multi_productos["5"]["nombre"];?></p>
+					<p><strong><?php echo $multi_productos["5"]["precio"];?></strong></p>
 					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
 					<div class="actionList">
 						<a class="pull-left" href="#">Add to Wish List </a> 

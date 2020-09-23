@@ -3,7 +3,28 @@
 	$f_productoR = fopen("productos.json", "r");
 	$json_producto = fread($f_productoR, filesize("productos.json"));
 	fclose($f_productoR);
-	$multi_productos = json_decode($json_producto, true);
+    $multi_productos = json_decode($json_producto, true);
+
+    $multi_comentarios = array(20190115143015 => array("id_producto" => "1",
+                                                    "correo" => "prueba01@gmail.com",
+                                                    "comentario" => "¡¡Excelentes!!",
+                                                    "valoración" => "5"),
+                            20191028011007 => array("id_producto" => "2",
+                                                    "correo" => "prueba02@gmail.com",
+                                                    "comentario" => "No era lo que esperaba",
+                                                    "valoración" => "2"),
+                            20200503204550 => array("id_producto" => "3",
+                                                    "correo" => "prueba03@gmail.com",
+                                                    "comentario" => "Muy bueno pero con algunos problemas",
+                                                    "valoración" => "4"),
+                            20200723141343 => array("id_producto" => "2",
+                                                    "correo" => "prueba04@gmail.com",
+                                                    "comentario" => "Se puede mejorar",
+                                                    "valoración" => "3"));
+    
+    $f_comentario = fopen("comentarios.json", "w");
+    fwrite($f_comentario, json_encode($multi_comentarios));
+    fclose($f_comentario);
 ?>
 <!-- 
 Body Section 
@@ -136,18 +157,21 @@ Body Section
 							<input type="radio" name="valoracion" id="Valoracion" value="4">4</input>
 							<input type="radio" name="valoracion" id="Valoracion" value="5" required>5</input>
 						</div>
-						<input type="submit" value="Enviar comentario">
+						<input type="submit" name="enviar" value="Enviar comentario">
 					</form>
-					<?php
-						echo "El usuario ", $_POST["id_correo"], " comento:<br>";
+                    <?php
+                        if(isset($_POST["enviar"])){
+                            $tiempo = date("ymdhms");
+
+                            
+                        }
+                        print_r($multi_comentarios)
+						/*echo "El usuario ", $_POST["id_correo"], " comento:<br>";
 						echo $_POST["comentario"], "<br>";
-						echo "valoracion: ", $_POST["valoracion"];
+						echo "valoracion: ", $_POST["valoracion"];*/
 
 					?>
-
-
-
-				</div>
+		        </div>
 				
 
                 <!--<div class="tab-pane fade" id="profile">
