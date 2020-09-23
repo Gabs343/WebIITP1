@@ -60,25 +60,21 @@ Body Section
 	<hr class="soften">
 	<div class="row-fluid">	  
 		<div class="span2">
-			<img src="assets/img/c.jpg" alt="">
+			<img src="assets/img/teclado1.jpg" alt="">
 		</div>
 		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
+			<h5><?php echo $multi_productos["3"]["nombre"];?></h5>
+			<p><?php echo $multi_productos["3"]["descripción"]; ?></p>
 		</div>
 		<div class="span4 alignR">
 		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
+		<h3><?php echo $multi_productos["3"]["precio"];?></h3>
 		<label class="checkbox">
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.php" class="shopBtn">VIEW</a>
+		  <a href="product_details.php?product=3" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php?product=3" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -86,25 +82,21 @@ Body Section
 	<hr class="soften">
 	<div class="row-fluid">	  
 		<div class="span2">
-			<img src="assets/img/d.jpg" alt="">
+			<img src="assets/img/mouse1.jpg" alt="">
 		</div>
 		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
-			</p>
+			<h5><?php echo $multi_productos["4"]["nombre"];?></h5>
+			<p><?php echo $multi_productos["4"]["descripción"];?></p>
 		</div>
 		<div class="span4 alignR">
 		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
+		<h3><?php echo $multi_productos["4"]["precio"];?></h3>
 		<label class="checkbox">
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.php" class="shopBtn">VIEW</a>
+		  <a href="product_details.php?product=4" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php?product=4" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>
@@ -112,25 +104,22 @@ Body Section
 	<hr class="soften">
 	<div class="row-fluid">	  
 		<div class="span2">
-			<img src="assets/img/e.jpg" alt="">
+			<img src="assets/img/silla1.jpg" alt="">
 		</div>
 		<div class="span6">
-			<h5>Product Name </h5>
-			<p>
-			Nowadays the lingerie industry is one of the most successful business spheres.
-			We always stay in touch with the latest fashion tendencies - 
-			that is why our goods are so popular..
+			<h5><?php echo $multi_productos["5"]["nombre"];?></h5>
+			<p><?php echo $multi_productos["5"]["descripción"];?>
 			</p>
 		</div>
 		<div class="span4 alignR">
 		<form class="form-horizontal qtyFrm">
-		<h3> $140.00</h3>
+		<h3><?php echo $multi_productos["5"]["precio"];?></h3>
 		<label class="checkbox">
 			<input type="checkbox">  Adds product to compair
 		</label><br>
 		<div class="btn-group">
-		  <a href="product_details.php" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
-		  <a href="product_details.php" class="shopBtn">VIEW</a>
+		  <a href="product_details.php?product=5" class="defaultBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+		  <a href="product_details.php?product=5" class="shopBtn">VIEW</a>
 		 </div>
 			</form>
 		</div>

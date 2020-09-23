@@ -29,13 +29,53 @@
 												"Almacenamiento" => "500 GB",
 												"OS" => "Windows 10")),
 	
-		3 => array("id_producto" => "3",
+        3 => array("id_producto" => "3",
+                    "imagen" => "assets/img/teclado.jpg",
 					"nombre" => "Teclado Sentey Iluxion Gaming",
-					"descripcion" => "Teclado Retroiluminado USB",
+					"descripción" => "Teclado Retroiluminado USB",
 					"precio" => "ARS 1200",
 					"id_marca" => "3",
 					"id_categoria" => "2",
-					"destacado" => false));
+                    "destacado" => false,
+                    "especificaciones" => array("Conector" => "USB 2.0",
+                                            "Longitud Cable" => "1.5mts",
+                                            "Dimensión" => "446 * 142 * 318 mm",
+                                            "Aspecto" => "Negro Mate",
+                                            "Peso" => "490 gr")),
+        4 => array("id_producto" => "4",
+                    "imagen" => "assets/img/mouse1.jpg",
+                    "nombre" => "Mouse Centrophorus M601 USB 3200DPI",
+                    "descripción" => "El Centrophorus se abre paso en el mercado demostrando que no es solo una cara bonita y una construcción sólida, sus switches Omron y su sensor Pixart 3317 óptico, aseguran movimiento fluído y clicks precisos. Todo conectado a la PC mediante una ficha USB recubierta en oro que la hace inoxidable y aporta la mejor conductividad posible.",
+                    "precio" => "ARS 2.060",
+                    "id_marca" => "1",
+                    "id_categoria" => "3",
+                    "destacado" => false,
+                    "especificaciones" => array("Orientación" => "Ambidiestro",
+                                            "Conexión" => "Cableado USB",
+                                            "Retroiluminación" => "Si, roja",
+                                            "DPI Maximo" => "3200",
+                                            "DPI Minimo" => "400",
+                                            "Frecuencia de respuesta" => "1000 Hz",
+                                            "Dimensiones" => "12x7x3.9 cm",
+                                            "Modelo Sensor" => "Pixart 3317 óptico")),
+        5 => array("id_producto" => "5",
+                    "imagen" => "assets/img/silla1.jpg",
+                    "nombre" => "Silla Gamer Aureox G200 Entry Black/Red",
+                    "descripción" => "La experiencia de jugar como un verdadero PRO. Este modelo viene con todo lo necesario para que puedas vivir intensamente cada partida.  Además cuenta con un sistema regulable en altura, y una reclinacion de hasta 180°.",
+                    "precio" => "ARS 20.100",
+                    "id_marca" => "2",
+                    "id_categoria" => "4",
+                    "destacado" => false,
+                    "especificaciones" => array("Modelo" => "Aureox G200",
+                                            "Superficie" => "Cuero Sintético ",
+                                            "Estructura" => "Acero",
+                                            "Espuma de Alta Densidad" => "No",
+                                            "Ajuste de Altura" => "Si",
+                                            "Cilindro de Gas" => "Clase 3",
+                                            "Apoyabrazos" => "Fijos",
+                                            "Almohadones" => "Si",
+                                            "Peso Recomendado" => "110Kg",
+                                            "Peso" => "16Kg")));
 
 	$f_producto = fopen("productos.json", "w");
 	fwrite($f_producto, json_encode($multi_productos));
@@ -187,8 +227,8 @@ New Products
                                 <br class="clr">
                             </div>
                         </div>
-
                     </li>
+                    <!--Segundo Producto-->
                     <li class="span4">
                         <div class="thumbnail">
                             <a class="zoomTool" href="product_details.php?product=2" title="add to cart"><span
@@ -206,14 +246,15 @@ New Products
                             </div>
                         </div>
                     </li>
+                    <!--Tercer Producto-->
                     <li class="span4">
                         <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php" title="add to cart"><span
+                            <a class="zoomTool" href="product_details.php?product=3" title="add to cart"><span
                                     class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php"><img src="assets/img/a.jpg" alt=""></a>
+                            <a href="product_details.php?product=3"><img src="assets/img/teclado1.jpg" alt=""></a>
                             <div class="caption cntr">
-                                <p>Manicure & Pedicure</p>
-                                <p><strong> $22.00</strong></p>
+                                <p><?php echo $multi_productos["3"]["nombre"];?></p>
+                                <p><strong><?php echo $multi_productos["3"]["precio"];?></strong></p>
                                 <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
                                 <div class="actionList">
                                     <a class="pull-left" href="#">Add to Wish List </a>
