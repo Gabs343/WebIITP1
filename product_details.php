@@ -1,5 +1,9 @@
 <?php
 	require_once("header.php");
+	$f_productoR = fopen("productos.json", "r");
+	$json_producto = fread($f_productoR, filesize("productos.json"));
+	fclose($f_productoR);
+	$multi_productos = json_decode($json_producto, true);
 ?>
 <!-- 
 Body Section 
@@ -34,7 +38,13 @@ Body Section
                     </div>
                 </div>
                 <div class="span7">
-                    <h3>Name of the Item [$140.00]</h3>
+					<h3><?php
+						foreach($multi_productos as $clave){
+							if($clave["id_producto"] == $_GET["product"]){
+								echo $clave["nombre"];
+							}
+						}
+					?></h3>
                     <hr class="soft" />
 
                     <form class="form-horizontal qtyFrm">
@@ -121,43 +131,45 @@ Body Section
                             </tr>
                         </tbody>
                     </table>
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                        retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
-                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure
-                        terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
-                        american apparel, butcher voluptate nisi qui.</p>
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                        retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
-                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure
-                        terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
-                        american apparel, butcher voluptate nisi qui.</p>
-                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
-                        retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
-                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure
-                        terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
-						american apparel, butcher voluptate nisi qui.</p>
+					<?php
+						foreach($multi_productos as $clave){
+							if($clave["id_producto"] == $_GET["product"]){
+								echo "<p>", $clave["descripción"], "</p>";
+							}
+						}
+					?>
 						
-					<form action="" class="form_comments">
+					<form action="<?php $_PHP_SELF ?>" class="form_comments" method="POST">
 						<div>
 							<label for="Mail">Email:</label>
 							<input type="email" placeholder="@example.com" id="Mail" name="id_correo" required>
 						</div>
 						<div class="comment">
 							<label for="Comentario">Comentario:</label>
-							<textarea name="id_comentario" id="Comentario" cols="90" rows="3" required></textarea>
+							<textarea name="comentario" id="Comentario" cols="90" rows="3" required></textarea>
 						</div>
 						<div>
 							<label for="Valoracion">Califica el producto:</label>
-							<input type="radio" name="id_valoracion" id="Valoracion">1</input>
-							<input type="radio" name="id_valoracion" id="Valoracion">2</input>
-							<input type="radio" name="id_valoracion" id="Valoracion">3</input>
-							<input type="radio" name="id_valoracion" id="Valoracion">4</input>
-							<input type="radio" name="id_valoracion" id="Valoracion" checked required>5</input>
+							<input type="radio" name="valoracion" id="Valoracion" value="1">1</input>
+							<input type="radio" name="valoracion" id="Valoracion" value="2">2</input>
+							<input type="radio" name="valoracion" id="Valoracion" value="3">3</input>
+							<input type="radio" name="valoracion" id="Valoracion" value="4">4</input>
+							<input type="radio" name="valoracion" id="Valoracion" value="5" required>5</input>
 						</div>
 						<input type="submit" value="Enviar comentario">
 					</form>
+					<?php
+						echo "El usuario ", $_POST["id_correo"], " comento:<br>";
+						echo $_POST["comentario"], "<br>";
+						echo "valoracion: ", $_POST["valoracion"];
 
-                </div>
+					?>
+
+
+
+				</div>
+				
+
                 <!--<div class="tab-pane fade" id="profile">
                     <div class="row-fluid">
                         <div class="span2">
