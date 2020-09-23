@@ -24,14 +24,20 @@ Body Section
                     <div id="myCarousel" class="carousel slide cntr">
                         <div class="carousel-inner">
                             <div class="item active">
-                                <a href="#"> <img src="assets/img/a.jpg" alt="" style="width:100%"></a>
+                                <a href="#"> <img src=<?php
+                                    foreach($multi_productos as $clave){
+                                        if($clave["id_producto"] == $_GET["product"]){
+                                            echo $clave["imagen"];
+                                        }
+                                    }
+                                ?> alt="" style="width:100%"></a>
                             </div>
-                            <div class="item">
+                            <!--<div class="item">
                                 <a href="#"> <img src="assets/img/b.jpg" alt="" style="width:100%"></a>
                             </div>
                             <div class="item">
                                 <a href="#"> <img src="assets/img/e.jpg" alt="" style="width:100%"></a>
-                            </div>
+                            </div>-->
                         </div>
                         <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                         <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>-->
@@ -47,42 +53,31 @@ Body Section
 					?></h3>
                     <hr class="soft" />
 
-                    <form class="form-horizontal qtyFrm">
+                    <form action="cart.php" class="form-horizontal qtyFrm">
                         <div class="control-group">
-                            <label class="control-label"><span>$140.00</span></label>
+                            <label class="control-label">
+                            <span>
+                                <?php
+                                    foreach($multi_productos as $clave){
+                                        if($clave["id_producto"] == $_GET["product"]){
+                                            echo $clave["precio"];
+                                        }
+                                    }
+                                ?>
+                            </span></label>
                             <div class="controls">
                                 <input type="number" class="span6" placeholder="Qty.">
                             </div>
                         </div>
-
-                        <div class="control-group">
-                            <label class="control-label"><span>Color</span></label>
-                            <div class="controls">
-                                <select class="span11">
-                                    <option>Red</option>
-                                    <option>Purple</option>
-                                    <option>Pink</option>
-                                    <option>Red</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label"><span>Materials</span></label>
-                            <div class="controls">
-                                <select class="span11">
-                                    <option>Material 1</option>
-                                    <option>Material 2</option>
-                                    <option>Material 3</option>
-                                    <option>Material 4</option>
-                                </select>
-                            </div>
-                        </div>
-                        <h4>100 items in stock</h4>
-                        <p>Nowadays the lingerie industry is one of the most successful business spheres.
-                            Nowadays the lingerie industry is one of ...
-                        <p>
-                            <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to
-                                cart</button>
+                        <h4>Descripción</h4>
+                        <?php
+						    foreach($multi_productos as $clave){
+							    if($clave["id_producto"] == $_GET["product"]){
+								    echo "<p>", $clave["descripción"], "</p>";
+							    }
+						    }
+                        ?>
+                        <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
                     </form>
                 </div>
             </div>
@@ -102,43 +97,28 @@ Body Section
             </ul>
             <div id="myTabContent" class="tab-content tabWrapper">
                 <div class="tab-pane fade active in" id="home">
-                    <h4>Product Information</h4>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Color:</td>
-                                <td class="techSpecTD2">Black</td>
-                            </tr>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Style:</td>
-                                <td class="techSpecTD2">Apparel,Sports</td>
-                            </tr>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Season:</td>
-                                <td class="techSpecTD2">spring/summer</td>
-                            </tr>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Usage:</td>
-                                <td class="techSpecTD2">fitness</td>
-                            </tr>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Sport:</td>
-                                <td class="techSpecTD2">122855031</td>
-                            </tr>
-                            <tr class="techSpecRow">
-                                <td class="techSpecTD1">Brand:</td>
-                                <td class="techSpecTD2">Shock Absorber</td>
-                            </tr>
-                        </tbody>
-                    </table>
-					<?php
-						foreach($multi_productos as $clave){
-							if($clave["id_producto"] == $_GET["product"]){
-								echo "<p>", $clave["descripción"], "</p>";
-							}
-						}
-					?>
-						
+                    <h4>Información</h4>
+                    <?php
+                        echo "<table class='table table-striped'>";
+                        echo "<tbody>";
+                        foreach($multi_productos as $clave){
+                            if($clave["id_producto"] == $_GET["product"]){
+                                foreach($clave as $subclave){
+                                    if(is_array($subclave)){
+                                        foreach($subclave as $subclave2 => $subvalor){
+                                            echo "<tr class='techSpecRow'>";
+                                            echo "<td class='techSpecTD1'>", $subclave2, ":</td>";
+                                            echo "<td class='techSpecTD2'>", $subvalor, "</td>";
+                                            echo "</tr>";
+                                        }
+                                    }
+                                }  
+                            } 
+                        }
+                        echo "</tbody>";
+                        echo "</table>";
+                        
+                    ?>	
 					<form action="<?php $_PHP_SELF ?>" class="form_comments" method="POST">
 						<div>
 							<label for="Mail">Email:</label>
