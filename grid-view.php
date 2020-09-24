@@ -4,244 +4,59 @@
 	$json_producto = fread($f_productoR, filesize("productos.json"));
 	fclose($f_productoR);
 	$multi_productos = json_decode($json_producto, true);
-?>
-<!-- 
-Body Section 
--->
-	<div class="row">
-	<?php
+
+	function productos($num, $ruta, $a_nombre, $a_precio){
+		echo <<< tt
+		
+		<li class='span4'>
+		<div class='thumbnail'>
+		<a href='product_details.php?product=$num' class='overlay'></a>
+		<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
+		<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
+		<div class='caption cntr'>
+		<p>$a_nombre</p>
+		<p><strong>$a_precio</strong></p>
+		<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
+		<div class='actionList'>
+		<a class='pull-left' href='#'>Add to Wish List </a> 
+		<a class='pull-left' href='#'> Add to Compare </a>
+		</div> 
+		<br class='clr'>
+		</div>
+		</div>
+		</li>
+		tt;
+
+	}
+	/*BODY*/
+	echo "<div class='row'>";
 		require_once("left_menu.php");
-	?>
-	<div class="span9">
-<!--
-New Products
--->
-	<div class="well well-small">
-	<h3>Our Products </h3>
-		<div class="row-fluid">
-		  <ul class="thumbnails">
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php?product=1" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php?product=1" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php?product=1"><img src="assets/img/auricular1.png" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $multi_productos["1"]["nombre"]?></p>
-					<p><strong><?php echo $multi_productos["1"]["precio"]?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php?product=2" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php?product=2" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php?product=2"><img src="assets/img/laptop1.png" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $multi_productos["2"]["nombre"]?></p>
-					<p><strong><?php echo $multi_productos["2"]["precio"]?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php?product=3" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php?product=3" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php?product=3"><img src="assets/img/teclado1.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $multi_productos["3"]["nombre"]?></p>
-					<p><strong><?php echo $multi_productos["3"]["precio"]?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-		  </ul>
-		</div>
-	<div class="row-fluid">
-		  <ul class="thumbnails">
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php?product=4" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php?product=4" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php?product=4"><img src="assets/img/mouse1.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $multi_productos["4"]["nombre"]?></p>
-					<p><strong><?php echo $multi_productos["4"]["precio"]?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php?product=5" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php?product=5" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php?product=5"><img src="assets/img/silla1.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p><?php echo $multi_productos["5"]["nombre"]?></p>
-					<p><strong><?php echo $multi_productos["5"]["precio"]?></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/f.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-		  </ul>
-		</div>
-	<div class="row-fluid">
-		  <ul class="thumbnails">
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/g.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/h.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/i.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-		  </ul>
-		</div>
-	<div class="row-fluid">
-		  <ul class="thumbnails">
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/a.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/b.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-			<li class="span4">
-			  <div class="thumbnail">
-				<a href="product_details.php" class="overlay"></a>
-				<a class="zoomTool" href="product_details.php" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.php"><img src="assets/img/c.jpg" alt=""></a>
-				<div class="caption cntr">
-					<p>Manicure & Pedicure</p>
-					<p><strong> $22.00</strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-					<div class="actionList">
-						<a class="pull-left" href="#">Add to Wish List </a> 
-						<a class="pull-left" href="#"> Add to Compare </a>
-					</div> 
-					<br class="clr">
-				</div>
-			  </div>
-			</li>
-		  </ul>
-		</div>
-	
-	</div>
-	</div>
-	</div>
-<?php
+		echo "<div class='span9'>";
+			echo "<div class='well well-small'>";
+				echo "<h3>Our Products </h3>";
+				echo "<div class='row-fluid'>";
+					echo "<ul class='thumbnails'>";
+						productos(1, $multi_productos["1"]["imagen"], $multi_productos["1"]["nombre"], $multi_productos["1"]["precio"]);
+						productos(2, $multi_productos["2"]["imagen"], $multi_productos["2"]["nombre"], $multi_productos["2"]["precio"]);
+						productos(3, $multi_productos["3"]["imagen"], $multi_productos["3"]["nombre"], $multi_productos["3"]["precio"]);
+					echo "</ul>";
+				echo "</div>";
+				echo "<div class='row-fluid'>";
+					echo "<ul class='thumbnails'>";
+						productos(4, $multi_productos["4"]["imagen"], $multi_productos["4"]["nombre"], $multi_productos["4"]["precio"]);
+						productos(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["precio"]);
+						productos(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["precio"]);
+					echo "</ul>";
+				echo "</div>";
+				echo "<div class='row-fluid'>";
+					echo "<ul class='thumbnails'>";
+						productos(7, $multi_productos["7"]["imagen"], $multi_productos["7"]["nombre"], $multi_productos["7"]["precio"]);
+						productos(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["precio"]);
+						productos(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["precio"]);
+					echo "</ul>";
+				echo "</div>";
+			echo "</div>";
+		echo "</div>";
+	echo "</div>";
 	require_once("footer.php")
 ?>

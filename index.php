@@ -8,7 +8,6 @@
 					"precio" => "ARS 5.299",
 					"id_marca" => "1",
 					"id_categoria" => "1",
-                    "destacado" => true,
                     "especificaciones" => array("Retroiluminación" => "Si, retroiluminado rojo",
                                                 "Sensibilidad" => "109.8 dB",
                                                 "Vibración" => "Si. Motor de vibración 30 mm",
@@ -23,7 +22,6 @@
 					"precio" => "ARS 60.000",
 					"id_marca" => "4",
 					"id_categoria" => "5",
-					"destacado" => false,
 					"especificaciones" => array("Procesador" => "AMD",
 												"Memoria" => "4GB DDR4",
 												"Almacenamiento" => "500 GB",
@@ -33,10 +31,9 @@
                     "imagen" => "assets/img/teclado1.jpg",
 					"nombre" => "Teclado Sentey Iluxion Gaming",
 					"descripción" => "Teclado Retroiluminado USB",
-					"precio" => "ARS 1200",
+					"precio" => "ARS 1.200",
 					"id_marca" => "3",
 					"id_categoria" => "2",
-                    "destacado" => false,
                     "especificaciones" => array("Conector" => "USB 2.0",
                                             "Longitud Cable" => "1.5mts",
                                             "Dimensión" => "446 * 142 * 318 mm",
@@ -49,7 +46,6 @@
                     "precio" => "ARS 2.060",
                     "id_marca" => "1",
                     "id_categoria" => "3",
-                    "destacado" => false,
                     "especificaciones" => array("Orientación" => "Ambidiestro",
                                             "Conexión" => "Cableado USB",
                                             "Retroiluminación" => "Si, roja",
@@ -65,7 +61,6 @@
                     "precio" => "ARS 20.100",
                     "id_marca" => "2",
                     "id_categoria" => "4",
-                    "destacado" => false,
                     "especificaciones" => array("Modelo" => "Aureox G200",
                                             "Superficie" => "Cuero Sintético ",
                                             "Estructura" => "Acero",
@@ -83,7 +78,6 @@
                     "precio" => "ARS 1.769",
                     "id_marca" => "3",
                     "id_categoria" => "1",
-                    "destacado" => false,
                     "especificaciones" => array("Modelo" => "GS-4371",
                                                 "Conector" => "3.5mm x 2",
                                                 "Tipo de cable" => "Ultra Flexible",
@@ -101,7 +95,6 @@
                     "precio" => "ARS 105.000",
                     "id_marca" => "5",
                     "id_categoria" => "5",
-                    "destacado" => false,
                     "especificaciones" => array("Procesador" => "I5 1035 G1",
                                                 "Memoria" => "8GB Dual Channel (4+4) / Tipo: DDR4 SODIMM",
                                                 "Almacenamiento" => "512Gb + 32Gb / Clase: SSD NVME + Intel Optane",
@@ -115,268 +108,157 @@
 
 	$f_producto = fopen("productos.json", "w");
 	fwrite($f_producto, json_encode($multi_productos));
-	fclose($f_producto);
-?>
-<!-- 
-Body Section 
--->
-<div class="row">
-    <?php
-			include_once('left_menu.php');
-		?>
-    <div class="span9">
-        <div class="well np">
-            <div id="myCarousel" class="carousel slide homCar">
-                <div class="carousel-inner">
-                    <div class="item">
-                        <img style="width:100%" src="assets/img/bootstrap_free-ecommerce.png"
-                            alt="bootstrap ecommerce templates">
-                        <div class="carousel-caption">
-                            <h4>Bootstrap shopping cart</h4>
-                            <p><span>Very clean simple to use</span></p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img style="width:100%" src="assets/img/carousel1.png" alt="bootstrap ecommerce templates">
-                        <div class="carousel-caption">
-                            <h4>Bootstrap Ecommerce template</h4>
-                            <p><span>Highly Google seo friendly</span></p>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <img style="width:100%" src="assets/img/carousel3.png" alt="bootstrap ecommerce templates">
-                        <div class="carousel-caption">
-                            <h4>Twitter Bootstrap cart</h4>
-                            <p><span>Very easy to integrate and expand.</span></p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img style="width:100%" src="assets/img/bootstrap-templates.png" alt="bootstrap templates">
-                        <div class="carousel-caption">
-                            <h4>Bootstrap templates integration</h4>
-                            <p><span>Compitable to many more opensource cart</span></p>
-                        </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-            </div>
-        </div>
-        <!--
-New Products
--->
-        <div class="well well-small">
-            <h3>New Products </h3>
-            <hr class="soften" />
-            <div class="row-fluid">
-                <div id="newProductCar" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <ul class="thumbnails">
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_detaiphp" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="#" class="tag"></a>
-                                        <a href="product_details.php"><img src="assets/img/bootstrap-ring.png"
-                                                alt="bootstrap-ring"></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="#" class="tag"></a>
-                                        <a href="product_details.php"><img src="assets/img/i.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="#" class="tag"></a>
-                                        <a href="product_details.php"><img src="assets/img/g.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="product_details.php"><img src="assets/img/s.png" alt=""></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="item">
-                            <ul class="thumbnails">
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="product_details.php"><img src="assets/img/i.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="product_details.php"><img src="assets/img/f.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="product_details.php"><img src="assets/img/h.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                                <li class="span3">
-                                    <div class="thumbnail">
-                                        <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                                class="icon-search"></span> QUICK VIEW</a>
-                                        <a href="product_details.php"><img src="assets/img/j.jpg" alt=""></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#newProductCar" data-slide="prev">&lsaquo;</a>
-                    <a class="right carousel-control" href="#newProductCar" data-slide="next">&rsaquo;</a>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <ul class="thumbnails">
-                    <li class="span4">
-						<!--Primer Producto-->
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php?product=1" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php?product=1"><img src="assets/img/auricular1.png" alt=""></a>
-                            <div class="caption cntr">
-                                <p><?php echo $multi_productos["1"]["nombre"];?></p>
-                                <p><strong><?php echo $multi_productos["1"]["precio"]?></strong></p>
-                                <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-                                <div class="actionList">
-                                    <a class="pull-left" href="#">Add to Wish List </a>
-                                    <a class="pull-left" href="#"> Add to Compare </a>
-                                </div>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                    <!--Segundo Producto-->
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php?product=2" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php?product=2"><img src="assets/img/laptop1.png" alt=""></a>
-                            <div class="caption cntr">
-                                <p><?php echo $multi_productos["2"]["nombre"];?></p>
-                                <p><strong><?php echo $multi_productos["2"]["precio"]?></strong></p>
-                                <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-                                <div class="actionList">
-                                    <a class="pull-left" href="#">Add to Wish List </a>
-                                    <a class="pull-left" href="#"> Add to Compare </a>
-                                </div>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                    <!--Tercer Producto-->
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php?product=3" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php?product=3"><img src="assets/img/teclado1.jpg" alt=""></a>
-                            <div class="caption cntr">
-                                <p><?php echo $multi_productos["3"]["nombre"];?></p>
-                                <p><strong><?php echo $multi_productos["3"]["precio"];?></strong></p>
-                                <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-                                <div class="actionList">
-                                    <a class="pull-left" href="#">Add to Wish List </a>
-                                    <a class="pull-left" href="#"> Add to Compare </a>
-                                </div>
-                                <br class="clr">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--
-	Featured Products
-	-->
-        <div class="well well-small">
-            <h3><a class="btn btn-mini pull-right" href="products.php" title="View more">VIew More<span
-                        class="icon-plus"></span></a> Featured Products </h3>
-            <hr class="soften" />
-            <div class="row-fluid">
-                <ul class="thumbnails">
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php"><img src="assets/img/d.jpg" alt=""></a>
-                            <div class="caption">
-                                <h5>Manicure & Pedicure</h5>
-                                <h4>
-                                    <a class="defaultBtn" href="product_details.php" title="Click to view"><span
-                                            class="icon-zoom-in"></span></a>
-                                    <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                                    <span class="pull-right">$22.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php"><img src="assets/img/e.jpg" alt=""></a>
-                            <div class="caption">
-                                <h5>Manicure & Pedicure</h5>
-                                <h4>
-                                    <a class="defaultBtn" href="product_details.php" title="Click to view"><span
-                                            class="icon-zoom-in"></span></a>
-                                    <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                                    <span class="pull-right">$22.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span4">
-                        <div class="thumbnail">
-                            <a class="zoomTool" href="product_details.php" title="add to cart"><span
-                                    class="icon-search"></span> QUICK VIEW</a>
-                            <a href="product_details.php"><img src="assets/img/f.jpg" alt="" /></a>
-                            <div class="caption">
-                                <h5>Manicure & Pedicure</h5>
-                                <h4>
-                                    <a class="defaultBtn" href="product_details.php" title="Click to view"><span
-                                            class="icon-zoom-in"></span></a>
-                                    <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                                    <span class="pull-right">$22.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    fclose($f_producto);
+    
+    function productos($num, $ruta, $a_nombre, $a_precio){
+		echo <<< tt
+		
+		<li class='span4'>
+		<div class='thumbnail'>
+		<a href='product_details.php?product=$num' class='overlay'></a>
+		<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
+		<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
+		<div class='caption cntr'>
+		<p>$a_nombre</p>
+		<p><strong>$a_precio</strong></p>
+		<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
+		<div class='actionList'>
+		<a class='pull-left' href='#'>Add to Wish List </a> 
+		<a class='pull-left' href='#'> Add to Compare </a>
+		</div> 
+		<br class='clr'>
+		</div>
+		</div>
+		</li>
+		tt;
 
-        <div class="well well-small">
-            <a class="btn btn-mini pull-right" href="#">View more <span class="icon-plus"></span></a>
-            Popular Products
-        </div>
-        <hr>
-        <div class="well well-small">
-            <a class="btn btn-mini pull-right" href="#">View more <span class="icon-plus"></span></a>
-            Best selling Products
-        </div>
-    </div>
-</div>
+    }
 
-<?php
+    function bannerActive($ruta, $titulo, $descripcion){
+        echo "<div class='item active'>";
+            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
+            echo "<div class='carousel-caption'>";
+                echo "<h4>$titulo</h4>";
+                echo "<p><span>$descripcion</span></p>";
+            echo "</div>";
+        echo "</div>";
+    }
+
+    function banner($ruta, $titulo, $descripcion){
+        echo "<div class='item'>";
+            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
+            echo "<div class='carousel-caption'>";
+                echo "<h4>$titulo</h4>";
+                echo "<p><span>$descripcion</span></p>";
+            echo "</div>";
+        echo "</div>";
+    }
+
+    function featuredProducts($num, $ruta, $a_nombre, $a_precio){
+        echo "<li class='span4'>";
+        echo "<div class='thumbnail'>";
+            echo "<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>";
+            echo "<a href='product_details.php?product=$num'><img src=$ruta alt=''></a>";
+            echo "<div class='caption'>";
+                echo "<h5>$a_nombre</h5>";
+                echo "<h4>";
+                    echo "<a class='defaultBtn' href='product_details.php?product=$num' title='Click to view'><span class='icon-zoom-in'></span></a>";
+                    echo "<a class='shopBtn' href='#' title='add to cart'><span class='icon-plus'></span></a>";
+                    echo "<span class='pull-right'>$a_precio</span>";
+                echo "</h4>";
+            echo "</div>";
+        echo "</div>";
+        echo "</li>";
+    }
+
+    function newProducts($num, $ruta){
+        echo "<li class='span3'>";
+            echo "<div class='thumbnail'>";
+                echo "<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>";
+                echo "<a href='#' class='tag'></a>";
+                echo "<a href='product_details.php?product=$num'><img src='$ruta' alt='bootstrap-ring'></a>";
+            echo "</div>";
+        echo "</li>";
+    }
+
+    echo "<div class='row'>";
+        include_once('left_menu.php');
+        echo "<div class='span9'>";
+            /*CAROUSEL*/
+            echo "<div class='well np'>";
+                echo "<div id='myCarousel' class='carousel slide homCar'>";
+                    echo "<div class='carousel-inner'>";
+                        bannerActive("assets/img/bootstrap_free-ecommerce.png", "Prueba 1", "prueba 1");
+                        banner("assets/img/bootstrap_free-ecommerce.png", "Prueba 2", "prueba 2");
+                        banner("assets/img/bootstrap_free-ecommerce.png", "Prueba 3", "prueba 3");
+                        banner("assets/img/bootstrap_free-ecommerce.png", "Prueba 4", "prueba 4");
+                    echo "</div>";
+                    echo "<a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>";
+                    echo "<a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>";
+                echo "</div>";
+            echo "</div>";
+
+            /*NEW PRODUCTS*/
+            echo "<div class='well well-small'>";
+                echo "<h3>New Products </h3>";
+                echo "<hr class='soften'/>";
+                echo "<div class='row-fluid'>";
+                    echo "<div id='newProductCar' class='carousel slide'>";
+                        echo "<div class='carousel-inner'>";
+                            echo "<div class='item active'>";
+                                echo "<ul class='thumbnails'>";
+                                    newProducts(1, $multi_productos["1"]["imagen"]);
+                                    newProducts(2, $multi_productos["2"]["imagen"]);
+                                    newProducts(3, $multi_productos["3"]["imagen"]);
+                                    newProducts(4, $multi_productos["4"]["imagen"]);
+                                echo "</ul>";
+                            echo "</div>";
+                            echo "<div class='item'>";
+                                echo "<ul class='thumbnails'>";
+                                    newProducts(5, $multi_productos["5"]["imagen"]);
+                                    newProducts(6, $multi_productos["6"]["imagen"]);
+                                    newProducts(7, $multi_productos["7"]["imagen"]);
+                                    newProducts(4, $multi_productos["1"]["imagen"]);
+                                echo "</ul>";
+                            echo "</div>";
+                        echo "</div>";
+                        echo "<a class='left carousel-control' href='#newProductCar' data-slide='prev'>&lsaquo;</a>";
+                        echo "<a class='right carousel-control' href='#newProductCar' data-slide='next'>&rsaquo;</a>";
+                    echo "</div>";
+                echo "</div>"; 
+            echo "</div>";
+            echo "<div class='well well-small'>";
+                echo "<h3>New Products </h3>";
+                echo "<hr class='soften'/>";
+                echo "<div class='row-fluid'>";
+                    echo "<ul class='thumbnails'>";
+                        productos(1, $multi_productos["1"]["imagen"], $multi_productos["1"]["nombre"], $multi_productos["1"]["precio"]);
+	                    productos(2, $multi_productos["2"]["imagen"], $multi_productos["2"]["nombre"], $multi_productos["2"]["precio"]);
+	                    productos(3, $multi_productos["3"]["imagen"], $multi_productos["3"]["nombre"], $multi_productos["3"]["precio"]);
+                    echo "</ul>";
+                echo "</div>";
+            echo "</div>";
+          
+            /*FEATURED PRODUCTS*/
+            echo "<div class='well well-small'>";
+                echo "<h3><a class='btn btn-mini pull-right' href='products.php' title='View More'>View More<span class='icon-plus'></span></a>Featured Products</h3>";
+                echo "<hr class='soften'/>";
+                echo "<div class='row-fluid'>";
+                    echo "<ul class='thumbnails'>";
+                        featuredProducts(4, $multi_productos["4"]["imagen"], $multi_productos["4"]["nombre"], $multi_productos["4"]["precio"]);
+                        featuredProducts(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["precio"]);
+                        featuredProducts(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["precio"]);
+                    echo "</ul>";
+                echo "</div>";
+            echo "</div>";
+            echo "<div class='well well-small'>";
+                echo "<a class='btn btn-mini pull-right' href='#'>View more <span class='icon-plus'></span></a>Popular Products";
+            echo "</div>";
+            echo "<div class='well well-small'>";
+                echo "<a class='btn btn-mini pull-right' href='#'>View more <span class='icon-plus'></span></a> Best selling Products";
+            echo "</div>";
+        echo "</div>";
+    echo "</div>";
 	include_once('footer.php');
 ?>
 
