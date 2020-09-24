@@ -41,8 +41,11 @@
 	echo "</ul>";
 	echo "<ul class='thumbnails'>";
 		productos(7, $multi_productos["7"]["imagen"], $multi_productos["7"]["nombre"], $multi_productos["7"]["precio"]);
-		productos(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["precio"]);
-		productos(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["precio"]);
+		productos(8, $multi_productos["8"]["imagen"], $multi_productos["8"]["nombre"], $multi_productos["8"]["precio"]);
+		productos(9, $multi_productos["9"]["imagen"], $multi_productos["9"]["nombre"], $multi_productos["9"]["precio"]);
+	echo "</ul>";
+	echo "<ul class='thumbnails'>";
+		productos(10, $multi_productos["10"]["imagen"], $multi_productos["10"]["nombre"], $multi_productos["10"]["precio"]);
 	echo "</ul>";
 	require_once("footer.php");
 ?>
