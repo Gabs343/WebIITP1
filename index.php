@@ -104,11 +104,75 @@
                                                 "Dimensiones" => "23.49cm Profundidad, 35.70cm Ancho, 1.99cm Alto",
                                                 "Batería" => "2 celdas / Garantía: 12 Meses",
                                                 "Conexión PC" => "Jack 3.5mm + USB",
-                                                "Peso" => "1.80Kg")));
+                                                "Peso" => "1.80Kg")),
+        8 => array("id_producto" => "8",
+                    "imagen" => "assets/img/teclado2.jpg",
+                    "nombre" => "Teclado Mecánico Cougar Ultimus RGB Español Switch Red",
+                    "descripción" => "COUGAR Ultimus RGB es un teclado para el jugador comprometido. Con interruptores mecánicos, una retroiluminación RGB por tecla totalmente personalizable y uno de los diseños de teclado más resistentes que ha visto el mundo, todo lo que necesita para dominar a sus oponentes está aquí.",
+                    "precio" => "ARS 11.700",
+                    "id_marca" => "6",
+                    "id_categoria" => "2",
+                    "especificaciones" => array("Interruptores de las teclas" => "RGB Interruptores mecánicos",
+                                                "N-key rollover" => "Sí",
+                                                "Retroiluminación en todas las teclas" => "Sí (RGB, 16,8 millones de colores)",
+                                                "Ratio de refresco" => "	1000Hz / 1ms",
+                                                "Interfaz" => "	conector USB",
+                                                "Longitud del cable" => "1.8m Trenzado",
+                                                "Peso" => "0.95kg")),
+        9 => array("id_producto" => "9",
+                    "imagen" => "assets/img/placaVideo1.jpg",
+                    "nombre" => "Placa de Video Palit NVIDIA GeForce GTX1650 SUPER GP 4GB GDDR6",
+                    "descripción" => "La GeForce ® GTX 1650 está construida con el rendimiento gráfico revolucionario de la galardonada arquitectura NVIDIA Turing ™. Es un supercargador para los juegos más populares de la actualidad, e incluso más rápido con los títulos modernos.",
+                    "precio" => "ARS 20.000",
+                    "id_marca" => "7",
+                    "id_categoria" => "6",
+                    "especificaciones" => array("Chip" => "NVIDIA GTX1650 Super",
+                                                "Tamaño de memoria" => "4Gb",
+                                                "Interfaz de memoria" => "128bit",
+                                                "DRAM" => "GDDR6",
+                                                "Memory Speed" => "12 Gbps",
+                                                "OpenGL" => "4.6",
+                                                "Máxima resolución digital" => "7680x4320@60Hz",
+                                                "Tamaño de la placa" => "170x115x40 mm",
+                                                "Potencia de la tarjeta gráfica" => "100 W",
+                                                "Potencia recomendada del sistema" => "300 W")),
+        10 => array("id_producto" => "10",
+                    "imagen" => "assets/img/control1.jpg",
+                    "nombre" => "Gamepad Joystick Redragon Harrow G808 PC/PS3 USB Wireless",
+                    "descripción" => "El Harrow es una pieza terminada sobre plástico ABS reforzado, de forma ergonómica y diseñada para todo tipo de jugadores. Tengan el agarre del mando que tengan, y cualquiera sea la cantidad de horas de uso que tengan pensadas.",
+                    "precio" => "ARS 3.800",
+                    "id_marca" => "1",
+                    "id_categoria" => "7",
+                    "especificaciones" => array("Tipo de conexión" => "Inalámbrica 2.4 Ghz",
+                                                "Plataformas soportadas" => "PC / PlayStation® 3",
+                                                "Interfaz" => "Dongle USB 2.0",
+                                                "Botones" => "8 + 2 Sticks",
+                                                "Bumpers L1/R1" => "2 tipo botón",
+                                                "Triggers LT/RT" => " 2 sensitivos",
+                                                "D-Pad" => "8 vías",
+                                                "Vibración" => "2 motores de vibración para Force Feedback",
+                                                "Tamaño" => "6 x 10 x 15 cm",
+                                                "Peso" => "330 gr")));
 
 	$f_producto = fopen("productos.json", "w");
 	fwrite($f_producto, json_encode($multi_productos));
     fclose($f_producto);
+
+    $marca = array(1 => "Redradon",
+                    2 => "Aureox",
+                    3 => "Sentey",
+                    4 => "Lenovo",
+                    5 => "Asus",
+                    6 => "Cougar",
+                    7 => "Nvidia");
+
+    $categoria = array(1 => "Auricular",
+                        2 => "Teclado",
+                        3 => "Mouse",
+                        4 => "Silla",
+                        5 => "Laptop",
+                        6 => "Placa de Video",
+                        7 => "Gamepad");
     
     function productos($num, $ruta, $a_nombre, $a_precio){
 		echo <<< tt
@@ -218,7 +282,7 @@
                                     newProducts(5, $multi_productos["5"]["imagen"]);
                                     newProducts(6, $multi_productos["6"]["imagen"]);
                                     newProducts(7, $multi_productos["7"]["imagen"]);
-                                    newProducts(4, $multi_productos["1"]["imagen"]);
+                                    newProducts(4, $multi_productos["8"]["imagen"]);
                                 echo "</ul>";
                             echo "</div>";
                         echo "</div>";

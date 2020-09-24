@@ -47,8 +47,11 @@
 				echo "<hr class='soften'>";
 				productos(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["descripción"], $multi_productos["6"]["precio"]);
 				echo "<hr class='soften'>";
-				productos(5, $multi_productos["7"]["imagen"], $multi_productos["7"]["nombre"], $multi_productos["7"]["descripción"], $multi_productos["7"]["precio"]);
+				productos(7, $multi_productos["7"]["imagen"], $multi_productos["7"]["nombre"], $multi_productos["7"]["descripción"], $multi_productos["7"]["precio"]);
+                echo "<hr class='soften'>";
+                productos(8, $multi_productos["8"]["imagen"], $multi_productos["8"]["nombre"], $multi_productos["8"]["descripción"], $multi_productos["8"]["precio"]);
 				echo "<hr class='soften'>";
+				productos(9, $multi_productos["9"]["imagen"], $multi_productos["9"]["nombre"], $multi_productos["9"]["descripción"], $multi_productos["9"]["precio"]);
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";

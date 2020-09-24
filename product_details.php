@@ -32,7 +32,7 @@ Body Section
 <div class="row">
     <?php
 			require_once("left_menu.php");
-		?>
+	?>
     <div class="span9">
         <ul class="breadcrumb">
             <li><a href="index.php">Home</a> <span class="divider">/</span></li>
