@@ -157,23 +157,7 @@
 	$f_producto = fopen("productos.json", "w");
 	fwrite($f_producto, json_encode($multi_productos));
     fclose($f_producto);
-
-    $marca = array(1 => "Redradon",
-                    2 => "Aureox",
-                    3 => "Sentey",
-                    4 => "Lenovo",
-                    5 => "Asus",
-                    6 => "Cougar",
-                    7 => "Nvidia");
-
-    $categoria = array(1 => "Auricular",
-                        2 => "Teclado",
-                        3 => "Mouse",
-                        4 => "Silla",
-                        5 => "Laptop",
-                        6 => "Placa de Video",
-                        7 => "Gamepad");
-    
+  
     function productos($num, $ruta, $a_nombre, $a_precio){
 		echo <<< tt
 		
@@ -271,18 +255,18 @@
                         echo "<div class='carousel-inner'>";
                             echo "<div class='item active'>";
                                 echo "<ul class='thumbnails'>";
-                                    newProducts(1, $multi_productos["1"]["imagen"]);
-                                    newProducts(2, $multi_productos["2"]["imagen"]);
-                                    newProducts(3, $multi_productos["3"]["imagen"]);
-                                    newProducts(4, $multi_productos["4"]["imagen"]);
+                                    newProducts(1, $multi_productos[1]["imagen"]);
+                                    newProducts(2, $multi_productos[2]["imagen"]);
+                                    newProducts(3, $multi_productos[3]["imagen"]);
+                                    newProducts(4, $multi_productos[4]["imagen"]);
                                 echo "</ul>";
                             echo "</div>";
                             echo "<div class='item'>";
                                 echo "<ul class='thumbnails'>";
-                                    newProducts(5, $multi_productos["5"]["imagen"]);
-                                    newProducts(6, $multi_productos["6"]["imagen"]);
-                                    newProducts(7, $multi_productos["7"]["imagen"]);
-                                    newProducts(4, $multi_productos["8"]["imagen"]);
+                                    newProducts(5, $multi_productos[5]["imagen"]);
+                                    newProducts(6, $multi_productos[6]["imagen"]);
+                                    newProducts(7, $multi_productos[7]["imagen"]);
+                                    newProducts(4, $multi_productos[8]["imagen"]);
                                 echo "</ul>";
                             echo "</div>";
                         echo "</div>";
@@ -296,9 +280,9 @@
                 echo "<hr class='soften'/>";
                 echo "<div class='row-fluid'>";
                     echo "<ul class='thumbnails'>";
-                        productos(1, $multi_productos["1"]["imagen"], $multi_productos["1"]["nombre"], $multi_productos["1"]["precio"]);
-	                    productos(2, $multi_productos["2"]["imagen"], $multi_productos["2"]["nombre"], $multi_productos["2"]["precio"]);
-	                    productos(3, $multi_productos["3"]["imagen"], $multi_productos["3"]["nombre"], $multi_productos["3"]["precio"]);
+                        productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["precio"]);
+	                    productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["precio"]);
+	                    productos(3, $multi_productos[3]["imagen"], $multi_productos[3]["nombre"], $multi_productos[3]["precio"]);
                     echo "</ul>";
                 echo "</div>";
             echo "</div>";
@@ -309,9 +293,9 @@
                 echo "<hr class='soften'/>";
                 echo "<div class='row-fluid'>";
                     echo "<ul class='thumbnails'>";
-                        featuredProducts(4, $multi_productos["4"]["imagen"], $multi_productos["4"]["nombre"], $multi_productos["4"]["precio"]);
-                        featuredProducts(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["precio"]);
-                        featuredProducts(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["precio"]);
+                        featuredProducts(4, $multi_productos[4]["imagen"], $multi_productos[4]["nombre"], $multi_productos[4]["precio"]);
+                        featuredProducts(5, $multi_productos[5]["imagen"], $multi_productos[5]["nombre"], $multi_productos[5]["precio"]);
+                        featuredProducts(6, $multi_productos[6]["imagen"], $multi_productos[6]["nombre"], $multi_productos[6]["precio"]);
                     echo "</ul>";
                 echo "</div>";
             echo "</div>";

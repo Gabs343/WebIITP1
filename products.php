@@ -5,6 +5,8 @@
 	fclose($f_productoR);
 	$multi_productos = json_decode($json_producto, true);
 
+
+
 	function productos($num, $ruta, $a_nombre, $a_descripcion, $a_precio){
 		echo <<< tt
 		<div class='row-fluid'>
@@ -35,23 +37,16 @@
 		include_once('left_menu.php');
 		echo "<div class='span9'>";
 			echo "<div class='well well-small'>";
-				productos(1, $multi_productos["1"]["imagen"], $multi_productos["1"]["nombre"], $multi_productos["1"]["descripción"], $multi_productos["1"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(2, $multi_productos["2"]["imagen"], $multi_productos["2"]["nombre"], $multi_productos["2"]["descripción"], $multi_productos["2"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(3, $multi_productos["3"]["imagen"], $multi_productos["3"]["nombre"], $multi_productos["3"]["descripción"], $multi_productos["3"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(4, $multi_productos["4"]["imagen"], $multi_productos["4"]["nombre"], $multi_productos["4"]["descripción"], $multi_productos["4"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(5, $multi_productos["5"]["imagen"], $multi_productos["5"]["nombre"], $multi_productos["5"]["descripción"], $multi_productos["5"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(6, $multi_productos["6"]["imagen"], $multi_productos["6"]["nombre"], $multi_productos["6"]["descripción"], $multi_productos["6"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(7, $multi_productos["7"]["imagen"], $multi_productos["7"]["nombre"], $multi_productos["7"]["descripción"], $multi_productos["7"]["precio"]);
-                echo "<hr class='soften'>";
-                productos(8, $multi_productos["8"]["imagen"], $multi_productos["8"]["nombre"], $multi_productos["8"]["descripción"], $multi_productos["8"]["precio"]);
-				echo "<hr class='soften'>";
-				productos(9, $multi_productos["9"]["imagen"], $multi_productos["9"]["nombre"], $multi_productos["9"]["descripción"], $multi_productos["9"]["precio"]);
+
+				foreach($multi_productos as $clave){
+					if($clave["id_categoria"] == $_GET["categoria"]){
+						$num = $_GET["categoria"];
+						productos($num, $multi_productos[$num]["imagen"], $multi_productos[$num]["nombre"], $multi_productos[$num]["descripción"], $multi_productos[$num]["precio"]);
+						echo "<hr class='soften'>";
+					}
+				}
+
+				
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
