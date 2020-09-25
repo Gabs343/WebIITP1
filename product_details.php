@@ -165,7 +165,6 @@ Body Section
 
                             
                         }
-                        print_r($multi_comentarios)
 						/*echo "El usuario ", $_POST["id_correo"], " comento:<br>";
 						echo $_POST["comentario"], "<br>";
 						echo "valoracion: ", $_POST["valoracion"];*/
