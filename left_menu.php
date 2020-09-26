@@ -19,7 +19,7 @@
 ?>
 
 <div id="sidebar" class="span3">
-<div class="well well-small">
+<div class="well well-small marca">
 	<ul class="nav nav-list">
 		<?php
 			for($i = 1; $i <= count($categoria); $i++){
