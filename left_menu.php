@@ -1,16 +1,38 @@
+<?php
+	$marca = array(1 => "Redradon",
+					2 => "Aureox",
+					3 => "Sentey",
+					4 => "Lenovo",
+					5 => "Asus",
+					6 => "Cougar",
+					7 => "Nvidia");
+
+
+	$categoria = array(1 => "Auricular",
+						2 => "Teclado",
+						3 => "Mouse",
+						4 => "Silla",
+						5 => "Laptop",
+						6 => "Placa de Video",
+						7 => "Gamepad");
+
+?>
+
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fashion</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Watches</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-		<li><a href="products.php"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+		<?php
+			for($i = 1; $i <= count($categoria); $i++){
+				echo "<li><a href='products.php?categoria=$i&marca=0'><span class='icon-chevron-right'></span>$categoria[$i]</a>";
+				echo "<ul class= 'nav nav-list'>";
+					for($j = 1; $j <= count($marca); $j++){
+						echo "<li><a href='products.php?categoria=$i&marca=$j'><span class='icon-chevron-right'></span>$marca[$j]</a></li>";
+				}
+				echo "</ul>";
+                echo "</li>";
+			}
+		?>
+
 		<li style="border:0"> &nbsp;</li>
 		<li> <a class="totalInCart" href="cart.php"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 	</ul>
