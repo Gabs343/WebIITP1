@@ -1,5 +1,5 @@
 <?php
-	$marca = array(1 => "Redradon",
+	$marca = array(1 => "Redragon",
 					2 => "Aureox",
 					3 => "Sentey",
 					4 => "Lenovo",
