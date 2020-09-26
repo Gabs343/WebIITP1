@@ -341,24 +341,6 @@
 	fwrite($f_producto, json_encode($multi_productos));
     fclose($f_producto);
 
-
-    $marca = array(1 => "Redragon",
-                    2 => "Aureox",
-                    3 => "Sentey",
-                    4 => "Lenovo",
-                    5 => "Asus",
-                    6 => "Cougar",
-                    7 => "Nvidia");
-
-    $categoria = array(1 => "Auricular",
-                        2 => "Teclado",
-                        3 => "Mouse",
-                        4 => "Silla",
-                        5 => "Laptop",
-                        6 => "Placa de Video",
-                        7 => "Gamepad");
-    
-
     function productos($num, $ruta, $a_nombre, $a_precio){
 		echo <<< tt
 		
