@@ -65,7 +65,7 @@ Body Section
                     </div>
                 </div>
                 <div class="span7">
-					<h3><?php
+                    <h3><?php
 						foreach($multi_productos as $clave){
 							if($clave["id_producto"] == $_GET["product"]){
 								echo $clave["nombre"];
@@ -77,15 +77,15 @@ Body Section
                     <form action="cart.php" class="form-horizontal qtyFrm">
                         <div class="control-group">
                             <label class="control-label">
-                            <span>
-                                <?php
+                                <span>
+                                    <?php
                                     foreach($multi_productos as $clave){
                                         if($clave["id_producto"] == $_GET["product"]){
                                             echo $clave["precio"];
                                         }
                                     }
                                 ?>
-                            </span></label>
+                                </span></label>
                             <div class="controls">
                                 <input type="number" class="span6" placeholder="Qty.">
                             </div>
@@ -98,7 +98,8 @@ Body Section
 							    }
 						    }
                         ?>
-                        <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+                        <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to
+                            cart</button>
                     </form>
                 </div>
             </div>
@@ -139,40 +140,39 @@ Body Section
                         echo "</tbody>";
                         echo "</table>";
                         
-                    ?>	
-					<form action="<?php $_PHP_SELF ?>" class="form_comments" method="POST">
-						<div>
-							<label for="Mail">Email:</label>
-							<input type="email" placeholder="@example.com" id="Mail" name="id_correo" required>
-						</div>
-						<div class="comment">
-							<label for="Comentario">Comentario:</label>
-							<textarea name="comentario" id="Comentario" cols="90" rows="3" required></textarea>
-						</div>
-						<div>
-							<label for="Valoracion">Califica el producto:</label>
-							<input type="radio" name="valoracion" id="Valoracion" value="1">1</input>
-							<input type="radio" name="valoracion" id="Valoracion" value="2">2</input>
-							<input type="radio" name="valoracion" id="Valoracion" value="3">3</input>
-							<input type="radio" name="valoracion" id="Valoracion" value="4">4</input>
-							<input type="radio" name="valoracion" id="Valoracion" value="5" required>5</input>
-						</div>
-						<input type="submit" name="enviar" value="Enviar comentario">
-					</form>
+                    ?>
+                    <form action="<?php $_PHP_SELF ?>" class="form_comments" method="POST">
+                        <div>
+                            <label for="Mail">Email:</label>
+                            <input type="email" placeholder="@example.com" id="Mail" name="id_correo" required>
+                        </div>
+                        <div class="comment">
+                            <label for="Comentario">Comentario:</label>
+                            <textarea name="comentario" id="Comentario" cols="90" rows="3" required></textarea>
+                        </div>
+                        <div>
+                            <label for="Valoracion">Califica el producto:</label>
+                            <input type="radio" name="valoracion" id="Valoracion" value="1">1</input>
+                            <input type="radio" name="valoracion" id="Valoracion" value="2">2</input>
+                            <input type="radio" name="valoracion" id="Valoracion" value="3">3</input>
+                            <input type="radio" name="valoracion" id="Valoracion" value="4">4</input>
+                            <input type="radio" name="valoracion" id="Valoracion" value="5" required>5</input>
+                        </div>
+                        <input type="submit" name="enviar" value="Enviar comentario">
+                    </form>
                     <?php
                         if(isset($_POST["enviar"])){
                             $tiempo = date("ymdhms");
 
                             
                         }
-                        print_r($multi_comentarios)
 						/*echo "El usuario ", $_POST["id_correo"], " comento:<br>";
 						echo $_POST["comentario"], "<br>";
 						echo "valoracion: ", $_POST["valoracion"];*/
 
 					?>
-		        </div>
-				
+                </div>
+
 
                 <!--<div class="tab-pane fade" id="profile">
                     <div class="row-fluid">
@@ -489,8 +489,8 @@ Body Section
                 </div>-->
             </div>
 
-        </div> 
-    </div> 
+        </div>
+    </div>
 </div> <!-- Body wrapper -->
 <?php
 	require_once("footer.php");
