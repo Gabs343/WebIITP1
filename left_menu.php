@@ -23,7 +23,7 @@
 	<ul class="nav nav-list">
 		<?php
 			for($i = 1; $i <= count($categoria); $i++){
-				echo "<li><a href='products.php?categoria=$i'><span class='icon-chevron-right'></span>$categoria[$i]</a>";
+				echo "<li><a href='products.php?categoria=$i&marca=0'><span class='icon-chevron-right'></span>$categoria[$i]</a>";
 				echo "<ul class= 'nav nav-list'>";
 					for($j = 1; $j <= count($marca); $j++){
 						echo "<li><a href='products.php?categoria=$i&marca=$j'><span class='icon-chevron-right'></span>$marca[$j]</a></li>";
