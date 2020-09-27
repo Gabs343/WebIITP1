@@ -7,7 +7,8 @@
 					"descripción" => "El Redragon Memecoleous ofrece un increíble nivel de sonido a gamers gracias a su sonido diseñado a medida. Su estilo de diseño único y su espectro de frecuencia combinados entregan una precisión impresionante.",
 					"precio" => "ARS 5.299",
 					"id_marca" => 1,
-					"id_categoria" => 1,
+                    "id_categoria" => 1,
+                    "destacado" => true,
                     "especificaciones" => array("Retroiluminación" => "Si, retroiluminado rojo",
                                                 "Sensibilidad" => "109.8 dB",
                                                 "Vibración" => "Si. Motor de vibración 30 mm",
@@ -21,7 +22,8 @@
 					"descripción" => "Garantía Oficial Lenovo 12 Meses",
 					"precio" => "ARS 60.000",
 					"id_marca" => 4,
-					"id_categoria" => 5,
+                    "id_categoria" => 5,
+                    "destacado" => false,
 					"especificaciones" => array("Procesador" => "AMD",
 												"Memoria" => "4GB DDR4",
 												"Almacenamiento" => "500 GB",
@@ -33,7 +35,8 @@
 					"descripción" => "Teclado Retroiluminado USB",
 					"precio" => "ARS 1.200",
 					"id_marca" => 3,
-					"id_categoria" => 2,
+                    "id_categoria" => 2,
+                    "destacado" => true,
                     "especificaciones" => array("Conector" => "USB 2.0",
                                             "Longitud Cable" => "1.5mts",
                                             "Dimensión" => "446 * 142 * 318 mm",
@@ -46,6 +49,7 @@
                     "precio" => "ARS 2.060",
                     "id_marca" => 1,
                     "id_categoria" => 3,
+                    "destacado" => true,
                     "especificaciones" => array("Orientación" => "Ambidiestro",
                                             "Conexión" => "Cableado USB",
                                             "Retroiluminación" => "Si, roja",
@@ -61,6 +65,7 @@
                     "precio" => "ARS 20.100",
                     "id_marca" => 2,
                     "id_categoria" => 4,
+                    "destacado" => true,
                     "especificaciones" => array("Modelo" => "Aureox G200",
                                             "Superficie" => "Cuero Sintético ",
                                             "Estructura" => "Acero",
@@ -78,6 +83,7 @@
                     "precio" => "ARS 1.769",
                     "id_marca" => 3,
                     "id_categoria" => 1,
+                    "destacado" => false,
                     "especificaciones" => array("Modelo" => "GS-4371",
                                                 "Conector" => "3.5mm x 2",
                                                 "Tipo de cable" => "Ultra Flexible",
@@ -95,6 +101,7 @@
                     "precio" => "ARS 105.000",
                     "id_marca" => 5,
                     "id_categoria" => 5,
+                    "destacado" => false,
                     "especificaciones" => array("Procesador" => "I5 1035 G1",
                                                 "Memoria" => "8GB Dual Channel (4+4) / Tipo: DDR4 SODIMM",
                                                 "Almacenamiento" => "512Gb + 32Gb / Clase: SSD NVME + Intel Optane",
@@ -112,6 +119,7 @@
                     "precio" => "ARS 11.700",
                     "id_marca" => 6,
                     "id_categoria" => 2,
+                    "destacado" => false,
                     "especificaciones" => array("Interruptores de las teclas" => "RGB Interruptores mecánicos",
                                                 "N-key rollover" => "Sí",
                                                 "Retroiluminación en todas las teclas" => "Sí (RGB, 16,8 millones de colores)",
@@ -126,6 +134,7 @@
                     "precio" => "ARS 20.000",
                     "id_marca" => 7,
                     "id_categoria" => 6,
+                    "destacado" => false,
                     "especificaciones" => array("Chip" => "NVIDIA GTX1650 Super",
                                                 "Tamaño de memoria" => "4Gb",
                                                 "Interfaz de memoria" => "128bit",
@@ -143,6 +152,7 @@
                     "precio" => "ARS 3.800",
                     "id_marca" => 1,
                     "id_categoria" => 7,
+                    "destacado" => false,
                     "especificaciones" => array("Tipo de conexión" => "Inalámbrica 2.4 Ghz",
                                                 "Plataformas soportadas" => "PC / PlayStation® 3",
                                                 "Interfaz" => "Dongle USB 2.0",
@@ -154,13 +164,14 @@
                                                 "Tamaño" => "6 x 10 x 15 cm",
                                                 "Peso" => "330 gr")),
                                                 
-        11 => array ("id_producto" => "11",
+        11 => array ("id_producto" => 11,
                     "imagen" => "assets/img/mouse2.jpg", 
 					"nombre" => "Mouse Redragon Memeanlion Chroma M710 RGB USB 10000DPI", 
 					"descripción" => "El ratón para juegos Redragon M710 MEMEANLION CHROMA  no es el típico mouse para juegos. El mouse está diseñado para jugadores que demandan el mejor rendimiento. El mouse ofrece un factor de forma ergonómico ambidiestro para una completa comodidad.",
 					"precio" => "ARS 3.499",
-					"id_marca" => "1",
-					"id_categoria" => "3",
+					"id_marca" => 1,
+                    "id_categoria" => 3,
+                    "destacado" => false,
                     "especificaciones" => array("Botones Programables" => "7",
                                                 "Tipo de agarre" => "Palm, Claw, Fingertip",
                                                 "Orientación" => "Ambidiestro",
@@ -172,15 +183,16 @@
                                                 "Frecuencia de respuesta" => "125 Hz / 1000 Hz",
                                                 "Dimensiones" => "11.2×7.1×2.6cm")),
 
-        12 => array("id_producto" => "12",
+        12 => array("id_producto" => 12,
                     "imagen" => "assets/img/silla2.jpg",
                     "nombre" => "Silla Gamer Cougar Fusion Gaming Chair",
                     "descripción" => "Preparada tanto para el juego como para el uso profesional, FUSION es una
                     silla giratoria cómoda , construida con materiales de alta calidad y con un potente
                     diseño de COUGAR.",
                     "precio" => "ARS 36.999",
-                    "id_marca" => "6",
-                    "id_categoria" => "4",
+                    "id_marca" => 6,
+                    "id_categoria" => 4,
+                    "destacado" => false,
                     "especificaciones" => array("Capacidad de Peso" => "120 kg",
                                                 "Peso del producto" => "17.8 kg",
                                                 "Tamaño" => "Medium",
@@ -192,13 +204,14 @@
                                                 "Cilindro de Gas" => "Clase 4",
                                                 "Reposabrazos" => "Fijos")),
                                                 
-        13 => array("id_producto" => "13",
+        13 => array("id_producto" => 13,
                     "imagen" => "assets/img/placaVideo2.jpg",
                     "nombre" => "Placa de Video Palit NVIDIA GeForce RTX2080 SUPER GP 8GB GDDR6",
                     "descripción" => "Ahora, la nueva serie GeForce ® RTX SUPER ™ tiene aún más núcleos y relojes más altos, lo que le brinda un rendimiento hasta un 25% más rápido que la serie RTX 20 original. Es hora de prepararse",
                     "precio" => "ARS 68.999",
-                    "id_marca" => "7",
-                    "id_categoria" => "6",
+                    "id_marca" => 7,
+                    "id_categoria" => 6,
+                    "destacado" => false,
                     "especificaciones" => array("Chip" => "NVIDIA RTX2080 SUPER",
                                                 "Tamaño de memoria" => "8Gb",
                                                 "Interfaz de memoria" => "256bit",
@@ -213,14 +226,15 @@
                                                 "Tamaño de la placa" => "288 x 112 x 50 mm",
                                                 "Potencia de la tarjeta gráfica" => "250 W",
                                                 "Potencia recomendada del sistema" => "600 W")),
-                                                 
-        14 => array("id_producto" => "14",
+                                               
+        14 => array("id_producto" => 14,
                     "imagen" => "assets/img/control2.jpg",
                     "nombre" => "Gamepad Joystick Redragon Jupiter G809 PC/PS4/Switch Bluetooth",
                     "descripción" => "Más que un joystick wireless: es el periférico ideal para todos los jugadores de PC y PlayStation 4.",
                     "precio" => "ARS 5.899",
-                    "id_marca" => "1",
-                    "id_categoria" => "7",
+                    "id_marca" => 1,
+                    "id_categoria" => 7,
+                    "destacado" => false,
                     "especificaciones" => array("Tipo de conexión" => "Bluetooth 2.1",
                                                 "Plataformas soportadas" => "PC, PlayStation® 4, Nintendo Switch",
                                                 "Interfaz" => "Conexión vía Bluetooth 2.1 + EDR",
@@ -233,13 +247,14 @@
                                                 "Peso" => "196 gr",
                                                 "Extras" => "Retroiluminación – Barra LED Configurable")),
 
-        15 => array("id_producto" => "15",
+        15 => array("id_producto" => 15,
                     "imagen" => "assets/img/auricular3.jpg",
                     "nombre" => "Auriculares Cougar Phontum S Gamer 3.5mm PC/PS4/XBOX ONE",
                     "descripción" => "Phontum S ha sido creado para aquellos que desean disfrutar de un excelente audio en largas sesiones de juego. Una experiencia de audio de alta calidad de aislamiento para su hogar. Audio claro, ligero y portátil con superficie de tela extra fresca para sus viajes y desplazamientos. Phontum S te ofrece lo mejor de dos mundos.",
                     "precio" => "ARS 9.999",
-                    "id_marca" => "6",
-                    "id_categoria" => "1",
+                    "id_marca" => 6,
+                    "id_categoria" => 1,
+                    "destacado" => false,
                     "especificaciones" => array("Conductor" => "53mm",
                                                 "Respuesta de frecuencia" => "20Hz - 20KHz",
                                                 "Sensibilidad" => "1KHz 	98dB a 3dB",
@@ -251,13 +266,14 @@
                                                 "Sensibilidad" => "1 kHz -47dB a 3dB",
                                                 "Impedancia" => "2.2k")),
 
-        16 => array("id_producto" => "16",
+        16 => array("id_producto" => 16,
                     "imagen" => "assets/img/teclado3.jpg",
 					"nombre" => "Teclado Redragon ARYAMAN K569 RGB Mecánico Switch Red",
 					"descripción" => "Teclado mecánico construido en aluminio y plástico ABS, con switches Outemu blue y teclas de doble inyección que aseguran una gran durabilidad, iluminación RGB en las teclas y el lateral del cuerpo brindando un excelente ambiente de iluminación, 12 teclas de multimedia de acceso por función y bloqueo de tecla Windows.",
 					"precio" => "ARS 8.699",
-					"id_marca" => "1",
-					"id_categoria" => "2",
+					"id_marca" => 1,
+                    "id_categoria" => 2,
+                    "destacado" => false,
                     "especificaciones" => array("Tipo Teclado" => "Mecánicos",
                                             "Tipo Switch" => "Outemu Blue, Tactil con click audible , fuerza de actuación 50 gr",
                                             "Teclas Multimedia" => "Si, a tráves de tecla FN",
@@ -270,13 +286,14 @@
                                             "Construcción" => "Plástico ABS reforzado y placa de aluminio anodizado",
                                             "Dimensiones" => "45.1×20.5×4 cm")),
 
-        17 => array("id_producto" => "17",
+        17 => array("id_producto" => 17,
                     "imagen" => "assets/img/laptop3.jpg",
                     "nombre" => "Notebook ASUS TUF FX505DT",
                     "descripción" => "Garantia por 12 meses.",
                     "precio" => "ARS 134.999",
-                    "id_marca" => "5",
-                    "id_categoria" => "5",
+                    "id_marca" => 5,
+                    "id_categoria" => 5,
+                    "destacado" => false,
                     "especificaciones" => array("Procesador" => "AMD / Modelo: Ryzen 5 3550H",
                                                 "Memoria" => "8GB / Tipo: DDR4 SODIMM / 1 Slot Disponible (Hasta 16Gb)",
                                                 "Almacenamiento" => "512Gb / Clase: SSD NVME / Puerto M2: Si",
@@ -287,13 +304,14 @@
                                                 "Batería" => "3 celdas / Garantía: 12 Meses",
                                                 "Peso" => "2.30Kg / Modelo: ASUS TUF FX505DT-BQ402")),
 
-        18 => array ("id_producto" => "18",
+        18 => array ("id_producto" => 18,
                     "imagen" => "assets/img/mouse3.jpg", 
 					"nombre" => "Mouse Cougar Minos XT RGB 4000 DPI USB", 
 					"descripción" => "Minos XT es un ratón para juegos ágil y poderoso, ideal para aquellos que disfrutan de una experiencia de juego ágil.",
 					"precio" => "ARS 2.419",
-					"id_marca" => "6",
-					"id_categoria" => "3",
+					"id_marca" => 6,
+                    "id_categoria" => 3,
+                    "destacado" => false,
                     "especificaciones" => array("Botones Programables" => "6",
                                                 "Resolución de movimiento" => "4000 DPI",
                                                 "Orientación" => "Ambidiestro",
@@ -301,13 +319,14 @@
                                                 "Iluminación de color" => "Rojo/Verde/Azul",
                                                 "Color del producto" => "Negro")),
 
-        19 => array("id_producto" => "19",
+        19 => array("id_producto" => 19,
                     "imagen" => "assets/img/laptop4.jpg",
                     "nombre" => "Notebook Lenovo Gamer L340",
                     "descripción" => "Garantia por 12 meses.",
                     "precio" => "ARS 129.999",
-                    "id_marca" => "4",
-                    "id_categoria" => "5",
+                    "id_marca" => 4,
+                    "id_categoria" => 5,
+                    "destacado" => false,
                     "especificaciones" => array("Procesador" => "Intel / Modelo: I5-9300HF",
                                                 "Memoria" => "8GB / Tipo: DDR4 SODIMM / Expansión: 1 Slot Ocupado (Reemplazable hasta 16Gb)",
                                                 "Almacenamiento" => "1Tb HDD + 256Gb SSD / Puerto M2: Si",
@@ -318,13 +337,14 @@
                                                 "Batería" => "3 celdas / Garantía: 12 Meses Lenovo Oficial",
                                                 "Peso" => "2.19Kg / Modelo: 81LK0167AR")),
 
-        20 => array("id_producto" => "20",
+        20 => array("id_producto" => 20,
                     "imagen" => "assets/img/silla3.jpg",
                     "nombre" => "Silla Gamer Aureox G600 High Black/White",
                     "descripción" => "Silla gamer ergonómica, con agarre lumbar y almohadillas de descanso para mayor confort",
                     "precio" => "ARS 27.699",
-                    "id_marca" => "2",
-                    "id_categoria" => "4",
+                    "id_marca" => 2,
+                    "id_categoria" => 4,
+                    "destacado" => false,
                     "especificaciones" => array("Capacidad de Peso" => "125 kg",
                                                 "Peso del producto" => "18 kg",
                                                 "Superficie" => "Cuero Sintético",
@@ -436,22 +456,30 @@
                 echo "<div class='row-fluid'>";
                     echo "<div id='newProductCar' class='carousel slide'>";
                         echo "<div class='carousel-inner'>";
-                            echo "<div class='item active'>";
+       
+                            for($i = 0; $i < 2; $i++){
+                                if($i == 0){
+                                    echo "<div class='item active'>";
+                                }else{
+                                    echo "<div class='item'>";
+                                }
                                 echo "<ul class='thumbnails'>";
-                                    newProducts(1, $multi_productos[1]["imagen"]);
-                                    newProducts(2, $multi_productos[2]["imagen"]);
-                                    newProducts(3, $multi_productos[3]["imagen"]);
-                                    newProducts(4, $multi_productos[4]["imagen"]);
+                                
+                                for($j = 1; $j <= count($multi_productos); $j++){
+                                    if($i == 0){
+
+                                    }
+                                    /*if($multi_productos[$j]["destacado"]){
+                                        newProducts($j, $multi_productos[$j]["imagen"]);
+
+                                    }*/
+
+                                   
+                                }
                                 echo "</ul>";
-                            echo "</div>";
-                            echo "<div class='item'>";
-                                echo "<ul class='thumbnails'>";
-                                    newProducts(5, $multi_productos[5]["imagen"]);
-                                    newProducts(6, $multi_productos[6]["imagen"]);
-                                    newProducts(7, $multi_productos[7]["imagen"]);
-                                    newProducts(4, $multi_productos[8]["imagen"]);
-                                echo "</ul>";
-                            echo "</div>";
+                                echo "</div>";
+                            }
+                            
                         echo "</div>";
                         echo "<a class='left carousel-control' href='#newProductCar' data-slide='prev'>&lsaquo;</a>";
                         echo "<a class='right carousel-control' href='#newProductCar' data-slide='next'>&rsaquo;</a>";
