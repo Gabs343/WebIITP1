@@ -80,7 +80,7 @@ Navigation Bar Section
 			  <li class="active"><a href="index.php">Inicio</a></li>
 			  <li class=""><a href="list-view.php">Lista de productos</a></li>
 			  <li class=""><a href="grid-view.php">Grid View</a></li>
-			  <li class=""><a href="three-col.php">Three Column</a></li>
+			  <li class=""><a href="newProducts.php">New Products</a></li>
 			  <li class=""><a href="general.php">Contenido general</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
