@@ -97,7 +97,7 @@ Navigation Bar Section
 			  <li class="active"><a href="index.php">Home	</a></li>
 			  <li class=""><a href="list-view.php">List View</a></li>
 			  <li class=""><a href="grid-view.php">Grid View</a></li>
-			  <li class=""><a href="three-col.php">Three Column</a></li>
+			  <li class=""><a href="newProducts.php">New Products</a></li>
 			  <li class=""><a href="four-col.php">Four Column</a></li>
 			  <li class=""><a href="general.php">General Content</a></li>
 			</ul>

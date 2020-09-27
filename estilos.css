@@ -21,3 +21,17 @@
 .marca ul li:hover > ul{
     display: block;
 }
+
+#galeria{
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+#galeria img{
+    width: 90%;
+}
+
+#galeria .span4{
+    width: 30%;
+}

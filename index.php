@@ -8,7 +8,7 @@
 					"precio" => "ARS 5.299",
 					"id_marca" => 1,
                     "id_categoria" => 1,
-                    "destacado" => true,
+                    "destacado" => false,
                     "especificaciones" => array("Retroiluminación" => "Si, retroiluminado rojo",
                                                 "Sensibilidad" => "109.8 dB",
                                                 "Vibración" => "Si. Motor de vibración 30 mm",
@@ -36,7 +36,7 @@
 					"precio" => "ARS 1.200",
 					"id_marca" => 3,
                     "id_categoria" => 2,
-                    "destacado" => true,
+                    "destacado" => false,
                     "especificaciones" => array("Conector" => "USB 2.0",
                                             "Longitud Cable" => "1.5mts",
                                             "Dimensión" => "446 * 142 * 318 mm",
@@ -101,7 +101,7 @@
                     "precio" => "ARS 105.000",
                     "id_marca" => 5,
                     "id_categoria" => 5,
-                    "destacado" => false,
+                    "destacado" => true,
                     "especificaciones" => array("Procesador" => "I5 1035 G1",
                                                 "Memoria" => "8GB Dual Channel (4+4) / Tipo: DDR4 SODIMM",
                                                 "Almacenamiento" => "512Gb + 32Gb / Clase: SSD NVME + Intel Optane",
@@ -152,7 +152,7 @@
                     "precio" => "ARS 3.800",
                     "id_marca" => 1,
                     "id_categoria" => 7,
-                    "destacado" => false,
+                    "destacado" => true,
                     "especificaciones" => array("Tipo de conexión" => "Inalámbrica 2.4 Ghz",
                                                 "Plataformas soportadas" => "PC / PlayStation® 3",
                                                 "Interfaz" => "Dongle USB 2.0",
@@ -273,7 +273,7 @@
 					"precio" => "ARS 8.699",
 					"id_marca" => 1,
                     "id_categoria" => 2,
-                    "destacado" => false,
+                    "destacado" => true,
                     "especificaciones" => array("Tipo Teclado" => "Mecánicos",
                                             "Tipo Switch" => "Outemu Blue, Tactil con click audible , fuerza de actuación 50 gr",
                                             "Teclas Multimedia" => "Si, a tráves de tecla FN",
@@ -344,7 +344,7 @@
                     "precio" => "ARS 27.699",
                     "id_marca" => 2,
                     "id_categoria" => 4,
-                    "destacado" => false,
+                    "destacado" => true,
                     "especificaciones" => array("Capacidad de Peso" => "125 kg",
                                                 "Peso del producto" => "18 kg",
                                                 "Superficie" => "Cuero Sintético",
@@ -422,16 +422,6 @@
         echo "</li>";
     }
 
-    function newProducts($num, $ruta){
-        echo "<li class='span3'>";
-            echo "<div class='thumbnail'>";
-                echo "<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>";
-                echo "<a href='#' class='tag'></a>";
-                echo "<a href='product_details.php?product=$num'><img src='$ruta' alt='bootstrap-ring'></a>";
-            echo "</div>";
-        echo "</li>";
-    }
-
     echo "<div class='row'>";
         include_once('left_menu.php');
         echo "<div class='span9'>";
@@ -448,44 +438,7 @@
                     echo "<a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>";
                 echo "</div>";
             echo "</div>";
-
-            /*NEW PRODUCTS*/
-            echo "<div class='well well-small'>";
-                echo "<h3>New Products </h3>";
-                echo "<hr class='soften'/>";
-                echo "<div class='row-fluid'>";
-                    echo "<div id='newProductCar' class='carousel slide'>";
-                        echo "<div class='carousel-inner'>";
-       
-                            for($i = 0; $i < 2; $i++){
-                                if($i == 0){
-                                    echo "<div class='item active'>";
-                                }else{
-                                    echo "<div class='item'>";
-                                }
-                                echo "<ul class='thumbnails'>";
-                                
-                                for($j = 1; $j <= count($multi_productos); $j++){
-                                    if($i == 0){
-
-                                    }
-                                    /*if($multi_productos[$j]["destacado"]){
-                                        newProducts($j, $multi_productos[$j]["imagen"]);
-
-                                    }*/
-
-                                   
-                                }
-                                echo "</ul>";
-                                echo "</div>";
-                            }
-                            
-                        echo "</div>";
-                        echo "<a class='left carousel-control' href='#newProductCar' data-slide='prev'>&lsaquo;</a>";
-                        echo "<a class='right carousel-control' href='#newProductCar' data-slide='next'>&rsaquo;</a>";
-                    echo "</div>";
-                echo "</div>"; 
-            echo "</div>";
+            
             echo "<div class='well well-small'>";
                 echo "<h3>New Products </h3>";
                 echo "<hr class='soften'/>";
