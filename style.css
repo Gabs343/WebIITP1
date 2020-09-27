@@ -1,7 +1,8 @@
 
 
 body {
-  background: url(assets/img/white_leather.png) repeat 0 0;
+  background: rgb(0,212,255);
+  background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(134,232,246,1) 34%, rgba(4,193,204,0.8435749299719888) 70%, rgba(2,0,36,1) 100%);
 }
 #header {
   padding: 8px 0 8px;
