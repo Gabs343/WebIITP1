@@ -22,7 +22,6 @@ Body Section
     <div class="span9">
         <ul class="breadcrumb">
             <li><a href="index.php">Home</a> <span class="divider">/</span></li>
-            <li><a href="products.php">Items</a> <span class="divider">/</span></li>
             <li class="active">Preview</li>
         </ul>
         <div class="well well-small">

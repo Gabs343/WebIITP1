@@ -82,9 +82,10 @@ Navigation Bar Section
 			  <li class=""><a href="grid-view.php">Grid View</a></li>
 			  <li class=""><a href="newProducts.php">New Products</a></li>
 			  <li class=""><a href="general.php">Contenido general</a></li>
+			  <li class=""><a href="contact.php">Contacto</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
+			  <input type="text" placeholder="Search" class="span2">
 			</form>
 			<ul class="nav pull-right">
 			<li class="dropdown">
