@@ -30,32 +30,79 @@ Body Section
 		
 		<div class="span4">
 		<h4>Email Us</h4>
-		<form class="form-horizontal">
+		<form method="post" action="contact.php" class="form-horizontal">
         <fieldset>
           <div class="control-group">
            
-              <input type="text" placeholder="name" class="input-xlarge"/>
+              <input type="text" placeholder="Nombre" name="nombre" class="input-xlarge"/>
+           
+          </div>
+		  <div class="control-group">
+           
+              <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge"/>
            
           </div>
 		   <div class="control-group">
            
-              <input type="text" placeholder="email" class="input-xlarge"/>
+              <input type="text" placeholder="e-mail" name="email" class="input-xlarge"/>
            
           </div>
-		   <div class="control-group">
+			<div class="control-group">
            
-              <input type="text" placeholder="subject" class="input-xlarge"/>
+              <input type="text" placeholder="Asunto" name="asunto" class="input-xlarge"/>
           
+          	</div>
+		  <div class="control-group">
+		    Area de la empresa:
+    			<select name="area"  class="input-xlarge">
+        			<option value="soporte">Soporte de sistema</option>
+        			<option value="ventas" selected="selected">Sector de ventas</option>  
+        			<option value="productos">Area de productos</option>
+        			<option value="rrhh">Recursos Humanos</option>
+    			</select>
+              
           </div>
+
           <div class="control-group">
-              <textarea rows="3" id="textarea" class="input-xlarge"></textarea>
+              <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge"></textarea>
            
           </div>
 
-            <button class="shopBtn" type="submit">Send email</button>
+            <button class="shopBtn" type="submit" name="enviar">Enviar</button>
 
         </fieldset>
       </form>
+
+	  <?php 
+	   $arrayComentarios = [];
+if (isset($_POST['enviar'])){
+	
+    foreach ($arrayMail as $clave => $valor) {
+        if ($clave == 'area') {
+            switch ($valor) {
+                case 'soporte':
+                    $arrayMail ['destinatario'] = 'soporte@empresa.com';
+                    break;
+                case 'ventas':
+                    $arrayMail ['destinatario'] = 'ventas@empresa.com';
+                    break;
+                case 'productos':
+                    $arrayMail ['destinatario'] = 'productos@empresa.com';
+                    break;
+                case 'rrhh':
+                    $arrayMail ['destinatario'] = 'recursoshumanos@empresa.com';
+                    break;
+            }
+        }
+        
+    }
+    print_r ($arrayMail);
+    echo '<br>';
+    echo '<br>';
+}
+
+
+?>
 		</div>
 	</div>	
 </div>
