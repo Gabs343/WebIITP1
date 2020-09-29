@@ -10,16 +10,12 @@
     margin: 0px 10px;
 }
 
+.marca ul ul{
+    margin: 40px 0;
+}
+
 .marca ul li{
     margin-left: 20px;
-}
-
-.marca ul ul{
-    display: none; 
-}
-
-.marca ul li:hover > ul{
-    display: block;
 }
 
 #galeria{
@@ -35,4 +31,3 @@
 #galeria .span4{
     width: 30%;
 }
-
