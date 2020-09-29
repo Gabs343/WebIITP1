@@ -15,16 +15,42 @@
 <div class="well well-small marca">
 	<ul class="nav nav-list">
 		<?php
-			/*for($i = 1; $i <= count($categoria); $i++){
-				echo "<li><a href='products.php?categoria=$i&marca=0'><span class='icon-chevron-right'></span>$categoria[$i]</a>";
-				echo "<ul class= 'nav nav-list'>";
-					for($j = 1; $j <= count($marca); $j++){
-						echo "<li><a href='products.php?categoria=$i&marca=$j'><span class='icon-chevron-right'></span>$marca[$j]</a></li>";
-				}
-				echo "</ul>";
-                echo "</li>";
-			}*/
+			echo "<li><span class='icon-chevron-right'></span> Categorias ";
+			echo "<ul class= 'nav nav-list'>";
 			foreach($categoria as $clave => $valor){
+				if(isset($_GET["marca"])){
+					if($clave == $_GET["categoria"]){
+						echo "<li class='active'a><a href='products.php?categoria=0&marca=$_GET[marca]'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+					}else{
+						echo "<li><a href='products.php?categoria=$clave&marca=$_GET[marca]'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+					}
+				}else{
+					echo "<li><a href='products.php?categoria=$clave&marca=0'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+				}
+				
+			}
+			echo "</ul>";
+			echo "</li>";
+			echo"<li style='border:0'> &nbsp;</li>";
+
+			echo "<li><span class='icon-chevron-right'></span> Marcas ";
+			echo "<ul class= 'nav nav-list'>";
+			foreach($marca as $clave => $valor){
+				if(isset($_GET["categoria"])){
+					if($clave == $_GET["marca"]){
+						echo "<li class='active'><a href='products.php?categoria=$_GET[categoria]&marca=0'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+					}else{
+						echo "<li><a href='products.php?categoria=$_GET[categoria]&marca=$clave'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+					}
+				}else{
+					echo "<li><a href='products.php?categoria=0&marca=$clave'><span class='icon-chevron-right'></span>$valor[nombre]</a></li>";
+				}
+				
+			}
+			echo "</ul>";
+			echo "</li>";
+			echo"<li style='border:0'> &nbsp;</li>";
+			/*foreach($categoria as $clave => $valor){
 				echo "<li><a href='products.php?categoria=$clave&marca=0'><span class='icon-chevron-right'></span>$valor[nombre]</a>";
 				echo "<ul class= 'nav nav-list'>";
 				foreach($valor as $subclave){
@@ -40,10 +66,10 @@
 				}
 				echo "</ul>";
                 echo "</li>";
-			}
+			}*/
 		?>
 
-		<li style="border:0"> &nbsp;</li>
+		<!--<li style="border:0"> &nbsp;</li>-->
 	</ul>
 </div>
 
