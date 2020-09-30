@@ -6,7 +6,7 @@ Body Section
 -->
 	<hr class="soften">
 	<div class="well well-small">
-	<h1>Visit us</h1>
+	<h1>¿Dónde nos encontramos?</h1>
 	<hr class="soften"/>	
 	<div class="row-fluid">
 		<div class="span8 relative">
@@ -37,64 +37,57 @@ Body Section
               <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge"/>
            
           </div>
-		   <div class="control-group">
-           
-              <input type="text" placeholder="E-mail" name="email" class="input-xlarge"/>
-           
-          </div>
-			<div class="control-group">
-           
-              <input type="text" placeholder="Asunto" name="asunto" class="input-xlarge"/>
-          
-          	</div>
 		  <div class="control-group">
-		    Area de la empresa:
-    			<select name="area"  class="input-xlarge">
-        			<option value="soporte" selected="selected">Soporte de sistema</option>
-        			<option value="ventas">Sector de ventas</option>  
-        			<option value="productos">Area de productos</option>
-        			<option value="rrhh">Recursos Humanos</option>
-    			</select>
-              
-          </div>
-
-          <div class="control-group">
-              <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge"></textarea>
            
-          </div>
+		   <input type="text" placeholder="E-mail" name="email" class="input-xlarge"/>
+		
+	   </div>
+		 <div class="control-group">
+		
+		   <input type="tel" placeholder="Celular" name="celular" class="input-xlarge"/>
+	   
+		   </div>
+	   <div class="control-group">
+		 Area de la empresa:
+			 <select name="area" class="input-xlarge">
+				 <option value="soporte" selected="selected">Soporte de sistema</option>
+				 <option value="ventas">Sector de ventas</option>  
+				 <option value="productos">Area de productos</option>
+				 <option value="rrhh">Recursos Humanos</option>
+			 </select>
+		   
+	   </div>
 
-            <button class="shopBtn" type="submit" name="enviar">Enviar</button>
+	   <div class="control-group">
+		   <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge"></textarea>
+		
+	   </div>
 
-        </fieldset>
-      </form>
+		 <button class="shopBtn" type="submit" name="enviar">Enviar</button>
 
-	  <?php 
+	 </fieldset>
+   </form>
+
+<?php
 
 
-	   $arrayMail = [];
-     $arrayMail = [];
-		if (isset($_POST['enviar'])){
-    	foreach ($arrayMail as $clave => $valor) {
-        	if ($clave == 'area') {
-            	switch ($valor) {
-                	case 'soporte':
-                    	$arrayMail ['destinatario'] = 'soporte@empresa.com';
-                    	break;
-                	case 'ventas':
-                    	$arrayMail ['destinatario'] = 'ventas@empresa.com';
-                    	break;
-                	case 'productos':
-                    	$arrayMail ['destinatario'] = 'productos@empresa.com';
-                    	break;
-                	case 'rrhh':
-                    	$arrayMail ['destinatario'] = 'recursoshumanos@empresa.com';
-                    	break;
-            	}
-        	}       
-    	}
-	}
-	?>
+$f_consultar = fopen("contactanos.json", "r");
+$json_consulta = fread($f_consultar, filesize("contactanos.json"));
+fclose($f_consultar);
+$multi_consulta = json_decode($json_consulta, true);
 
+if (isset($_POST["enviar"])){
+	array_pop($_POST);
+    array_push($multi_consulta, $_POST);
+    $f_consulta = fopen("contactanos.json", "w");
+    fwrite($f_consulta, json_encode($multi_consulta));
+	fclose($f_consulta);
+    echo "<p class='text-center'><strong>Muchas gracias por tu consulta.</strong></p>";
+    echo "<br>";
+}
+
+
+?>
 		</div>
 	</div>	
 </div>
