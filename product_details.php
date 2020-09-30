@@ -136,9 +136,10 @@ Body Section
                             array_pop($_POST);
                             $_POST = array("id_producto" => $_GET["product"]) + $_POST;
                             
-                            $f_comentarioA = fopen("comentarios.json", "a");
-                            fwrite($f_comentarioA, json_encode($_POST));
-                            fclose($f_comentarioA);
+                            array_push($multi_comentarios, $_POST);
+                            $f_comentario = fopen("comentarios.json", "w");
+                            fwrite($f_comentario, json_encode($multi_comentarios));
+                            fclose($f_comentario);
                         
                         }
                         echo "<ul>";

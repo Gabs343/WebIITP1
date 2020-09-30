@@ -35,25 +35,50 @@
 		include_once('left_menu.php');
 		echo "<div class='span9'>";
 			echo "<div class='well well-small'>";
-				productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["descripción"], $multi_productos[1]["precio"]);
-				echo "<hr class='soften'>";
-				productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["descripción"], $multi_productos[2]["precio"]);
-				echo "<hr class='soften'>";
-				productos(3, $multi_productos[3]["imagen"], $multi_productos[3]["nombre"], $multi_productos[3]["descripción"], $multi_productos[3]["precio"]);
-				echo "<hr class='soften'>";
-				productos(4, $multi_productos[4]["imagen"], $multi_productos[4]["nombre"], $multi_productos[4]["descripción"], $multi_productos[4]["precio"]);
-				echo "<hr class='soften'>";
-				productos(5, $multi_productos[5]["imagen"], $multi_productos[5]["nombre"], $multi_productos[5]["descripción"], $multi_productos[5]["precio"]);
-				echo "<hr class='soften'>";
-				productos(6, $multi_productos[6]["imagen"], $multi_productos[6]["nombre"], $multi_productos[6]["descripción"], $multi_productos[6]["precio"]);
-				echo "<hr class='soften'>";
-				productos(7, $multi_productos[7]["imagen"], $multi_productos[7]["nombre"], $multi_productos[7]["descripción"], $multi_productos[7]["precio"]);
-				echo "<hr class='soften'>";
-				productos(8, $multi_productos[8]["imagen"], $multi_productos[8]["nombre"], $multi_productos[8]["descripción"], $multi_productos[8]["precio"]);
-				echo "<hr class='soften'>";
-				productos(9, $multi_productos[9]["imagen"], $multi_productos[9]["nombre"], $multi_productos[9]["descripción"], $multi_productos[9]["precio"]);
+				switch($_GET["page"]){
+					case 1:
+						$producto = 1;
+					break;
+					case 2:
+						$producto = 10;
+					break;
+					case 3: 
+						$producto = 19;
+					break;
+					default:
+						$producto = 1;
+					break;
+				}
+				for($i = 1; $i <= 9; $i++){
+					productos($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], $multi_productos[$producto]["descripción"], $multi_productos[$producto]["precio"]);
+					echo "<hr class='soften'>";
+					if($producto == count($multi_productos)){
+					break;
+					}else{
+						$producto++;
+					}
+		
+				}	
 			echo "</div>";
 		echo "</div>";
 	echo "</div>";
-	include_once('footer.php');
+?>
+<div id="paginas" class="navbar">
+	  <div class="navbar-inner">
+		<div class="container">
+		 
+		  <div class="nav-collapse">
+			<ul class="nav">
+			  <li><a href="#">Prev</a></li>
+			  <li><a href="list-view.php?page=1">1</a></li>
+			  <li><a href="list-view.php?page=2">2</a></li>
+			  <li><a href="list-view.php?page=3">3</a></li>
+			  <li><a href="#">Next</a></li>
+			</ul>	
+		  </div>
+		</div>
+	</div>
+</div>
+<?php
+	require_once("footer.php");
 ?>

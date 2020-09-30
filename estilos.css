@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 .form_comments > div{
     display: flex;
 }
@@ -10,9 +15,13 @@
     margin: 0px 10px;
 }
 
-.marca ul ul{
-    margin: 40px 0;
+/*.marca ul ul{
+    display: none; 
 }
+
+.marca ul li:hover > ul{
+    display: block;
+}*/
 
 .marca ul li{
     margin-left: 20px;
@@ -30,4 +39,9 @@
 
 #galeria .span4{
     width: 30%;
+}
+
+
+#paginas.navbar{
+    margin: 0 350px;
 }
