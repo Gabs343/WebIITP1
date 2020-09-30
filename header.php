@@ -79,9 +79,9 @@ Navigation Bar Section
 			<ul class="nav">
 			  <li class="active"><a href="index.php">Inicio</a></li>
 			  <li class=""><a href="list-view.php?page">Lista de productos</a></li>
-			  <li class=""><a href="grid-view.php">Grid View</a></li>
-			  <li class=""><a href="newProducts.php">New Products</a></li>
-			  <li class=""><a href="general.php">Contenido general</a></li>
+			  <li class=""><a href="grid-view.php">Productos en cuadrículas</a></li>
+			  <li class=""><a href="newProducts.php">Nuevos productos</a></li>
+			  <!-- <li class=""><a href="general.php">Contenido general</a></li> -->
 			  <li class=""><a href="contact.php">Contacto</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
