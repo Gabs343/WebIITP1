@@ -69,7 +69,10 @@ Body Section
       </form>
 
 	  <?php 
+
+
 	   $arrayMail = [];
+     $arrayMail = [];
 		if (isset($_POST['enviar'])){
     	foreach ($arrayMail as $clave => $valor) {
         	if ($clave == 'area') {
@@ -91,6 +94,7 @@ Body Section
     	}
 	}
 	?>
+
 		</div>
 	</div>	
 </div>
