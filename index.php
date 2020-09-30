@@ -75,16 +75,6 @@
         echo "</li>";
     }
 
-    function newProducts($num, $ruta){
-        echo "<li class='span3'>";
-            echo "<div class='thumbnail'>";
-                echo "<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>";
-                echo "<a href='#' class='tag'></a>";
-                echo "<a href='product_details.php?product=$num'><img src='$ruta' alt='bootstrap-ring'></a>";
-            echo "</div>";
-        echo "</li>";
-    }
-
     echo "<div class='row'>";
         include_once('left_menu.php');
         echo "<div class='span9'>";

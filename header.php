@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Bootstrap styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+	<link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
@@ -78,7 +78,7 @@ Navigation Bar Section
 		  <div class="nav-collapse">
 			<ul class="nav">
 			  <li class="active"><a href="index.php">Inicio</a></li>
-			  <li class=""><a href="list-view.php">Lista de productos</a></li>
+			  <li class=""><a href="list-view.php?page">Lista de productos</a></li>
 			  <li class=""><a href="grid-view.php">Grid View</a></li>
 			  <li class=""><a href="newProducts.php">New Products</a></li>
 			  <li class=""><a href="general.php">Contenido general</a></li>
@@ -110,5 +110,5 @@ Navigation Bar Section
 			</ul>
 		  </div>
 		</div>
-	  </div>
 	</div>
+</div>
