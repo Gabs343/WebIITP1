@@ -75,6 +75,7 @@ Body Section
 
 	  <?php 
 	   $arrayComentarios = [];
+	   $arrayMail = [];
 if (isset($_POST['enviar'])){
 	
     foreach ($arrayMail as $clave => $valor) {
