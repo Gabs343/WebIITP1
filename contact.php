@@ -14,22 +14,17 @@ Body Section
 
 		<div class="absoluteBlk">
 		<div class="well wellsmall">
-		<h4>Contact Details</h4>
+		<h4>Visitanos</h4>
 		<h5>
 			2601 Mission St.<br/>
-			San Francisco, CA 94110<br/><br/>
-			 
-			info@mysite.com<br/>
-			﻿Tel 123-456-6780<br/>
-			Fax 123-456-5679<br/>
-			web:wwwmysitedomain.com
+			San Francisco, CA 94110<br/>
 		</h5>
 		</div>
 		</div>
 		</div>
 		
 		<div class="span4">
-		<h4>Email Us</h4>
+		<h4>Contactanos</h4>
 		<form method="post" action="contact.php" class="form-horizontal">
         <fieldset>
           <div class="control-group">
@@ -44,7 +39,7 @@ Body Section
           </div>
 		   <div class="control-group">
            
-              <input type="text" placeholder="e-mail" name="email" class="input-xlarge"/>
+              <input type="text" placeholder="E-mail" name="email" class="input-xlarge"/>
            
           </div>
 			<div class="control-group">
@@ -55,8 +50,8 @@ Body Section
 		  <div class="control-group">
 		    Area de la empresa:
     			<select name="area"  class="input-xlarge">
-        			<option value="soporte">Soporte de sistema</option>
-        			<option value="ventas" selected="selected">Sector de ventas</option>  
+        			<option value="soporte" selected="selected">Soporte de sistema</option>
+        			<option value="ventas">Sector de ventas</option>  
         			<option value="productos">Area de productos</option>
         			<option value="rrhh">Recursos Humanos</option>
     			</select>
@@ -74,36 +69,32 @@ Body Section
       </form>
 
 	  <?php 
-	   $arrayComentarios = [];
+
+
 	   $arrayMail = [];
-if (isset($_POST['enviar'])){
-	
-    foreach ($arrayMail as $clave => $valor) {
-        if ($clave == 'area') {
-            switch ($valor) {
-                case 'soporte':
-                    $arrayMail ['destinatario'] = 'soporte@empresa.com';
-                    break;
-                case 'ventas':
-                    $arrayMail ['destinatario'] = 'ventas@empresa.com';
-                    break;
-                case 'productos':
-                    $arrayMail ['destinatario'] = 'productos@empresa.com';
-                    break;
-                case 'rrhh':
-                    $arrayMail ['destinatario'] = 'recursoshumanos@empresa.com';
-                    break;
-            }
-        }
-        
-    }
-    print_r ($arrayMail);
-    echo '<br>';
-    echo '<br>';
-}
+     $arrayMail = [];
+		if (isset($_POST['enviar'])){
+    	foreach ($arrayMail as $clave => $valor) {
+        	if ($clave == 'area') {
+            	switch ($valor) {
+                	case 'soporte':
+                    	$arrayMail ['destinatario'] = 'soporte@empresa.com';
+                    	break;
+                	case 'ventas':
+                    	$arrayMail ['destinatario'] = 'ventas@empresa.com';
+                    	break;
+                	case 'productos':
+                    	$arrayMail ['destinatario'] = 'productos@empresa.com';
+                    	break;
+                	case 'rrhh':
+                    	$arrayMail ['destinatario'] = 'recursoshumanos@empresa.com';
+                    	break;
+            	}
+        	}       
+    	}
+	}
+	?>
 
-
-?>
 		</div>
 	</div>	
 </div>
