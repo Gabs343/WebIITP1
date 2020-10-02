@@ -70,6 +70,7 @@ Body Section
 
 <?php
 
+
 $f_consultar = fopen("contactanos.json", "r");
 $json_consulta = fread($f_consultar, filesize("contactanos.json"));
 fclose($f_consultar);
