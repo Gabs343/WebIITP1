@@ -34,10 +34,7 @@
 		<div class="container">
 			<div class="alignR">
 				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
+					<p><strong>Todo lo que un gamer necesita, lo encontras aquí.</strong></p>
 				</div>
 				<div class="span4 pull-right alignR">
 					<p><strong> Nuestro Whatsapp:  0800 1234 678 </strong></p>
