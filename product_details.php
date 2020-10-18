@@ -133,13 +133,18 @@ Body Section
                     </form>
                     <?php
                         if(isset($_POST["enviar"])){
+                            date_default_timezone_set("America/Argentina/Buenos_Aires");
+                            $key = date("YmdHis");
+
                             array_pop($_POST);
-                            $_POST = array("id_producto" => $_GET["product"]) + $_POST;
-                            
-                            array_push($multi_comentarios, $_POST);
+                            $_POST = array("id_producto" => $_GET["product"], "fecha" => date("d-m-Y H:i:s")) + $_POST;
+                            $multi_comentarios[$key] = $_POST;
+
+                            file_put_contents("comentarios.json", json_encode($multi_comentarios));
+                            /*array_push($multi_comentarios[$key], $_POST);
                             $f_comentario = fopen("comentarios.json", "w");
                             fwrite($f_comentario, json_encode($multi_comentarios));
-                            fclose($f_comentario);
+                            fclose($f_comentario);*/
                         
                         }
                         echo "<ul>";

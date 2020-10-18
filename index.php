@@ -93,7 +93,7 @@
             echo "</div>";
             echo "<hr>";
             echo "<div class='well well-small'>";
-                echo "<h3>Nuevos productos.</h3>";
+                echo "<h3>Productos.</h3>";
                 echo "<hr class='soften'/>";
                 echo "<div class='row-fluid'>";
                     echo "<ul class='thumbnails'>";
