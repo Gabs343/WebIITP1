@@ -15,7 +15,7 @@
 <div class="well well-small marca">
 	<ul class="nav nav-list">
 		<?php
-			echo "<li><span class='icon-chevron-right'></span> Categorias ";
+			echo "<li><span class='icon-chevron-right'><a href='products.php?categoria=&marca='>Categorias</a></span> ";
 			echo "<ul class= 'nav nav-list'>";
 			foreach($categoria as $clave => $valor){
 				if(isset($_GET["marca"])){
@@ -33,7 +33,7 @@
 			echo "</li>";
 			echo"<li style='border:0'> &nbsp;</li>";
 
-			echo "<li><span class='icon-chevron-right'></span> Marcas ";
+			echo "<li><span class='icon-chevron-right'><a href='products.php?categoria=&marca='>Marcas</a></span> ";
 			echo "<ul class= 'nav nav-list'>";
 			foreach($marca as $clave => $valor){
 				if(isset($_GET["categoria"])){
