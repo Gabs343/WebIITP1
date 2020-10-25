@@ -1,8 +1,91 @@
+<?php
+
+$f_productoR = fopen("productos.json", "r");
+$json_producto = fread($f_productoR, filesize("productos.json"));
+fclose($f_productoR);
+$multi_productos = json_decode($json_producto, true);
+
+$f_carritoR = fopen("carrito.json", "r");
+$json_carrito = fread($f_carritoR, filesize("carrito.json"));
+fclose($f_carritoR);
+$carrito = json_decode($json_carrito, true);
+
+$items_navlist = array(1 => array("archivo" => "index.php",
+								"nombre" => "Inicio"),
+						2 => array("archivo" => "list-view.php?page",
+									"nombre" => "Lista de productos"),
+						3 => array("archivo" => "grid-view.php",
+									"nombre" => "Productos en cuadrículas"),
+						4 => array("archivo" => "newProducts.php",
+									"nombre" => "Nuevos productos"),
+						5 => array("archivo" => "contact.php",
+									"nombre" => "Contacto"));
+
+function navlist($a_nav){
+	echo "<ul class='nav'>";
+	foreach($a_nav as $clave => $valor){
+		echo "<li><a href=".$valor["archivo"].">".$valor["nombre"]."</a></li>";	
+	}
+	echo "</ul>";
+}
+
+function productosNuevos($num, $ruta, $a_nombre, $a_precio){
+	echo <<< tt
+	
+	<li class='span4'>
+	<div class='thumbnail'>
+	<a href='product_details.php?product=$num' class='overlay'></a>
+	<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
+	<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
+	<a href='#' class='tag'></a>
+	<div class='caption cntr'>
+	<p>$a_nombre</p>
+	<p><strong>$a_precio</strong></p>
+	<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
+	<div class='actionList'>
+	<a class='pull-left' href='#'>Add to Wish List </a> 
+	<a class='pull-left' href='#'> Add to Compare </a>
+	</div> 
+	<br class='clr'>
+	</div>
+	</div>
+	</li>
+	tt;
+
+}
+
+function productos($num, $ruta, $a_nombre, $a_precio){
+	echo <<< tt
+	
+	<li class='span4'>
+	<div class='thumbnail'>
+	<a href='product_details.php?product=$num' class='overlay'></a>
+	<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
+	<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
+	<div class='caption cntr'>
+	<p>$a_nombre</p>
+	<p><strong>$a_precio</strong></p>
+	<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
+	<div class='actionList'>
+	<a class='pull-left' href='#'>Add to Wish List </a> 
+	<a class='pull-left' href='#'> Add to Compare </a>
+	</div> 
+	<br class='clr'>
+	</div>
+	</div>
+	</li>
+	tt;
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Dimension Gamer</title>
+    <title><?php echo "DGamer/"; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -73,14 +156,9 @@ Navigation Bar Section
 			<span class="icon-bar"></span>
 		  </a>
 		  <div class="nav-collapse">
-			<ul class="nav">
-			  <li class="active"><a href="index.php">Inicio</a></li>
-			  <li class=""><a href="list-view.php?page">Lista de productos</a></li>
-			  <li class=""><a href="grid-view.php">Productos en cuadrículas</a></li>
-			  <li class=""><a href="newProducts.php">Nuevos productos</a></li>
-			  <!-- <li class=""><a href="general.php">Contenido general</a></li> -->
-			  <li class=""><a href="contact.php">Contacto</a></li>
-			</ul>
+			<?php
+				navlist($items_navlist); 
+			?>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="span2">
 			</form>
