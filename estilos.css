@@ -45,3 +45,7 @@ html {
 #paginas.navbar{
     margin: 0 350px;
 }
+
+.margen-top {
+    padding-top: 30px;
+}
