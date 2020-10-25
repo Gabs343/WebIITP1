@@ -1,33 +1,6 @@
 <?php
 	require_once("header.php");
-	$f_productoR = fopen("productos.json", "r");
-	$json_producto = fread($f_productoR, filesize("productos.json"));
-	fclose($f_productoR);
-	$multi_productos = json_decode($json_producto, true);
 
-	function productos($num, $ruta, $a_nombre, $a_precio){
-		echo <<< tt
-		
-		<li class='span4'>
-		<div class='thumbnail'>
-		<a href='product_details.php?product=$num' class='overlay'></a>
-		<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
-		<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
-		<div class='caption cntr'>
-		<p>$a_nombre</p>
-		<p><strong>$a_precio</strong></p>
-		<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
-		<div class='actionList'>
-		<a class='pull-left' href='#'>Add to Wish List </a> 
-		<a class='pull-left' href='#'> Add to Compare </a>
-		</div> 
-		<br class='clr'>
-		</div>
-		</div>
-		</li>
-		tt;
-
-	}
 	/*BODY*/
 	echo "<div class='row'>";
 		require_once("left_menu.php");

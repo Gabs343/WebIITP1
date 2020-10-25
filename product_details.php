@@ -1,16 +1,21 @@
 <?php
     require_once("header.php");
-    
-	$f_productoR = fopen("productos.json", "r");
-	$json_producto = fread($f_productoR, filesize("productos.json"));
-	fclose($f_productoR);
-    $multi_productos = json_decode($json_producto, true);
 
-  
     $f_comentarioR = fopen("comentarios.json", "r");
     $json_comentario = fread($f_comentarioR, filesize("comentarios.json"));
     fclose($f_comentarioR);
     $multi_comentarios = json_decode($json_comentario, true);
+
+    rsort($multi_comentarios);
+
+
+    function infoProduct($multi_productos, $informacion){
+        foreach($multi_productos as $clave){
+            if($clave["id_producto"] == $_GET["product"]){
+                echo $clave[$informacion];
+            }
+        }
+    }
 ?>
 <!-- 
 Body Section 
@@ -31,11 +36,7 @@ Body Section
                         <div class="carousel-inner">
                             <div class="item active">
                                 <a href="#"> <img src=<?php
-                                    foreach($multi_productos as $clave){
-                                        if($clave["id_producto"] == $_GET["product"]){
-                                            echo $clave["imagen"];
-                                        }
-                                    }
+                                    infoProduct($multi_productos, "imagen");
                                 ?> alt="" style="width:100%"></a>
                             </div>
                           
@@ -45,40 +46,32 @@ Body Section
                 </div>
                 <div class="span7">
                     <h3><?php
-						foreach($multi_productos as $clave){
-							if($clave["id_producto"] == $_GET["product"]){
-								echo $clave["nombre"];
-							}
-						}
+						infoProduct($multi_productos, "nombre");
 					?></h3>
                     <hr class="soft" />
 
-                    <form action="cart.php" class="form-horizontal qtyFrm">
+                    <form action="<?php $_PHP_SELF ?>" class="form-horizontal qtyFrm" method="POST">
                         <div class="control-group">
                             <label class="control-label">
                                 <span>
-                                    <?php
-                                    foreach($multi_productos as $clave){
-                                        if($clave["id_producto"] == $_GET["product"]){
-                                            echo $clave["precio"];
-                                        }
-                                    }
+                                <?php
+                                    infoProduct($multi_productos, "precio");
                                 ?>
                                 </span></label>
-                            <div class="controls">
-                                <input type="number" class="span6" placeholder="Qty.">
-                            </div>
                         </div>
                         <h4>Descripción</h4>
                         <?php
-						    foreach($multi_productos as $clave){
-							    if($clave["id_producto"] == $_GET["product"]){
-								    echo "<p>", $clave["descripción"], "</p>";
-							    }
-						    }
+                            echo "<p>";
+                            infoProduct($multi_productos, "descripción");
+                            echo "</p>";
+                            echo "<button type='submit' name='cart' class='shopBtn'><span class='icon-shopping-cart'></span> Add to cart</button>";
+                            echo "<a href='cart.php'>View cart</a>";
+                            if(isset($_POST["cart"])){
+                                $carrito["id_producto"][] = $_GET["product"];
+                                file_put_contents("carrito.json", json_encode($carrito));
+                                
+                            }
                         ?>
-                        <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to
-                            cart</button>
                     </form>
                 </div>
             </div>
@@ -141,16 +134,11 @@ Body Section
                             $multi_comentarios[$key] = $_POST;
 
                             file_put_contents("comentarios.json", json_encode($multi_comentarios));
-                            /*array_push($multi_comentarios[$key], $_POST);
-                            $f_comentario = fopen("comentarios.json", "w");
-                            fwrite($f_comentario, json_encode($multi_comentarios));
-                            fclose($f_comentario);*/
-                        
                         }
                         echo "<ul>";
                         foreach ($multi_comentarios as $clave) {
                             if ($clave["id_producto"] == $_GET["product"]) {
-                                echo "<li>";
+                                echo "<li class='comentario'>";
                                 foreach ($clave as $subclave => $subvalor) {
                                     if($subclave == "id_producto"){
                                         continue;

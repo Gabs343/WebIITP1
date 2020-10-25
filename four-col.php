@@ -1,31 +1,6 @@
 <?php
 	require_once("header.php");
-	$f_productoR = fopen("productos.json", "r");
-	$json_producto = fread($f_productoR, filesize("productos.json"));
-	fclose($f_productoR);
-	$multi_productos = json_decode($json_producto, true);
 
-    function productos($num, $ruta, $a_nombre, $a_precio){
-        echo <<< tt
-		<li class='span3'>
-		<div class='thumbnail'>
-		<a href='product_details.php?product=$num' class='overlay'></a>
-		<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>
-		<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
-		<div class='caption cntr'>
-		<p>$a_nombre</p>
-		<p><strong>$a_precio</strong></p>
-		<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
-		<div class='actionList'>
-		<a class='pull-left' href='#'>Add to Wish List </a> 
-		<a class='pull-left' href='#'> Add to Compare </a>
-		</div> 
-		<br class='clr'>
-		</div>
-		</div>
-		</li>
-		tt;
-    }
 	echo "<ul class='thumbnails'>";
 		productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["precio"]);
 		productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["precio"]);
@@ -42,5 +17,5 @@
 		productos(9, $multi_productos[9]["imagen"], $multi_productos[9]["nombre"], $multi_productos[9]["precio"]);
 		productos(10, $multi_productos[10]["imagen"], $multi_productos[10]["nombre"], $multi_productos[10]["precio"]);
 	echo "</ul>";
-	require_once("footer.php")
+	require_once("footer.php");
 ?>

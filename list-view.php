@@ -1,23 +1,19 @@
 <?php
 	include_once('header.php');
-	$f_productoR = fopen("productos.json", "r");
-	$json_producto = fread($f_productoR, filesize("productos.json"));
-	fclose($f_productoR);
-	$multi_productos = json_decode($json_producto, true);
 
-	function productos($num, $ruta, $a_nombre, $a_descripcion, $a_precio){
+	function productosDescripcion($num, $imagen, $nombre, $descripcion, $precio){
 		echo <<< tt
 		<div class='row-fluid'>
 			<div class="span2">
-				<img src=$ruta alt''>
+				<img src=$imagen alt''>
 			</div>
 			<div class='span6'>
-				<h5>$a_nombre</h5>
-				<p>$a_descripcion</p>
+				<h5>$nombre</h5>
+				<p>$descripcion</p>
 			</div>
 			<div class='span4 alignR'>
 				<form class='form-horizontal qtyFrm'>
-					<h3>$a_precio</h3>
+					<h3>$precio</h3>
 					<label class='checkbox'>
 						<input type='checkbox'>Adds product to compair
 					</label><br>
@@ -50,7 +46,7 @@
 					break;
 				}
 				for($i = 1; $i <= 9; $i++){
-					productos($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], $multi_productos[$producto]["descripción"], $multi_productos[$producto]["precio"]);
+					productosDescripcion($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], $multi_productos[$producto]["descripción"], $multi_productos[$producto]["precio"]);
 					echo "<hr class='soften'>";
 					if($producto == count($multi_productos)){
 					break;

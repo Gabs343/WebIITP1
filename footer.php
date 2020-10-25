@@ -30,7 +30,7 @@ Footer
 	<p class="text-center">Copyright &copy; 2020. Trabajo práctico 1 Programación Web II</p>
 </div>
 </div>
-<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+	<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
