@@ -55,6 +55,7 @@ Body Section
                             <label class="control-label">
                                 <span>
                                 <?php
+                                    echo "ARS $";
                                     infoProduct($multi_productos, "precio");
                                 ?>
                                 </span></label>

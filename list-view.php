@@ -1,5 +1,6 @@
 <?php
-	include_once('header.php');
+	require_once('header.php');
+	require_once('funcs.php');
 
 	function productosDescripcion($num, $imagen, $nombre, $descripcion, $precio){
 		echo <<< tt
@@ -13,10 +14,7 @@
 			</div>
 			<div class='span4 alignR'>
 				<form class='form-horizontal qtyFrm'>
-					<h3>$precio</h3>
-					<label class='checkbox'>
-						<input type='checkbox'>Adds product to compair
-					</label><br>
+					<h3>ARS $$precio</h3>
 					<div class='btn-group'>
 						<a href='product_details.php?product=$num' class='defaultBtn'><span class='icon-shopping-cart'></span>Add to cart</a>
 						<a href='product_details.php?product=$num' class='shopBtn'>VIEW</a>
@@ -36,17 +34,14 @@
 						$producto = 1;
 					break;
 					case 2:
-						$producto = 10;
-					break;
-					case 3: 
-						$producto = 19;
+						$producto = 12;
 					break;
 					default:
 						$producto = 1;
 					break;
 				}
-				for($i = 1; $i <= 9; $i++){
-					productosDescripcion($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], $multi_productos[$producto]["descripción"], $multi_productos[$producto]["precio"]);
+				for($i = 1; $i <= 11; $i++){
+					productosDescripcion($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], cortar($multi_productos[$producto]["descripción"], 90), $multi_productos[$producto]["precio"]);
 					echo "<hr class='soften'>";
 					if($producto == count($multi_productos)){
 					break;
@@ -68,7 +63,6 @@
 			  <li><a href="#">Prev</a></li>
 			  <li><a href="list-view.php?page=1">1</a></li>
 			  <li><a href="list-view.php?page=2">2</a></li>
-			  <li><a href="list-view.php?page=3">3</a></li>
 			  <li><a href="#">Next</a></li>
 			</ul>	
 		  </div>

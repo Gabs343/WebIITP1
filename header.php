@@ -40,7 +40,7 @@ function productosNuevos($num, $ruta, $a_nombre, $a_precio){
 	<a href='#' class='tag'></a>
 	<div class='caption cntr'>
 	<p>$a_nombre</p>
-	<p><strong>$a_precio</strong></p>
+	<p><strong>ARS $$a_precio</strong></p>
 	<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
 	<div class='actionList'>
 	<a class='pull-left' href='#'>Add to Wish List </a> 
@@ -64,7 +64,7 @@ function productos($num, $ruta, $a_nombre, $a_precio){
 	<a href='product_details.php?product=$num'><img src='$ruta' alt=''></a>
 	<div class='caption cntr'>
 	<p>$a_nombre</p>
-	<p><strong>$a_precio</strong></p>
+	<p><strong>ARS $$a_precio</strong></p>
 	<h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
 	<div class='actionList'>
 	<a class='pull-left' href='#'>Add to Wish List </a> 

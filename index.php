@@ -38,7 +38,7 @@
                 echo "<h4>";
                     echo "<a class='defaultBtn' href='product_details.php?product=$num' title='Click to view'><span class='icon-zoom-in'></span></a>";
                     echo "<a class='shopBtn' href='#' title='add to cart'><span class='icon-plus'></span></a>";
-                    echo "<span class='pull-right'>$a_precio</span>";
+                    echo "<span class='pull-right'>ARS $$a_precio</span>";
                 echo "</h4>";
             echo "</div>";
         echo "</div>";
