@@ -50,26 +50,7 @@
 			echo "</ul>";
 			echo "</li>";
 			echo"<li style='border:0'> &nbsp;</li>";
-			/*foreach($categoria as $clave => $valor){
-				echo "<li><a href='products.php?categoria=$clave&marca=0'><span class='icon-chevron-right'></span>$valor[nombre]</a>";
-				echo "<ul class= 'nav nav-list'>";
-				foreach($valor as $subclave){
-					if(is_array($subclave)){			
-						foreach($subclave as $subclave2 => $subvalor){
-                            foreach ($marca as $claveM => $valorM) {
-                                if ($subvalor == $valorM["id_marca"]) {
-                                    echo "<li><a href='products.php?categoria=$clave&marca=$subvalor'><span class='icon-chevron-right'></span>$valorM[nombre]</a></li>";
-                                }
-                            }	
-						}
-					}
-				}
-				echo "</ul>";
-                echo "</li>";
-			}*/
 		?>
-
-		<!--<li style="border:0"> &nbsp;</li>-->
 	</ul>
 </div>
 

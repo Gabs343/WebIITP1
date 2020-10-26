@@ -20,44 +20,43 @@ Body Section
                 <tr>
                   <th>Product</th>
                   <th>Nombre</th>
-                  <th>Unit price</th>
-                  <th>Qty </th>
-                  <th>Total</th>
+				  <th>Remove</th>
+				  <th>Total</th>
+               
 				</tr>
 			  </thead>
 			  
 			<?php
+			$total = 0;
 				echo "<tbody>";
-
 				foreach($carrito as $claveC => $valor){
 					foreach($valor as $subclave => $subvalor){
 						foreach($multi_productos as $claveP){
 							if($claveP["id_producto"] == $subvalor){
-								echo "<tr>";
-								echo "<td><img width='100' src='".$claveP["imagen"]."' alt=''></td>";
-								echo "<td>".$claveP['nombre']."<br>Carate : 22<br>Model : n/a</td>";
-								echo "<td>".$claveP["precio"]."</td>";
-								echo "<td>";
-								echo "<input class='span1' style='max-width:34px' placeholder='1' id='appendedInputButtons' size='16' type='text' value='2'>";
-								echo "<div class='input-append'>";
-								echo "<button class='btn btn-mini' type='button'>-</button><button class='btn btn-mini' type='button'> + </button><button class='btn btn-mini btn-danger' type='button'><span class='icon-remove'></span></button>";
-								echo "</div>";
-								echo "</td>";
-								echo "<td>$100.00</td>";
-								echo "</tr>";
+								echo <<< tt
+								<tr>
+								<td><img width='100' src='$claveP[imagen]' alt=''></td>
+								<td>$claveP[nombre]</td>
+								<td>
+								<div class='input-append'>
+								<button class='btn btn-mini btn-danger' type='button'><span class='icon-remove'></span></button>
+								</div> </td>
+								<td> ARS $$claveP[precio]</td>
+								</tr>
+								tt;
+								$total += $claveP["precio"];
 							}
 						}
 					}
 				}
 				echo "<tr>";
 				echo "<td colspan='6' class='alignR'>Total products:	</td>";
-				echo "<td class='label label-primary'> $448.42</td>";
+				echo "<td class='label label-primary'>ARS $$total</td>";
 				echo "</tr>";
 				echo "</tbody>";  
 			 
 			?>
             </table><br/>
-		
 		
             <table class="table table-bordered">
 			<tbody>
