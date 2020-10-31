@@ -44,48 +44,56 @@
         echo "</div>";
         echo "</li>";
     }
-
-    echo "<div class='row'>";
-        include_once('left_menu.php');
-        echo "<div class='span9'>";
-            /*CAROUSEL*/
-            echo "<div class='well np'>";
-                echo "<div id='myCarousel' class='carousel slide homCar'>";
-                    echo "<div class='carousel-inner'>";
+    ?>
+    <div class='row'>
+        <?php include_once('left_menu.php');?>
+        <div class='span9'>
+            <!--CAROUSEL-->
+            <div class='well np'>
+                <div id='myCarousel' class='carousel slide homCar'>
+                    <div class='carousel-inner'>
+                        <?php
                         bannerActive($banner_index[1]["id_producto"], "¡Laptops!", "De las mejores marcas.");
                         banner($banner_index[2]["id_producto"], "Tarjetas gráficas", "Para la mejor experiencia.");
                         banner($banner_index[3]["id_producto"], "¡Ryden y Radeon!", "Los mejores procesadores.");
                         banner($banner_index[4]["id_producto"], "Nueva generación", "Intel presenta la décima generación.");
-                    echo "</div>";
-                    echo "<a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>";
-                    echo "<a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>";
-                echo "</div>";
-            echo "</div>";
-            echo "<hr>";
-            echo "<div class='well well-small'>";
-                echo "<h3>Productos.</h3>";
-                echo "<hr class='soften'/>";
-                echo "<div class='row-fluid'>";
-                    echo "<ul class='thumbnails'>";
+                        ?>
+                    </div>
+                    <a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>
+                    <a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>
+                </div>
+            </div>
+            <hr>
+            <div class='well well-small'>
+                <h3>Productos.</h3>
+                <hr class='soften'/>
+                <div class='row-fluid'>
+                    <ul class='thumbnails'>
+                        <?php
                         productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["precio"]);
 	                    productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["precio"]);
 	                    productos(3, $multi_productos[3]["imagen"], $multi_productos[3]["nombre"], $multi_productos[3]["precio"]);
-                    echo "</ul>";
-                echo "</div>";
-            echo "</div>";
-            echo "<hr>";
-            /*FEATURED PRODUCTS*/
-            echo "<div class='well well-small'>";
-                echo "<h3>Productos desctados.</h3>";
-                echo "<hr class='soften'/>";
-                echo "<div class='row-fluid'>";
-                    echo "<ul class='thumbnails'>";
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <!--FEATURED PRODUCTS-->
+            <div class='well well-small'>
+                <h3>Productos desctados.</h3>
+                <hr class='soften'/>
+                <div class='row-fluid'>
+                    <ul class='thumbnails'>
+                        <?php
                         featuredProducts(4, $multi_productos[4]["imagen"], $multi_productos[4]["nombre"], $multi_productos[4]["precio"]);
                         featuredProducts(5, $multi_productos[5]["imagen"], $multi_productos[5]["nombre"], $multi_productos[5]["precio"]);
                         featuredProducts(6, $multi_productos[6]["imagen"], $multi_productos[6]["nombre"], $multi_productos[6]["precio"]);
-                    echo "</ul>";
-                echo "</div>";
-            echo "</div>";
-        echo "</div>";
-    echo "</div>";
-	include_once('footer.php');
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    include_once('footer.php');
+    ?>
