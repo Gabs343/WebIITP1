@@ -1,32 +1,29 @@
 <?php
 	require_once('header.php');
 
-    $banner_index = array (
-        1 => array ("id_producto" => "assets/img/asus.png"),
-        2 => array ("id_producto" => "assets/img/nvidia.png"),
-        3 => array ("id_producto" => "assets/img/amd.png"),
-        4 => array ("id_producto" => "assets/img/intel.png")
+    $banner_list = array (
+        1 => array ("banner" => "assets/img/asus.png",
+                    "titulo" => "¡Laptops!",
+                    "descripcion" => "De las mejores marcas."),
+        2 => array ("banner" => "assets/img/nvidia.png",
+                    "titulo" => "Tarjetas gráficas",
+                    "descripcion" => "Para la mejor experiencia."),
+        3 => array ("banner" => "assets/img/amd.png",
+                    "titulo" => "¡Ryden y Radeon!",
+                    "descripcion" => "Los mejores procesadores."),
+        4 => array ("banner" => "assets/img/intel.png",
+                    "titulo" => "Nueva generación",
+                    "descripcion" => "Intel presenta la décima generación.")
     );
-
-    function bannerActive($ruta, $titulo, $descripcion){
-        echo "<div class='item active'>";
-            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
-            echo "<div class='carousel-caption'>";
-                echo "<h4>$titulo</h4>";
-                echo "<p><span>$descripcion</span></p>";
-            echo "</div>";
-        echo "</div>";
-    }
-
-    function banner($ruta, $titulo, $descripcion){
-        echo "<div class='item'>";
-            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
-            echo "<div class='carousel-caption'>";
-                echo "<h4>$titulo</h4>";
-                echo "<p><span>$descripcion</span></p>";
-            echo "</div>";
-        echo "</div>";
-    }
+    function banner($banner, $ruta, $titulo, $descripcion){?>
+        <div class='item <?php ActiveBanner($banner);?>'>
+            <img style='width:100%' src="<?php echo $ruta; ?>" alt='bootstrap ecommerce templates'>
+            <div class='carousel-caption'>
+                <h4><?php echo $titulo; ?></h4>
+                <p><span> <?php echo $descripcion; ?></span></p>
+            </div>
+        </div>
+    <?php }
 
     function featuredProducts($num, $ruta, $a_nombre, $a_precio){
         echo "<li class='span4'>";
@@ -53,10 +50,9 @@
                 <div id='myCarousel' class='carousel slide homCar'>
                     <div class='carousel-inner'>
                         <?php
-                        bannerActive($banner_index[1]["id_producto"], "¡Laptops!", "De las mejores marcas.");
-                        banner($banner_index[2]["id_producto"], "Tarjetas gráficas", "Para la mejor experiencia.");
-                        banner($banner_index[3]["id_producto"], "¡Ryden y Radeon!", "Los mejores procesadores.");
-                        banner($banner_index[4]["id_producto"], "Nueva generación", "Intel presenta la décima generación.");
+                        for($i = 1; $i <= count($banner_list); $i++){
+                            banner($i, $banner_list[$i]["banner"], $banner_list[$i]["titulo"], $banner_list[$i]["descripcion"]);
+                        }
                         ?>
                     </div>
                     <a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>
