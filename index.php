@@ -16,7 +16,7 @@
                     "descripcion" => "Intel presenta la décima generación.")
     );
     function banner($banner, $ruta, $titulo, $descripcion){?>
-        <div class='item <?php ActiveBanner($banner);?>'>
+        <div class="item <?php ActiveBanner($banner);?>">
             <img style='width:100%' src="<?php echo $ruta; ?>" alt='bootstrap ecommerce templates'>
             <div class='carousel-caption'>
                 <h4><?php echo $titulo; ?></h4>
@@ -47,16 +47,16 @@
         <div class='span9'>
             <!--CAROUSEL-->
             <div class='well np'>
-                <div id='myCarousel' class='carousel slide homCar'>
+                <div id="myCarousel" class='carousel slide homCar'>
                     <div class='carousel-inner'>
                         <?php
-                        for($i = 1; $i <= count($banner_list); $i++){
-                            banner($i, $banner_list[$i]["banner"], $banner_list[$i]["titulo"], $banner_list[$i]["descripcion"]);
-                        }
+                            for($i = 1; $i <= count($banner_list); $i++){
+                                banner($i, $banner_list[$i]["banner"], $banner_list[$i]["titulo"], $banner_list[$i]["descripcion"]);
+                            }
                         ?>
                     </div>
-                    <a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>
-                    <a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>
+                    <a class="left carousel-control" href="#myCarousel" data-slide='prev'>&lsaquo;</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
                 </div>
             </div>
             <hr>
