@@ -16,7 +16,7 @@ $items_navlist = array(
 		"nombre" => "Inicio"
 	),
 	2 => array(
-		"archivo" => "list-view.php?page",
+		"archivo" => "list-view.php",
 		"nombre" => "Lista de productos"
 	),
 	3 => array(
@@ -33,17 +33,17 @@ $items_navlist = array(
 	)
 );
 
-function navlist($a_nav)
-{
-	echo "<ul class='nav'>";
-	foreach ($a_nav as $clave => $valor) {
-		echo "<li><a href=" . $valor["archivo"] . ">" . $valor["nombre"] . "</a></li>";
+function navlist($a_nav){?>
+	<ul class='nav'>
+	<?php
+	foreach ($a_nav as $clave => $valor) {?>
+		<li class=<?php Active($valor["archivo"])?>><a href=<?php echo $valor["archivo"]."?page";?>><?php echo $valor["nombre"];?></a></li>
+	<?php
 	}
 	echo "</ul>";
 }
 
-function productosNuevos($num, $ruta, $a_nombre, $a_precio)
-{
+function productosNuevos($num, $ruta, $a_nombre, $a_precio){
 	echo <<< tt
 	
 	<li class='span4'>
@@ -67,8 +67,7 @@ function productosNuevos($num, $ruta, $a_nombre, $a_precio)
 	tt;
 }
 
-function productos($num, $ruta, $a_nombre, $a_precio)
-{
+function productos($num, $ruta, $a_nombre, $a_precio){
 	echo <<< tt
 	
 	<li class='span4'>
@@ -91,6 +90,13 @@ function productos($num, $ruta, $a_nombre, $a_precio)
 	tt;
 }
 
+function Active($menu){
+	echo strpos($_SERVER["PHP_SELF"], $menu) ? "active" : "";
+}
+
+function ActiveBanner($itemBanner){
+	echo $itemBanner == 1 ? "active" : "";
+}
 
 ?>
 
