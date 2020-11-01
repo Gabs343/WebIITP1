@@ -61,7 +61,7 @@
         "precio": 2060,
         "id_marca": 1,
         "id_categoria": 3,
-        "destacado": false,
+        "destacado": true,
         "nuevo": false,
         "especificaciones": {
             "Orientaci\u00f3n": "Ambidiestro",
@@ -82,7 +82,7 @@
         "precio": 20100,
         "id_marca": 2,
         "id_categoria": 4,
-        "destacado": false,
+        "destacado": true,
         "nuevo": false,
         "especificaciones": {
             "Modelo": "Aureox G200",
@@ -128,7 +128,7 @@
         "precio": 105000,
         "id_marca": 5,
         "id_categoria": 5,
-        "destacado": false,
+        "destacado": true,
         "nuevo": false,
         "especificaciones": {
             "Procesador": "I5 1035 G1",

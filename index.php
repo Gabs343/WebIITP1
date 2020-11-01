@@ -23,25 +23,7 @@
                 <p><span> <?php echo $descripcion; ?></span></p>
             </div>
         </div>
-    <?php }
-
-    function featuredProducts($num, $ruta, $a_nombre, $a_precio){
-        echo "<li class='span4'>";
-        echo "<div class='thumbnail'>";
-            echo "<a class='zoomTool' href='product_details.php?product=$num' title='add to cart'><span class='icon-search'></span> QUICK VIEW</a>";
-            echo "<a href='product_details.php?product=$num'><img src=$ruta alt=''></a>";
-            echo "<div class='caption'>";
-                echo "<h5>$a_nombre</h5>";
-                echo "<h4>";
-                    echo "<a class='defaultBtn' href='product_details.php?product=$num' title='Click to view'><span class='icon-zoom-in'></span></a>";
-                    echo "<a class='shopBtn' href='#' title='add to cart'><span class='icon-plus'></span></a>";
-                    echo "<span class='pull-right'>ARS $$a_precio</span>";
-                echo "</h4>";
-            echo "</div>";
-        echo "</div>";
-        echo "</li>";
-    }
-    ?>
+    <?php }  ?>
     <div class='row'>
         <?php include_once('left_menu.php');?>
         <div class='span9'>
@@ -66,9 +48,10 @@
                 <div class='row-fluid'>
                     <ul class='thumbnails'>
                         <?php
-                        productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["precio"]);
-	                    productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["precio"]);
-	                    productos(3, $multi_productos[3]["imagen"], $multi_productos[3]["nombre"], $multi_productos[3]["precio"]);
+                        productos($multi_productos, 1);
+                        productos($multi_productos, 2);
+                        productos($multi_productos, 3);
+                        
                         ?>
                     </ul>
                 </div>
@@ -81,9 +64,9 @@
                 <div class='row-fluid'>
                     <ul class='thumbnails'>
                         <?php
-                        featuredProducts(4, $multi_productos[4]["imagen"], $multi_productos[4]["nombre"], $multi_productos[4]["precio"]);
-                        featuredProducts(5, $multi_productos[5]["imagen"], $multi_productos[5]["nombre"], $multi_productos[5]["precio"]);
-                        featuredProducts(6, $multi_productos[6]["imagen"], $multi_productos[6]["nombre"], $multi_productos[6]["precio"]);
+                        productos($multi_productos, 4);
+                        productos($multi_productos, 5);
+                        productos($multi_productos, 7);
                         ?>
                     </ul>
                 </div>
