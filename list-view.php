@@ -24,11 +24,12 @@
 		</div>
 		tt;
 	}
-
-	echo "<div class='row'>";
-		include_once('left_menu.php');
-		echo "<div class='span9'>";
-			echo "<div class='well well-small'>";
+	?>
+	<div class='row'>
+		<?php include_once('left_menu.php');?>
+		<div class='span9'>
+			<div class='well well-small'>
+				<?php
 				switch($_GET["page"]){
 					case 1:
 						$producto = 1;
@@ -49,11 +50,11 @@
 						$producto++;
 					}
 		
-				}	
-			echo "</div>";
-		echo "</div>";
-	echo "</div>";
-?>
+				}
+				?>	
+			</div>
+		</div>
+	</div>
 <div id="paginas" class="navbar">
 	  <div class="navbar-inner">
 		<div class="container">

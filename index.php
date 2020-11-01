@@ -1,32 +1,29 @@
 <?php
 	require_once('header.php');
 
-    $banner_index = array (
-        1 => array ("id_producto" => "assets/img/asus.png"),
-        2 => array ("id_producto" => "assets/img/nvidia.png"),
-        3 => array ("id_producto" => "assets/img/amd.png"),
-        4 => array ("id_producto" => "assets/img/intel.png")
+    $banner_list = array (
+        1 => array ("banner" => "assets/img/asus.png",
+                    "titulo" => "¡Laptops!",
+                    "descripcion" => "De las mejores marcas."),
+        2 => array ("banner" => "assets/img/nvidia.png",
+                    "titulo" => "Tarjetas gráficas",
+                    "descripcion" => "Para la mejor experiencia."),
+        3 => array ("banner" => "assets/img/amd.png",
+                    "titulo" => "¡Ryden y Radeon!",
+                    "descripcion" => "Los mejores procesadores."),
+        4 => array ("banner" => "assets/img/intel.png",
+                    "titulo" => "Nueva generación",
+                    "descripcion" => "Intel presenta la décima generación.")
     );
-
-    function bannerActive($ruta, $titulo, $descripcion){
-        echo "<div class='item active'>";
-            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
-            echo "<div class='carousel-caption'>";
-                echo "<h4>$titulo</h4>";
-                echo "<p><span>$descripcion</span></p>";
-            echo "</div>";
-        echo "</div>";
-    }
-
-    function banner($ruta, $titulo, $descripcion){
-        echo "<div class='item'>";
-            echo "<img style='width:100%' src=$ruta alt='bootstrap ecommerce templates'>";
-            echo "<div class='carousel-caption'>";
-                echo "<h4>$titulo</h4>";
-                echo "<p><span>$descripcion</span></p>";
-            echo "</div>";
-        echo "</div>";
-    }
+    function banner($banner, $ruta, $titulo, $descripcion){?>
+        <div class='item <?php ActiveBanner($banner);?>'>
+            <img style='width:100%' src="<?php echo $ruta; ?>" alt='bootstrap ecommerce templates'>
+            <div class='carousel-caption'>
+                <h4><?php echo $titulo; ?></h4>
+                <p><span> <?php echo $descripcion; ?></span></p>
+            </div>
+        </div>
+    <?php }
 
     function featuredProducts($num, $ruta, $a_nombre, $a_precio){
         echo "<li class='span4'>";
@@ -44,48 +41,55 @@
         echo "</div>";
         echo "</li>";
     }
-
-    echo "<div class='row'>";
-        include_once('left_menu.php');
-        echo "<div class='span9'>";
-            /*CAROUSEL*/
-            echo "<div class='well np'>";
-                echo "<div id='myCarousel' class='carousel slide homCar'>";
-                    echo "<div class='carousel-inner'>";
-                        bannerActive($banner_index[1]["id_producto"], "¡Laptops!", "De las mejores marcas.");
-                        banner($banner_index[2]["id_producto"], "Tarjetas gráficas", "Para la mejor experiencia.");
-                        banner($banner_index[3]["id_producto"], "¡Ryden y Radeon!", "Los mejores procesadores.");
-                        banner($banner_index[4]["id_producto"], "Nueva generación", "Intel presenta la décima generación.");
-                    echo "</div>";
-                    echo "<a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>";
-                    echo "<a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>";
-                echo "</div>";
-            echo "</div>";
-            echo "<hr>";
-            echo "<div class='well well-small'>";
-                echo "<h3>Productos.</h3>";
-                echo "<hr class='soften'/>";
-                echo "<div class='row-fluid'>";
-                    echo "<ul class='thumbnails'>";
+    ?>
+    <div class='row'>
+        <?php include_once('left_menu.php');?>
+        <div class='span9'>
+            <!--CAROUSEL-->
+            <div class='well np'>
+                <div id='myCarousel' class='carousel slide homCar'>
+                    <div class='carousel-inner'>
+                        <?php
+                        for($i = 1; $i <= count($banner_list); $i++){
+                            banner($i, $banner_list[$i]["banner"], $banner_list[$i]["titulo"], $banner_list[$i]["descripcion"]);
+                        }
+                        ?>
+                    </div>
+                    <a class='left carousel-control' href='#myCarousel' data-slide='prev'>&lsaquo;</a>
+                    <a class='right carousel-control' href='#myCarousel' data-slide='next'>&rsaquo;</a>
+                </div>
+            </div>
+            <hr>
+            <div class='well well-small'>
+                <h3>Productos.</h3>
+                <hr class='soften'/>
+                <div class='row-fluid'>
+                    <ul class='thumbnails'>
+                        <?php
                         productos(1, $multi_productos[1]["imagen"], $multi_productos[1]["nombre"], $multi_productos[1]["precio"]);
 	                    productos(2, $multi_productos[2]["imagen"], $multi_productos[2]["nombre"], $multi_productos[2]["precio"]);
 	                    productos(3, $multi_productos[3]["imagen"], $multi_productos[3]["nombre"], $multi_productos[3]["precio"]);
-                    echo "</ul>";
-                echo "</div>";
-            echo "</div>";
-            echo "<hr>";
-            /*FEATURED PRODUCTS*/
-            echo "<div class='well well-small'>";
-                echo "<h3>Productos desctados.</h3>";
-                echo "<hr class='soften'/>";
-                echo "<div class='row-fluid'>";
-                    echo "<ul class='thumbnails'>";
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <!--FEATURED PRODUCTS-->
+            <div class='well well-small'>
+                <h3>Productos desctados.</h3>
+                <hr class='soften'/>
+                <div class='row-fluid'>
+                    <ul class='thumbnails'>
+                        <?php
                         featuredProducts(4, $multi_productos[4]["imagen"], $multi_productos[4]["nombre"], $multi_productos[4]["precio"]);
                         featuredProducts(5, $multi_productos[5]["imagen"], $multi_productos[5]["nombre"], $multi_productos[5]["precio"]);
                         featuredProducts(6, $multi_productos[6]["imagen"], $multi_productos[6]["nombre"], $multi_productos[6]["precio"]);
-                    echo "</ul>";
-                echo "</div>";
-            echo "</div>";
-        echo "</div>";
-    echo "</div>";
-	include_once('footer.php');
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    include_once('footer.php');
+    ?>
