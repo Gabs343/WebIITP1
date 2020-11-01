@@ -51,7 +51,7 @@ Body Section
 									<td>
 										<div class='input-append'>
 											<form action="cart.php" method="$_POST">
-												<button class='btn btn-mini btn-danger' name="deleteItem" value="<?php echo $item?>" type='submit' onclick="deleteItem('<?php echo $item; ?>')"><span class='icon-remove'></span></button>
+												<button class='btn btn-mini btn-danger' name="deleteItem" value="<?php echo $item?>" type='submit'><span class='icon-remove'></span></button>
 											</form>
 										</div>
 									</td>
@@ -63,14 +63,6 @@ Body Section
 					}
 				}
 				?>
-
-				<script>
-					function deleteItem(item) {
-						//document.getElementById(item).style.color = "red";
-					
-					}
-				</script>
-
 
 				<tr>
 					<td colspan='6' class='alignR'>Total products:</td>
