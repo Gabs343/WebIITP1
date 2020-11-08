@@ -6,8 +6,7 @@ $json_comentario = fread($f_comentarioR, filesize("comentarios.json"));
 fclose($f_comentarioR);
 $multi_comentarios = json_decode($json_comentario, true);
 
-rsort($multi_comentarios);
-
+asort($multi_comentarios);
 
 function infoProduct($multi_productos, $informacion)
 {
@@ -36,7 +35,7 @@ Body Section
                     <div id="myCarousel" class="carousel slide cntr">
                         <div class="carousel-inner">
                             <div class="item active">
-                                <a href="#"><img src="<?php infoProduct($multi_productos, "imagen");?>" alt="" style="width:100%"></a>
+                                <a href="#"><img src="<?php infoProduct($multi_productos, "imagen"); ?>" alt="" style="width:100%"></a>
                             </div>
                         </div>
                     </div>
@@ -67,13 +66,13 @@ Body Section
                     </p>
                     <form action="<?php $_PHP_SELF ?>" class="form-horizontal qtyFrm" method="POST">
                         <button type='submit' name='cart' class='shopBtn'><span class='icon-shopping-cart'></span> Add to cart</button>
-                        <a href='cart.php'>View cart</a>
                         <?php if (isset($_POST["cart"])) {
                             $carrito["id_producto"][] = $_GET["product"];
                             file_put_contents("carrito.json", json_encode($carrito));
                         }
                         ?>
                     </form>
+                    <a href='cart.php'>View cart</a>
                 </div>
             </div>
             <hr class="softn clr" />
@@ -117,10 +116,10 @@ Body Section
                         </div>
                         <div>
                             <label for="Valoracion">Califica el producto:</label>
-                            <?php 
-                                for($i = 1; $i < 6; $i++){
-                                    echo "<input type='radio' name='valoracion' id='Valoracion' value='$i' required>$i</input>";
-                                }
+                            <?php
+                            for ($i = 1; $i < 6; $i++) {
+                                echo "<input type='radio' name='valoracion' id='Valoracion' value='$i' required>$i</input>";
+                            }
                             ?>
                         </div>
                         <input type="submit" name="enviar" value="Enviar comentario">
@@ -137,8 +136,10 @@ Body Section
                         file_put_contents("comentarios.json", json_encode($multi_comentarios));
                     }
                     echo "<ul>";
+
+                    $numComentario = 0;
                     foreach ($multi_comentarios as $clave) {
-                        if ($clave["id_producto"] == $_GET["product"]) {
+                        if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 3) {
                             echo "<li class='comentario'>";
                             foreach ($clave as $subclave => $subvalor) {
                                 if ($subclave == "id_producto") {
@@ -148,6 +149,7 @@ Body Section
                                 }
                             }
                             echo "</li>";
+                            $numComentario++;
                         }
                     }
                     echo "</ul>";
