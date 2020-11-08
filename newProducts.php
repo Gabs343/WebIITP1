@@ -4,8 +4,8 @@
 	echo "<h3>New Products</h3>";
 	echo "<ul id='galeria' class='thumbnails'>";
 		for($i = 1; $i <= count($multi_productos); $i++){
-            if ($multi_productos[$i]["destacado"]) {
-                productosNuevos($i, $multi_productos[$i]["imagen"], $multi_productos[$i]["nombre"], $multi_productos[$i]["precio"]);
+            if ($multi_productos[$i]["nuevo"]) {
+				productos($multi_productos, $i, $items_navlist);
             }
 		}	
 	echo "</ul>";
