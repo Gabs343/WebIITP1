@@ -5,7 +5,7 @@
 	echo "<ul id='galeria' class='thumbnails'>";
 		for($i = 1; $i <= count($multi_productos); $i++){
             if ($multi_productos[$i]["nuevo"]) {
-				productos($multi_productos, $i);
+				productos($multi_productos, $i, $items_navlist);
             }
 		}	
 	echo "</ul>";

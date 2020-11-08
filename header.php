@@ -44,7 +44,7 @@ function navlist($a_nav)
 		echo "</ul>";
 	}
 
-	function productos($a_productos, $numeroProducto){ ?>
+	function productos($a_productos, $numeroProducto, $a_nav){ ?>
 		<li class="span4">
 			<div class="thumbnail">
 				<?php 
@@ -58,10 +58,10 @@ function navlist($a_nav)
 					echo $a_productos[$numeroProducto]["nuevo"] ? "<a href='#' class='tag'></a>" : "";
 				?>
 
-				<div class="caption <?php echo $a_productos[$numeroProducto]["destacado"] ? "": "cntr"?>">
+				<div class="caption <?php echo $a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"]) ? "": "cntr"?>">
 					<h5><?php echo $a_productos[$numeroProducto]["nombre"]; ?></h5>
 					<?php 
-						if($a_productos[$numeroProducto]["destacado"]){
+						if($a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"])){
 
 							echo "<h4>";
                     		echo "<a class='defaultBtn' href='product_details.php?product=$numeroProducto' title='Click to view'><span class='icon-zoom-in'></span></a>";
