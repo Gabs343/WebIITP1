@@ -46,7 +46,7 @@ function navlist($a_nav){ ?>
 
 function productos($a_productos, $numeroProducto, $a_nav){ ?>
     <li class="span4">
-        <div class="thumbnail">
+        <div id='<?php echo $numeroProducto; ?>'class="thumbnail">
             <?php
 				echo $a_productos[$numeroProducto]["destacado"] ? "" : "<a href='product_details.php?product=$numeroProducto' class='overlay'></a>";
 				?>
@@ -60,8 +60,7 @@ function productos($a_productos, $numeroProducto, $a_nav){ ?>
 				echo $a_productos[$numeroProducto]["nuevo"] ? "<a href='#' class='tag'></a>" : "";
 				?>
 
-            <div
-                class="caption <?php echo $a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"]) ? "" : "cntr" ?>">
+            <div class="caption <?php echo $a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"]) ? "" : "cntr" ?>">
                 <h5><?php echo $a_productos[$numeroProducto]["nombre"]; ?></h5>
                 <?php
 					if ($a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"])) {
@@ -72,8 +71,17 @@ function productos($a_productos, $numeroProducto, $a_nav){ ?>
 						echo "<span class='pull-right'>ARS $" . $a_productos[$numeroProducto]['precio'] . "</span>";
 						echo "</h4>";
 					} else { ?>
-                <p><strong>ARS $ <?php echo $a_productos[$numeroProducto]['precio']; ?></strong></p>
-                <h4><a class='shopBtn' href='#' title='add to cart'> Add to cart </a></h4>
+				<p><strong>ARS $ <?php echo $a_productos[$numeroProducto]['precio']; ?></strong></p>
+				
+				<form action="#" class="form-horizontal qtyFrm" method="POST">
+                        <h4><button type='submit' name='cart' class='shopBtn'><span class='icon-shopping-cart'></span> Add to cart</button></h4>
+                        <?php if (isset($_POST["cart"])) {
+							$carrito["id_producto"][] = strval($numeroProducto); 
+							print_r($carrito);
+                            /*file_put_contents("carrito.json", json_encode($carrito));*/
+                        }
+						?>
+				</form>
                 <div class='actionList'>
                     <a class='pull-left' href='#'>Add to Wish List </a>
                     <a class='pull-left' href='#'> Add to Compare </a>
