@@ -48,9 +48,9 @@
                 <div class='row-fluid'>
                     <ul class='thumbnails'>
                         <?php
-                        productos($multi_productos, 1, $items_navlist);
-                        productos($multi_productos, 2, $items_navlist);
-                        productos($multi_productos, 3, $items_navlist);
+                        productos($multi_productos, 1, $items_navlist, $carrito);
+                        productos($multi_productos, 2, $items_navlist, $carrito);
+                        productos($multi_productos, 3, $items_navlist, $carrito);
                         
                         ?>
                     </ul>
@@ -64,9 +64,9 @@
                 <div class='row-fluid'>
                     <ul class='thumbnails'>
                         <?php
-                        productos($multi_productos, 4, $items_navlist);
-                        productos($multi_productos, 5, $items_navlist);
-                        productos($multi_productos, 7, $items_navlist);
+                        productos($multi_productos, 4, $items_navlist, $carrito);
+                        productos($multi_productos, 5, $items_navlist, $carrito);
+                        productos($multi_productos, 7, $items_navlist, $carrito);
                         ?>
                     </ul>
                 </div>

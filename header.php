@@ -42,14 +42,14 @@ function navlist($a_nav){ ?>
     <?php
 		}
 		echo "</ul>";
-}
+        }
 
-function productos($a_productos, $numeroProducto, $a_nav){ ?>
+function productos($a_productos, $numeroProducto, $a_nav, $carrito){ ?>
     <li class="span4">
         <div id='<?php echo $numeroProducto; ?>'class="thumbnail">
             <?php
 				echo $a_productos[$numeroProducto]["destacado"] ? "" : "<a href='product_details.php?product=$numeroProducto' class='overlay'></a>";
-				?>
+			?>
 
             <a class="zoomTool" href="product_details.php?product=<?php echo $numeroProducto; ?>"
                 title="add to cart"><span class="icon-search"></span>QUICK VIEW</a>
@@ -58,37 +58,39 @@ function productos($a_productos, $numeroProducto, $a_nav){ ?>
 
             <?php
 				echo $a_productos[$numeroProducto]["nuevo"] ? "<a href='#' class='tag'></a>" : "";
-				?>
+			?>
 
             <div class="caption <?php echo $a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"]) ? "" : "cntr" ?>">
                 <h5><?php echo $a_productos[$numeroProducto]["nombre"]; ?></h5>
                 <?php
-					if ($a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"])) {
-
-						echo "<h4>";
-						echo "<a class='defaultBtn' href='product_details.php?product=$numeroProducto' title='Click to view'><span class='icon-zoom-in'></span></a>";
-						echo "<a class='shopBtn' href='#' title='add to cart'><span class='icon-plus'></span></a>";
-						echo "<span class='pull-right'>ARS $" . $a_productos[$numeroProducto]['precio'] . "</span>";
-						echo "</h4>";
-					} else { ?>
+					if ($a_productos[$numeroProducto]["destacado"] && !strpos($_SERVER["PHP_SELF"], $a_nav[3]["archivo"])) { ?>
+						<h4>
+						<form action="index.php" class="form-horizontal qtyFrm" method="POST">
+							<a class='defaultBtn' href='product_details.php?product=<?php echo $numeroProducto; ?>' title='Click to view'><span class='icon-zoom-in'></span></a>
+							<button type='submit' name='item' class='shopBtn' title='add to cart' value="<?php echo $numeroProducto; ?>"><span class='icon-plus'></span></button>
+                            <span class='pull-right'>ARS $<?php echo $a_productos[$numeroProducto]['precio'];?> </span>
+                            
+							<?php if (isset($_POST["item"])) {
+								$carrito["id_producto"][] = $_POST["item"]; 
+                            	file_put_contents("carrito.json", json_encode($carrito));
+                        	}
+                            ?>
+                            
+						</form>
+						</h4>
+					<?php } else { ?>
 				<p><strong>ARS $ <?php echo $a_productos[$numeroProducto]['precio']; ?></strong></p>
 				
-				<form action="#" class="form-horizontal qtyFrm" method="POST">
-                        <h4><button type='submit' name='cart' class='shopBtn'><span class='icon-shopping-cart'></span> Add to cart</button></h4>
-                        <?php if (isset($_POST["cart"])) {
-							$carrito["id_producto"][] = strval($numeroProducto); 
-							print_r($carrito);
-                            /*file_put_contents("carrito.json", json_encode($carrito));*/
-                        }
-						?>
+				<form action="index.php" class="form-horizontal qtyFrm" method="POST">
+                <button type='submit' name='item' value='<?php echo $numeroProducto; ?>' class='shopBtn'><span class='icon-shopping-cart'></span> Add to cart</button>
+                <?php if (isset($_POST["item"])) {
+                    $carrito["id_producto"][] = $_POST["item"];
+                    file_put_contents("carrito.json", json_encode($carrito));
+                }
+                ?>
 				</form>
-                <div class='actionList'>
-                    <a class='pull-left' href='#'>Add to Wish List </a>
-                    <a class='pull-left' href='#'> Add to Compare </a>
-                </div>
                 <br class='clr'>
-                <?php }
-					?>
+                <?php } ?>
             </div>
         </div>
     </li>
@@ -158,8 +160,7 @@ function ActiveBanner($itemBanner){
                                             <input type="text" class="span2" id="inputEmail" placeholder="Email">
                                         </div>
                                         <div class="control-group">
-                                            <input type="password" class="span2" id="inputPassword"
-                                                placeholder="Contraseña">
+                                            <input type="password" class="span2" id="inputPassword" placeholder="Contraseña">
                                         </div>
                                         <div class="control-group">
                                             <label class="checkbox">
