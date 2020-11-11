@@ -2,27 +2,33 @@
 	require_once('header.php');
 	require_once('funcs.php');
 
-	function productosDescripcion($num, $imagen, $nombre, $descripcion, $precio){
-		echo <<< tt
+	function productosDescripcion($a_productos, $numeroProducto, $carrito, $a_nav){ ?>
+	
 		<div class='row-fluid'>
 			<div class="span2">
-				<img src=$imagen alt''>
+				<img src=' <?php echo $a_productos[$numeroProducto]['imagen']; ?>' alt=''>
 			</div>
 			<div class='span6'>
-				<h5>$nombre</h5>
-				<p>$descripcion</p>
+				<h5><?php echo $a_productos[$numeroProducto]['nombre']; ?></h5>
+				<p><?php echo cortar($a_productos[$numeroProducto]['descripción'], 90); ?></p>
 			</div>
 			<div class='span4 alignR'>
-				<form class='form-horizontal qtyFrm'>
-					<h3>ARS $$precio</h3>
+				<form action='list-view.php?page' method='POST' class='form-horizontal qtyFrm'>
+					<h3>ARS $<?php echo $a_productos[$numeroProducto]['precio']; ?></h3>
+		 
 					<div class='btn-group'>
-						<a href='product_details.php?product=$num' class='defaultBtn'><span class='icon-shopping-cart'></span>Add to cart</a>
-						<a href='product_details.php?product=$num' class='shopBtn'>VIEW</a>
+					<button type='submit' name='item' value='<?php echo $numeroProducto; ?>' class='defaultBtn'><span class='icon-shopping-cart'></span> Add to cart</button>
+    				<?php if (isset($_POST["item"])) {
+        				$carrito["id_producto"][] = $_POST["item"];
+        				file_put_contents("carrito.json", json_encode($carrito));
+    				}
+   	 				?>
+					<a href='product_details.php?product=<?php echo $numeroProducto?>' class='shopBtn'>VIEW</a>
 					</div>
 				</form>
 			</div>
 		</div>
-		tt;
+	<?php
 	}
 	?>
 	<div class='row'>
@@ -42,14 +48,13 @@
 					break;
 				}
 				for($i = 1; $i <= 11; $i++){
-					productosDescripcion($producto, $multi_productos[$producto]["imagen"], $multi_productos[$producto]["nombre"], cortar($multi_productos[$producto]["descripción"], 90), $multi_productos[$producto]["precio"]);
+					productosDescripcion($multi_productos, $i, $carrito, $items_navlist);
 					echo "<hr class='soften'>";
 					if($producto == count($multi_productos)){
 					break;
 					}else{
 						$producto++;
 					}
-		
 				}
 				?>	
 			</div>

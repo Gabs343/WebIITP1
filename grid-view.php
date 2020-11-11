@@ -11,7 +11,7 @@
 					echo "<ul id='galeria'class='thumbnails'>";
 						for($i = 1; $i <= count($multi_productos); $i++){
 							if($i < 16){
-								productos($multi_productos, $i, $items_navlist);
+								productos($multi_productos, $i, $items_navlist, $carrito);
 							}else{
 								break;
 							}
