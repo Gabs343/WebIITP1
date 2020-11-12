@@ -48,7 +48,7 @@
 					break;
 				}
 				for($i = 1; $i <= 11; $i++){
-					productosDescripcion($multi_productos, $i, $carrito, $items_navlist);
+					productosDescripcion($multi_productos, $producto, $carrito, $items_navlist);
 					echo "<hr class='soften'>";
 					if($producto == count($multi_productos)){
 					break;
@@ -66,10 +66,10 @@
 		 
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li><a href="#">Prev</a></li>
+			  <li><a href="list-view.php?page=<?php echo $_GET["page"] > 1 ? $_GET["page"] - 1 : "1";?>">Prev</a></li>
 			  <li><a href="list-view.php?page=1">1</a></li>
 			  <li><a href="list-view.php?page=2">2</a></li>
-			  <li><a href="#">Next</a></li>
+			  <li><a href="list-view.php?page=<?php echo $_GET["page"] < 2 ? $_GET["page"] + 1 : "2";?>">Next</a></li>
 			</ul>	
 		  </div>
 		</div>
