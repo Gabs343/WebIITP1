@@ -27,7 +27,7 @@ Footer
 
 <div class="copyright">
 	<div class="container">
-		<p class="text-center">Copyright &copy; 2020. Trabajo práctico 1 Programación Web II</p>
+		<p class="text-center">Copyright &copy; 2020. Trabajo práctico 2 Programación Web II</p>
 	</div>
 </div>
 </div>
