@@ -16,6 +16,11 @@ function infoProduct($multi_productos, $informacion)
         }
     }
 }
+
+function comentario($txt) {?>
+    <script>alert("<?php echo $txt; ?>")</script>
+<?php }
+
 ?>
 <!-- 
 Body Section 
@@ -122,7 +127,7 @@ Body Section
                             }
                             ?>
                         </div>
-                        <input type="submit" name="enviar" value="Enviar comentario">
+                        <input class="shopBtn" type="submit" name="enviar" value="Enviar comentario">
                     </form>
                     <?php
                     if (isset($_POST["enviar"])) {
@@ -134,6 +139,7 @@ Body Section
                         $multi_comentarios[$key] = $_POST;
 
                         file_put_contents("comentarios.json", json_encode($multi_comentarios));
+                        comentario('Gracias por su comentario, ¡lo apreciamos!');
                     }
                     echo "<ul>";
 
