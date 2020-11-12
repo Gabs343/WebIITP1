@@ -1,5 +1,9 @@
 <?php
 	require_once("header.php");
+
+	function consulta($txt) {?>
+		<script>alert("<?php echo $txt; ?>")</script>
+	<?php }
 ?>
 <!-- 
 Body Section 
@@ -10,14 +14,14 @@ Body Section
 	<hr class="soften"/>	
 	<div class="row-fluid">
 		<div class="span8 relative">
-		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Newbury+Street,+Boston,+MA,+United+States&amp;aq=1&amp;oq=NewBoston,+MA,+United+States&amp;sll=42.347238,-71.084011&amp;sspn=0.014099,0.033023&amp;ie=UTF8&amp;hq=Newbury+Street,+Boston,+MA,+United+States&amp;t=m&amp;ll=42.348994,-71.088248&amp;spn=0.001388,0.006276&amp;z=18&amp;iwloc=A&amp;output=embed"></iframe>
+		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105045.10146632943!2d-58.607159858850494!3d-34.6380460301668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca25d18ad68b%3A0xf3698defdb8ec4b9!2sGezatek!5e0!3m2!1ses!2sar!4v1605213211861!5m2!1ses!2sar"></iframe>
 
 		<div class="absoluteBlk">
 		<div class="well wellsmall">
 		<h4>Visitanos</h4>
 		<h5>
-			2601 Mission St.<br/>
-			San Francisco, CA 94110<br/>
+			Av. Carabobo 11,<br/>
+			Caballito, Buenos Aires<br/>
 		</h5>
 		</div>
 		</div>
@@ -79,11 +83,8 @@ $multi_consulta = json_decode($json_consulta, true);
 if (isset($_POST["enviar"])){
 	array_pop($_POST);
     array_push($multi_consulta, $_POST);
-    $f_consulta = fopen("contactanos.json", "w");
-    fwrite($f_consulta, json_encode($multi_consulta));
-	fclose($f_consulta);
-    echo "<p class='text-center'><strong>Muchas gracias por tu consulta.</strong></p>";
-    echo "<br>";
+	file_put_contents("contactanos.json", json_encode($multi_consulta));
+	consulta('Muchas gracias por su consulta, ya nos contactaremos con vos.');
 }
 
 
