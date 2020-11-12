@@ -38,7 +38,7 @@ function navlist($a_nav){ ?>
     <?php
 		foreach ($a_nav as $clave => $valor) { ?>
     <li class=<?php Active($valor["archivo"]) ?>><a
-            href=<?php echo $valor["archivo"] . "?page"; ?>><?php echo $valor["nombre"]; ?></a></li>
+            href="<?php echo $valor["archivo"]."?page=1" ?>"><?php echo $valor["nombre"]; ?></a></li>
     <?php
 		}
 		echo "</ul>";
