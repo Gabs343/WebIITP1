@@ -10,6 +10,11 @@ $json_carrito = fread($f_carritoR, filesize("carrito.json"));
 fclose($f_carritoR);
 $carrito = json_decode($json_carrito, true);
 
+$f_correos = fopen("correos.json", "r");
+$json_correos = fread($f_correos, filesize("correos.json"));
+fclose($f_correos);
+$multi_suscritos = json_decode($json_correos, true);
+
 $items_navlist = array(
 	1 => array(
 		"archivo" => "index.php",
@@ -103,6 +108,11 @@ function Active($menu){
 function ActiveBanner($itemBanner){
 	echo $itemBanner == 1 ? "active" : "";
 }
+
+function suscripcion($txt) {?>
+    <script>alert("<?php echo $txt; ?>")</script>
+<?php }
+
 ?>
 
 <!DOCTYPE html>
@@ -148,28 +158,38 @@ function ActiveBanner($itemBanner){
                         <?php
 						navlist($items_navlist);
 						?>
-                        <form action="#" class="navbar-search pull-left">
+                        <!--<form action="#" class="navbar-search pull-left">
                             <input type="text" placeholder="Search" class="span2">
-                        </form>
+                        </form>-->
                         <ul class="nav pull-right">
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span
-                                        class="icon-lock"></span> Ingresa <b class="caret"></b></a>
+                                        class="icon-lock"></span> ¡Suscribite! <b class="caret"></b></a>
                                 <div class="dropdown-menu">
-                                    <form class="form-horizontal loginFrm">
+                                    <form class="form-horizontal loginFrm" method="post">
                                         <div class="control-group">
-                                            <input type="text" class="span2" id="inputEmail" placeholder="Email">
+                                            <input type="email" class="span2" name="email" placeholder="Email" required>
                                         </div>
                                         <div class="control-group">
-                                            <input type="password" class="span2" id="inputPassword" placeholder="Contraseña">
+                                            <input type="text" class="span2" name="nombre" placeholder="Nombre" required>
                                         </div>
                                         <div class="control-group">
-                                            <label class="checkbox">
-                                                <input type="checkbox"> Recuerdame
-                                            </label>
-                                            <button type="submit" class="shopBtn btn-block">Ingresar</button>
+                                            <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
+                                        </div>
+                                        <div class="control-group">
+                                            <button type="submit" class="shopBtn btn-block" name="enviar">Suscribirse.</button>
                                         </div>
                                     </form>
+                                    <?php 
+
+                                        if (isset($_POST["enviar"])){
+	                                        array_pop($_POST);
+                                            array_push($multi_suscritos, $_POST);
+	                                        file_put_contents("correos.json", json_encode($multi_suscritos));
+	                                        suscripcion('Muchas gracias por suscribirte, '.$_POST["nombre"].'.');
+                                        }
+
+                                    ?>
                                 </div>
                             </li>
                         </ul>
@@ -191,3 +211,4 @@ function ActiveBanner($itemBanner){
                     </div>
                 </div>
             </header>
+

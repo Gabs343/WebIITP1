@@ -33,17 +33,17 @@ Body Section
         <fieldset>
           <div class="control-group">
            
-              <input type="text" placeholder="Nombre" name="nombre" class="input-xlarge"/>
+              <input type="text" placeholder="Nombre" name="nombre" class="input-xlarge" required/>
            
           </div>
 		  <div class="control-group">
            
-              <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge"/>
+              <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge" required/>
            
           </div>
 		  <div class="control-group">
            
-		   <input type="text" placeholder="E-mail" name="email" class="input-xlarge"/>
+		   <input type="email" placeholder="@example.com" name="email" class="input-xlarge" required/>
 		
 	   </div>
 		 <div class="control-group">
@@ -84,7 +84,7 @@ if (isset($_POST["enviar"])){
 	array_pop($_POST);
     array_push($multi_consulta, $_POST);
 	file_put_contents("contactanos.json", json_encode($multi_consulta));
-	consulta('Muchas gracias por su consulta, ya nos contactaremos con vos.');
+	consulta('Muchas gracias por su consulta, '.$_POST["nombre"].', ya nos contactaremos con vos.');
 }
 
 
