@@ -1,14 +1,12 @@
 <?php
-require_once('funcs.php');
-$f_productoR = fopen("productos.json", "r");
-$json_producto = fread($f_productoR, filesize("productos.json"));
-fclose($f_productoR);
-$multi_productos = json_decode($json_producto, true);
 
-$f_carritoR = fopen("carrito.json", "r");
-$json_carrito = fread($f_carritoR, filesize("carrito.json"));
-fclose($f_carritoR);
-$carrito = json_decode($json_carrito, true);
+require_once ("funcs.php");
+
+$multi_productos = json_decode(file_get_contents('productos.json'), true);
+
+$carrito = json_decode(file_get_contents('carrito.json'), true);
+
+$multi_suscritos = json_decode(file_get_contents('correos.json'), true);
 
 $items_navlist = array(
 	1 => array(
@@ -114,6 +112,11 @@ function Active($menu){
 function ActiveBanner($itemBanner){
 	echo $itemBanner == 1 ? "active" : "";
 }
+
+function suscripcion($txt) {?>
+    <script>alert("<?php echo $txt; ?>")</script>
+<?php }
+
 ?>
 
 <!DOCTYPE html>
@@ -159,28 +162,38 @@ function ActiveBanner($itemBanner){
                         <?php
 						navlist($items_navlist);
 						?>
-                        <form action="#" class="navbar-search pull-left">
+                        <!--<form action="#" class="navbar-search pull-left">
                             <input type="text" placeholder="Search" class="span2">
-                        </form>
+                        </form>-->
                         <ul class="nav pull-right">
                             <li class="dropdown">
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span
-                                        class="icon-lock"></span> Ingresa <b class="caret"></b></a>
+                                        class="icon-lock"></span> ¡Suscribite! <b class="caret"></b></a>
                                 <div class="dropdown-menu">
-                                    <form class="form-horizontal loginFrm">
+                                    <form class="form-horizontal loginFrm" method="post">
                                         <div class="control-group">
-                                            <input type="text" class="span2" id="inputEmail" placeholder="Email">
+                                            <input type="email" class="span2" name="email" placeholder="Email" required>
                                         </div>
                                         <div class="control-group">
-                                            <input type="password" class="span2" id="inputPassword" placeholder="Contraseña">
+                                            <input type="text" class="span2" name="nombre" placeholder="Nombre" required>
                                         </div>
                                         <div class="control-group">
-                                            <label class="checkbox">
-                                                <input type="checkbox"> Recuerdame
-                                            </label>
-                                            <button type="submit" class="shopBtn btn-block">Ingresar</button>
+                                            <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
+                                        </div>
+                                        <div class="control-group">
+                                            <button type="submit" class="shopBtn btn-block" name="suscribirse">Suscribirse.</button>
                                         </div>
                                     </form>
+                                    <?php 
+
+                                        if (isset($_POST["suscribirse"])){
+	                                        array_pop($_POST);
+                                            array_push($multi_suscritos, $_POST);
+	                                        file_put_contents("correos.json", json_encode($multi_suscritos));
+	                                        suscripcion('Muchas gracias por suscribirte, '.$_POST["nombre"].'.');
+                                        }
+
+                                    ?>
                                 </div>
                             </li>
                         </ul>
@@ -202,3 +215,4 @@ function ActiveBanner($itemBanner){
                     </div>
                 </div>
             </header>
+

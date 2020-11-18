@@ -1,5 +1,6 @@
 <?php
 	require_once("header.php");
+	require_once("correo_respuesta.php");
 
 	function consulta($txt) {?>
 		<script>alert("<?php echo $txt; ?>")</script>
@@ -29,21 +30,21 @@ Body Section
 		
 		<div class="span4">
 		<h4>Contactanos</h4>
-		<form method="post" action="contact.php" class="form-horizontal">
+		<form method="post" action="correo_respuesta.php" class="form-horizontal">
         <fieldset>
           <div class="control-group">
            
-              <input type="text" placeholder="Nombre" name="nombre" class="input-xlarge"/>
+              <input type="text" placeholder="Nombre" name="nombre" class="input-xlarge" required/>
            
           </div>
 		  <div class="control-group">
            
-              <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge"/>
+              <input type="text" placeholder="Apellido" name="apellido" class="input-xlarge" required/>
            
           </div>
 		  <div class="control-group">
            
-		   <input type="text" placeholder="E-mail" name="email" class="input-xlarge"/>
+		   <input type="email" placeholder="@example.com" name="email" class="input-xlarge" required/>
 		
 	   </div>
 		 <div class="control-group">
@@ -72,23 +73,6 @@ Body Section
 	 </fieldset>
    </form>
 
-<?php
-
-
-$f_consultar = fopen("contactanos.json", "r");
-$json_consulta = fread($f_consultar, filesize("contactanos.json"));
-fclose($f_consultar);
-$multi_consulta = json_decode($json_consulta, true);
-
-if (isset($_POST["enviar"])){
-	array_pop($_POST);
-    array_push($multi_consulta, $_POST);
-	file_put_contents("contactanos.json", json_encode($multi_consulta));
-	consulta('Muchas gracias por su consulta, ya nos contactaremos con vos.');
-}
-
-
-?>
 		</div>
 	</div>	
 </div>
