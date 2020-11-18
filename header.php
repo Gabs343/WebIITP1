@@ -1,5 +1,5 @@
 <?php
-
+require_once('funcs.php');
 $f_productoR = fopen("productos.json", "r");
 $json_producto = fread($f_productoR, filesize("productos.json"));
 fclose($f_productoR);
@@ -32,6 +32,17 @@ $items_navlist = array(
 		"nombre" => "Contacto"
 	)
 );
+
+$size_image = array(0 => array('nombre'=>'small','ancho'=>'500','alto'=>'1000')
+                    /*1 => array('nombre'=>'big','ancho'=>'5000','alto'=>'10000'),
+                    /*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
+
+for($i = 1; $i <= count($multi_productos); $i++){
+    if(!is_dir("imagenes/".$i."/")){
+        mkdir("imagenes/".$i."/");
+        redimensionar("imagenes/".$i."/", $multi_productos[$i]["imagen"], $multi_productos[$i]["imagen"], $multi_productos[$i]["id_producto"], $size_image);
+    }
+}
 
 function navlist($a_nav){ ?>
 <ul class='nav'>
