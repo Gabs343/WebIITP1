@@ -1,7 +1,5 @@
 <?php
 
-
-
 /*Funcion de redireccionamiento de paginas*/
 
 function redirect($pURL) 

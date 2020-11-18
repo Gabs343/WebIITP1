@@ -1,13 +1,8 @@
 <?php
-	$f_marcaR = fopen("marcas.json", "r");
-	$json_marca = fread($f_marcaR, filesize("marcas.json"));
-	fclose($f_marcaR);
-	$marca = json_decode($json_marca, true);
 
-	$f_categoriaR = fopen("categorias.json", "r");
-	$json_categoria = fread($f_categoriaR, filesize("categorias.json"));
-	fclose($f_categoriaR);
-	$categoria = json_decode($json_categoria, true);
+	$marca = json_decode(file_get_contents('marcas.json'), true);
+
+	$categoria = json_decode(file_get_contents('categorias.json'), true);
 
 ?>
 
