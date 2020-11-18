@@ -1,6 +1,5 @@
 <?php
 	require_once('header.php');
-	require_once('funcs.php');
 
 	function productosDescripcion($a_productos, $numeroProducto, $carrito, $a_nav){ ?>
 	

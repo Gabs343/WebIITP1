@@ -127,10 +127,10 @@ Body Section
                             }
                             ?>
                         </div>
-                        <input class="shopBtn" type="submit" name="enviar" value="Enviar comentario">
+                        <input class="shopBtn" type="submit" name="comentar" value="Enviar comentario">
                     </form>
                     <?php
-                    if (isset($_POST["enviar"])) {
+                    if (isset($_POST["comentar"])) {
                         date_default_timezone_set("America/Argentina/Buenos_Aires");
                         $key = date("YmdHis");
 

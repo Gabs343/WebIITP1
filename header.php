@@ -1,19 +1,12 @@
 <?php
 
-$f_productoR = fopen("productos.json", "r");
-$json_producto = fread($f_productoR, filesize("productos.json"));
-fclose($f_productoR);
-$multi_productos = json_decode($json_producto, true);
+require_once ("funcs.php");
 
-$f_carritoR = fopen("carrito.json", "r");
-$json_carrito = fread($f_carritoR, filesize("carrito.json"));
-fclose($f_carritoR);
-$carrito = json_decode($json_carrito, true);
+$multi_productos = json_decode(file_get_contents('productos.json'), true);
 
-$f_correos = fopen("correos.json", "r");
-$json_correos = fread($f_correos, filesize("correos.json"));
-fclose($f_correos);
-$multi_suscritos = json_decode($json_correos, true);
+$carrito = json_decode(file_get_contents('carrito.json'), true);
+
+$multi_suscritos = json_decode(file_get_contents('correos.json'), true);
 
 $items_navlist = array(
 	1 => array(
@@ -37,6 +30,17 @@ $items_navlist = array(
 		"nombre" => "Contacto"
 	)
 );
+
+$size_image = array(0 => array('nombre'=>'small','ancho'=>'500','alto'=>'1000')
+                    /*1 => array('nombre'=>'big','ancho'=>'5000','alto'=>'10000'),
+                    /*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
+
+for($i = 1; $i <= count($multi_productos); $i++){
+    if(!is_dir("imagenes/".$i."/")){
+        mkdir("imagenes/".$i."/");
+        redimensionar("imagenes/".$i."/", $multi_productos[$i]["imagen"], $multi_productos[$i]["imagen"], $multi_productos[$i]["id_producto"], $size_image);
+    }
+}
 
 function navlist($a_nav){ ?>
 <ul class='nav'>
@@ -177,12 +181,12 @@ function suscripcion($txt) {?>
                                             <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
                                         </div>
                                         <div class="control-group">
-                                            <button type="submit" class="shopBtn btn-block" name="enviar">Suscribirse.</button>
+                                            <button type="submit" class="shopBtn btn-block" name="suscribirse">Suscribirse.</button>
                                         </div>
                                     </form>
                                     <?php 
 
-                                        if (isset($_POST["enviar"])){
+                                        if (isset($_POST["suscribirse"])){
 	                                        array_pop($_POST);
                                             array_push($multi_suscritos, $_POST);
 	                                        file_put_contents("correos.json", json_encode($multi_suscritos));

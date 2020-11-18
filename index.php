@@ -15,6 +15,7 @@
                     "titulo" => "Nueva generación",
                     "descripcion" => "Intel presenta la décima generación.")
     );
+    
     function banner($banner, $ruta, $titulo, $descripcion){?>
         <div class="item <?php ActiveBanner($banner);?>">
             <img style='width:100%' src="<?php echo $ruta; ?>" alt='bootstrap ecommerce templates'>
