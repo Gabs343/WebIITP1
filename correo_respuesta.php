@@ -18,7 +18,7 @@ $mail->Host       = 'smtp.gmail.com';
 $mail->Port       = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth   = true;
-$mail->Username   = "username@davinci.edu.ar";
+$mail->Username   = "user@davinci.edu.ar";
 $mail->Password   = "password";
 
 
