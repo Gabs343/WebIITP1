@@ -1,12 +1,9 @@
 <?php
 require_once("header.php");
 
-$f_comentarioR = fopen("comentarios.json", "r");
-$json_comentario = fread($f_comentarioR, filesize("comentarios.json"));
-fclose($f_comentarioR);
-$multi_comentarios = json_decode($json_comentario, true);
+$multi_comentarios = json_decode(file_get_contents('comentarios.json'), true);
 
-asort($multi_comentarios);
+arsort($multi_comentarios);
 
 function infoProduct($multi_productos, $informacion)
 {
@@ -146,7 +143,7 @@ Body Section
                     $numComentario = 0;
                     foreach ($multi_comentarios as $clave) {
                         if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 3) {
-                            echo "<li class='comentario'>";
+                            echo "<li>";
                             foreach ($clave as $subclave => $subvalor) {
                                 if ($subclave == "id_producto") {
                                     continue;
