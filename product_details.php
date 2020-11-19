@@ -6,7 +6,7 @@ $json_comentario = fread($f_comentarioR, filesize("comentarios.json"));
 fclose($f_comentarioR);
 $multi_comentarios = json_decode($json_comentario, true);
 
-asort($multi_comentarios);
+arsort($multi_comentarios);
 
 function infoProduct($multi_productos, $informacion)
 {

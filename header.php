@@ -33,7 +33,7 @@ $items_navlist = array(
 
 $size_image = array(0 => array('nombre'=>'small','ancho'=>'500','alto'=>'1000')
                     /*1 => array('nombre'=>'big','ancho'=>'5000','alto'=>'10000'),
-                    /*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
+/*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
 
 for($i = 1; $i <= count($multi_productos); $i++){
     if(!is_dir("imagenes/".$i."/")){
