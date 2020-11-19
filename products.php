@@ -1,30 +1,33 @@
 <?php
 	include_once('header.php');
 
-	function productosDescripcion($num, $imagen, $nombre, $descripcion, $precio){
-		echo <<< tt
+	function productosDescripcion($a_productos, $numeroProducto, $carrito){ ?>
+	
 		<div class='row-fluid'>
 			<div class="span2">
-				<img src=$imagen alt''>
+				<img src=' <?php echo $a_productos[$numeroProducto]['imagen']; ?>' alt=''>
 			</div>
 			<div class='span6'>
-				<h5>$nombre</h5>
-				<p>$descripcion</p>
+				<h5><?php echo $a_productos[$numeroProducto]['nombre']; ?></h5>
+				<p><?php echo cortar($a_productos[$numeroProducto]['descripción'], 90); ?></p>
 			</div>
 			<div class='span4 alignR'>
-				<form class='form-horizontal qtyFrm'>
-					<h3>$precio</h3>
-					<label class='checkbox'>
-						<input type='checkbox'>Adds product to compair
-					</label><br>
+				<form action='list-view.php?page' method='POST' class='form-horizontal qtyFrm'>
+					<h3>ARS $<?php echo $a_productos[$numeroProducto]['precio']; ?></h3>
+		 
 					<div class='btn-group'>
-						<a href='product_details.php?product=$num' class='defaultBtn'><span class='icon-shopping-cart'></span>Add to cart</a>
-						<a href='product_details.php?product=$num' class='shopBtn'>VIEW</a>
+					<button type='submit' name='item' value='<?php echo $numeroProducto; ?>' class='defaultBtn'><span class='icon-shopping-cart'></span> Add to cart</button>
+    				<?php if (isset($_POST["item"])) {
+        				$carrito["id_producto"][] = $_POST["item"];
+        				file_put_contents("carrito.json", json_encode($carrito));
+    				}
+   	 				?>
+					<a href='product_details.php?product=<?php echo $numeroProducto?>' class='shopBtn'>VIEW</a>
 					</div>
 				</form>
 			</div>
 		</div>
-		tt;
+	<?php
 	}
 
 	echo "<div class='row'>";
@@ -32,11 +35,11 @@
 		echo "<div class='span9'>";
 			echo "<div class='well well-small'>";
 				foreach($multi_productos as $clave){
-					static $contProducto = 1;
+					static $contador = 1;
 					if(($clave["id_categoria"] == $_GET["categoria"] && $clave["id_marca"] == $_GET["marca"]) || ($clave["id_categoria"] == $_GET["categoria"] && $_GET["marca"] == 0) || ($clave["id_marca"] == $_GET["marca"] && $_GET["categoria"] == 0)){ 
-						productosDescripcion($contProducto, $multi_productos[$contProducto]["imagen"],$multi_productos[$contProducto]["nombre"], $multi_productos[$contProducto]["descripción"], $multi_productos[$contProducto]["precio"]);
+						productosDescripcion($multi_productos, $contador, $carrito);
 					}
-					$contProducto ++;
+					$contador ++;
 				}		
 			echo "</div>";
 		echo "</div>";
