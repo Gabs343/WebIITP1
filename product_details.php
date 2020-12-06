@@ -144,7 +144,6 @@ Body Section
                         ?>    
                     </form>
                     <?php
-                     $multi_comentarios = json_decode(file_get_contents('comentarios.json'), true);
                      krsort($multi_comentarios);
                      echo "<ul>";
 
