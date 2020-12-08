@@ -23,7 +23,7 @@ $items_navlist = array(
 	),
 	4 => array(
 		"archivo" => "newProducts.php",
-		"nombre" => "Nuevos productos"
+		"nombre" => "Productos destacados"
 	),
 	5 => array(
 		"archivo" => "contact.php",
