@@ -3,8 +3,12 @@ require_once("header.php");
 
 $multi_comentarios = json_decode(file_get_contents('comentarios.json'), true);
 
+<<<<<<< HEAD
 sort($multi_comentarios);
 #arsort($multi_comentarios);
+=======
+krsort($multi_comentarios);
+>>>>>>> master
 
 function infoProduct($multi_productos, $informacion)
 {
@@ -110,6 +114,10 @@ Body Section
                     ?>
                     <form action="<?php $_PHP_SELF ?>" class="form_comments" method="post">
                         <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+                        </div>
+                        <div>
                             <label for="Mail">Email:</label>
                             <input type="email" placeholder="@example.com" id="Mail" name="id_correo" required>
                         </div>
@@ -126,8 +134,22 @@ Body Section
                             ?>
                         </div>
                         <input class="shopBtn" type="submit" name="comentar" value="Enviar comentario">
+                        <?php
+                             if (isset($_POST["comentar"])) {
+                                date_default_timezone_set("America/Argentina/Buenos_Aires");
+                                $key = date("YmdHis");
+        
+                                array_pop($_POST);
+                                $_POST = array("id_producto" => $_GET["product"], "fecha" => date("d-m-Y H:i:s"), "nombre" => $_POST["nombre"]) + $_POST;
+                                $multi_comentarios[$key] = $_POST;
+        
+                                file_put_contents("comentarios.json", json_encode($multi_comentarios));
+                                comentario('Gracias por su comentario, ¡lo apreciamos!');
+                            }
+                        ?>    
                     </form>
                     <?php
+<<<<<<< HEAD
                     if (isset($_POST["comentar"])) {
                         date_default_timezone_set("America/Argentina/Buenos_Aires");
                         $key = date("YmdHis");
@@ -157,6 +179,28 @@ Body Section
                         }
                     }
                     echo "</ul>";
+=======
+                     krsort($multi_comentarios);
+                     echo "<ul>";
+
+                     $numComentario = 0;
+                     foreach ($multi_comentarios as $clave) {
+                         if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 3) {
+                             echo "<li>";
+                             foreach ($clave as $subclave => $subvalor) {
+                                 if ($subclave == "id_producto") {
+                                     continue;
+                                 } else {
+                                     echo $subclave, ": ", $subvalor, "<br>";
+                                 }
+                             }
+                             echo "</li>";
+                             $numComentario++;
+                         }
+                     }
+                     echo "</ul>";
+                   
+>>>>>>> master
                     ?>
 
                 </div>
