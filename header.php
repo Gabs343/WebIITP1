@@ -33,7 +33,7 @@ $items_navlist = array(
 
 $size_image = array(0 => array('nombre'=>'small','ancho'=>'500','alto'=>'1000')
                     /*1 => array('nombre'=>'big','ancho'=>'5000','alto'=>'10000'),
-                    /*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
+/*2 => array('nombre'=>'thumb','ancho'=>'50','alto'=>'50')*/);
 
 for($i = 1; $i <= count($multi_productos); $i++){
     if(!is_dir("imagenes/".$i."/")){
@@ -181,8 +181,12 @@ function suscripcion($txt) {?>
                                             <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
                                         </div>
                                         <div class="control-group">
+                                            <input type="text" class="span2" name="edad" placeholder="Apellido" required>
+                                        </div>
+                                        <div class="control-group">
                                             <button type="submit" class="shopBtn btn-block" name="suscribirse">Suscribirse.</button>
                                         </div>
+                                        
                                     </form>
                                     <?php 
 
