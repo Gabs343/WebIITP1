@@ -23,7 +23,7 @@ $items_navlist = array(
 	),
 	4 => array(
 		"archivo" => "newProducts.php",
-		"nombre" => "Nuevos productos"
+		"nombre" => "Productos destacados"
 	),
 	5 => array(
 		"archivo" => "contact.php",
@@ -179,9 +179,6 @@ function suscripcion($txt) {?>
                                         </div>
                                         <div class="control-group">
                                             <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
-                                        </div>
-                                        <div class="control-group">
-                                            <input type="text" class="span2" name="edad" placeholder="Apellido" required>
                                         </div>
                                         <div class="control-group">
                                             <button type="submit" class="shopBtn btn-block" name="suscribirse">Suscribirse.</button>

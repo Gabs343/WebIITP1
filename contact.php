@@ -60,28 +60,26 @@ Body Section
 	   </div>
 		 <div class="control-group">
 		
-		   <input type="tel" placeholder="Celular" name="celular" class="input-xlarge"/>
+		   <input type="tel" placeholder="Celular" name="celular" pattern="[0-9]{8}" class="input-xlarge" required/>
 	   
 		   </div>
 	   <div class="control-group">
 		 Area de la empresa:
-			 <select name="area" class="input-xlarge">
+			 <select name="area" class="input-xlarge" required>
 				 <option value="soporte" selected="selected">Soporte de sistema</option>
 				 <option value="ventas">Sector de ventas</option>  
 				 <option value="productos">Area de productos</option>
 				 <option value="rrhh">Recursos Humanos</option>
 			 </select>
-		   
 	   </div>
 
 	   <div class="control-group">
-		   <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge"></textarea>
-		
+		   <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge" required></textarea>
 	   </div>
 
 	   <div class="control-group">
 		Enviar un archivo:
-		<input type="file" name="in_archivo" class="input-xlarge"/>
+		<input type="file" name="in_archivo" class="row span11">
 		</div>
 
 		 <button class="shopBtn" type="submit" name="enviar">Enviar</button>

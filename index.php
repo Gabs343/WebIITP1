@@ -60,7 +60,7 @@
             <hr>
             <!--FEATURED PRODUCTS-->
             <div class='well well-small'>
-                <h3>Productos desctados.</h3>
+                <h3>Nuevos productos.</h3>
                 <hr class='soften'/>
                 <div class='row-fluid'>
                     <ul class='thumbnails'>

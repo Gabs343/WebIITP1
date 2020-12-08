@@ -1,1 +1,30 @@
-{"1":{"id_marca":1,"nombre":"Redragon"},"2":{"id_marca":2,"nombre":"Aureox"},"3":{"id_marca":3,"nombre":"Sentey"},"4":{"id_marca":4,"nombre":"Lenovo"},"5":{"id_marca":5,"nombre":"Asus"},"6":{"id_marca":6,"nombre":"Cougar"},"7":{"id_marca":7,"nombre":"Nvidia"}}
+{
+    "1": {
+        "id_marca": 1,
+        "nombre": "Redragon"
+    },
+    "2": {
+        "id_marca": 2,
+        "nombre": "Aureox"
+    },
+    "3": {
+        "id_marca": 3,
+        "nombre": "Sentey"
+    },
+    "4": {
+        "id_marca": 4,
+        "nombre": "Lenovo"
+    },
+    "5": {
+        "id_marca": 5,
+        "nombre": "Asus"
+    },
+    "6": {
+        "id_marca": 6,
+        "nombre": "Cougar"
+    },
+    "7": {
+        "id_marca": 7,
+        "nombre": "Nvidia"
+    }
+}
