@@ -30,7 +30,18 @@ Body Section
 		
 		<div class="span4">
 		<h4>Contactanos</h4>
-		<form method="post" action="correo_respuesta.php" class="form-horizontal">
+		<?php 
+
+		if(isset($_FILES['in_archivo'])) {
+			$nombre_ar= $_FILES['in_archivo']['name'];
+			$nombre_ar_tmp = $_FILES['in_archivo']['tmp_name'];
+
+			move_uploaded_file($nombre_ar_tmp, "contactos/".$nombre_ar);
+
+		}
+		?>
+
+		<form method="post" action="correo_respuesta.php" enctype="multipart/form-data" class="form-horizontal">
         <fieldset>
           <div class="control-group">
            
@@ -67,6 +78,11 @@ Body Section
 		   <textarea rows="3" id="textarea" name="mensaje" class="input-xlarge"></textarea>
 		
 	   </div>
+
+	   <div class="control-group">
+		Enviar un archivo:
+		<input type="file" name="in_archivo" class="input-xlarge"/>
+		</div>
 
 		 <button class="shopBtn" type="submit" name="enviar">Enviar</button>
 
