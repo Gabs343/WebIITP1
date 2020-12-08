@@ -18,8 +18,8 @@ $mail->Host       = 'smtp.gmail.com';
 $mail->Port       = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth   = true;
-$mail->Username   = "user@davinci.edu.ar";
-$mail->Password   = "password";
+$mail->Username   = "isaac.hernandez@davinci.edu.ar";
+$mail->Password   = "diamonD10.";
 
 
 $mail->SetFrom('isaac.hernandez@davinci.edu.ar', 'Isaac Hernández');

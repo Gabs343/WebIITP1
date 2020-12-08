@@ -1,1 +1,32 @@
-{"1":{"email":"isaac.hernandez@davinci.edu.ar","nombre":"Isaac","apellido":"Hern\u00e1ndez"},"2":{"email":"gabriel.lopezp@davinci.edu.ar","nombre":"Gabriel","apellido":"L\u00f3pez"},"3":{"email":"alejandro.guevara@gmail.com","nombre":"Alejandro","apellido":"Guevara"},"4":{"email":"gatoperro@gmail.com","nombre":"Gato","apellido":"casa"},"5":{"email":"igna27cha@gmail.com","nombre":"Ignacio","apellido":"Chalbaud"},"6":{"nombre":"Isa","apellido":"Perez","email":"isaca1996@gmail.com","celular":"8952437791","area":"productos","mensaje":"Me gustar\u00eda ver el presupuesto de un armado de pc, gracias. "},"7":{"email":"isaachernandez@gmail.com","nombre":"Isaac","apellido":"Hernandez"}}
+{
+    "1": {
+        "email": "isaac.hernandez@davinci.edu.ar",
+        "nombre": "Isaac",
+        "apellido": "Hern\u00e1ndez"
+    },
+    "2": {
+        "email": "gabriel.lopezp@davinci.edu.ar",
+        "nombre": "Gabriel",
+        "apellido": "L\u00f3pez"
+    },
+    "3": {
+        "email": "alejandro.guevara@gmail.com",
+        "nombre": "Alejandro",
+        "apellido": "Guevara"
+    },
+    "4": {
+        "email": "gatoperro@gmail.com",
+        "nombre": "Gato",
+        "apellido": "casa"
+    },
+    "5": {
+        "email": "igna27cha@gmail.com",
+        "nombre": "Ignacio",
+        "apellido": "Chalbaud"
+    },
+    "6": {
+        "email": "isaachernandez@gmail.com",
+        "nombre": "Isaac",
+        "apellido": "Hernandez"
+    }
+}

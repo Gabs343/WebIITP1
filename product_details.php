@@ -3,7 +3,8 @@ require_once("header.php");
 
 $multi_comentarios = json_decode(file_get_contents('comentarios.json'), true);
 
-arsort($multi_comentarios);
+sort($multi_comentarios);
+#arsort($multi_comentarios);
 
 function infoProduct($multi_productos, $informacion)
 {
@@ -142,7 +143,7 @@ Body Section
 
                     $numComentario = 0;
                     foreach ($multi_comentarios as $clave) {
-                        if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 3) {
+                        if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 4) {
                             echo "<li>";
                             foreach ($clave as $subclave => $subvalor) {
                                 if ($subclave == "id_producto") {
