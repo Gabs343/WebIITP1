@@ -3,12 +3,7 @@ require_once("header.php");
 
 $multi_comentarios = json_decode(file_get_contents('comentarios.json'), true);
 
-<<<<<<< HEAD
-sort($multi_comentarios);
-#arsort($multi_comentarios);
-=======
 krsort($multi_comentarios);
->>>>>>> master
 
 function infoProduct($multi_productos, $informacion)
 {
@@ -149,37 +144,6 @@ Body Section
                         ?>    
                     </form>
                     <?php
-<<<<<<< HEAD
-                    if (isset($_POST["comentar"])) {
-                        date_default_timezone_set("America/Argentina/Buenos_Aires");
-                        $key = date("YmdHis");
-
-                        array_pop($_POST);
-                        $_POST = array("id_producto" => $_GET["product"], "fecha" => date("d-m-Y H:i:s")) + $_POST;
-                        $multi_comentarios[$key] = $_POST;
-
-                        file_put_contents("comentarios.json", json_encode($multi_comentarios));
-                        comentario('Gracias por su comentario, ¡lo apreciamos!');
-                    }
-                    echo "<ul>";
-
-                    $numComentario = 0;
-                    foreach ($multi_comentarios as $clave) {
-                        if (($clave["id_producto"] == $_GET["product"]) && $numComentario < 4) {
-                            echo "<li>";
-                            foreach ($clave as $subclave => $subvalor) {
-                                if ($subclave == "id_producto") {
-                                    continue;
-                                } else {
-                                    echo $subclave, ": ", $subvalor, "<br>";
-                                }
-                            }
-                            echo "</li>";
-                            $numComentario++;
-                        }
-                    }
-                    echo "</ul>";
-=======
                      krsort($multi_comentarios);
                      echo "<ul>";
 
@@ -200,7 +164,6 @@ Body Section
                      }
                      echo "</ul>";
                    
->>>>>>> master
                     ?>
 
                 </div>

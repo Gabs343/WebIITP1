@@ -181,9 +181,6 @@ function suscripcion($txt) {?>
                                             <input type="text" class="span2" name="apellido" placeholder="Apellido" required>
                                         </div>
                                         <div class="control-group">
-                                            <input type="text" class="span2" name="edad" placeholder="Apellido" required>
-                                        </div>
-                                        <div class="control-group">
                                             <button type="submit" class="shopBtn btn-block" name="suscribirse">Suscribirse.</button>
                                         </div>
                                         
